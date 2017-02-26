@@ -1,0 +1,560 @@
+%Chapter 3
+
+\chapter{Expost implementation in economies with  interdependent valuations}  % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+
+\section{Introduction}
+ We try to characterize truthful implementation in ex post equilibrium in this Chapter.  Due to "Wilson criterion", ex post equilibrium 
+ is a good equilibrium in implementation theory for its distribution free property. A large body of literature has been devoted to 
+ many aspects of ex post implementation. 
+
+ 
+
+ As is pointed out in \parencite{Postlewaite2014}, it is often the case that truthful revelation is not ex post incentive compatible, that is, for a given 
+ agent, there are some profiles of the other agents' types for which the agent may be better off by misreporting his type than by 
+ truthfully revealing it. However, with the help of money transfer, the authors in \parencite{Maskin00} devised an complicated yet ingenious 
+ auction mechanism to Nash implement a rather general kind of allocation problems in interdependent value context. It is obvious 
+ that money transfer is one key for implementation. 
+ In this chapter, we provide a sufficient and necessary condition for truthful implementation with money transfer. VCG mechanisms in 
+ private value context and all its generalized forms in interdependent value context have all successfully find a suitable
+ money transfer scheme for specific economic environments. We would like to show the subtlety of those ingenious mechanisms in 
+ implementing social goal within our paper's model framework, and how their implemented social goals have satisfied the sufficient and 
+ necessary condition.
+ Here, for a certain but not rare kind of setting, we propose a simple Generalized Vickery mechanism which can easily make the buyers
+ reveal their private information truthfully through the help of money transfer. Of course, the Generalized Vickery mechanism is not 
+ balanced scheme. Nevertheless, the ability of the mechanism to make people tell truthfully about their private information is a sign of 
+ its power.   
+ For the common knowledge part of agents, we make the agents tell truth in Nash equilibrium using insights got from the paper
+ \parencite{Repullo90}.
+ 
+ In private value settings, ex post equilibrium is equivalent to dominant strategy
+ equilibrium. Thus the well-known VCG mechanism is the ideal mechanism for ex post implementation in private value case. What we care
+ most in this paper is the interdependent value setting. We also assume quasilinear utility for the agents, which is a common 
+ assumption. 
+In \parencite{BergemannM08}, the authors focus on identifying conditions for full implementation
+ of a social choice set in ex post equilibrium. They stressed that a conceptual advantage of ex post equilibrium is its 
+ robustness to the informational assumptions about the environment. \parencite{Maskin00} proposed an indirect bidding mechanism which
+ give ex post partial implementation of the socially efficient outcome.
+   An important contribution of \parencite{Maskin00} is that a mechanism for allocating  multiple heterogeneous goods is 
+ provided. \parencite{Perry2002} devised another clever mechanism for this case. Their methods consists of a collection of second-price 
+ auctions between each pair of bidders conducted over at most two rounds of bidding. Unlike them, in this paper we do not consider 
+ full implementation, and for partial implementation we focus on direct revelation mechanism. we use the direct mechanism and get 
+ to cover some more situations that are not implementable using the indirect bidding mechanism in \parencite{Maskin00}.
+ We restrict out attention to the conditions garanteeing that truthful revelation of one's own private signal constitutes an ex post 
+ equilibrium in some carefully designed direct revelation mechanism. That is, we focus on incentive compatibility of truthful
+ information revelation in direct mechanism. Partial implementation is enough in this paper. In such direct mechanisms,
+ a well devised payment rule is of key importance. \parencite{Ausubel99} provides a payment scheme in its generalized Vickery Auction
+ mechanism, which under some conditions achieves the task of implementing social efficiency in ex post equilibrium. 
+ \parencite{Jehiel2001} takes into consideration discreet social choice possibilities. 
+ 
+ In this paper, we would like to also investigate the continuous
+ cases of interdependent value,  including allocation of continuous resources and efficient provision of continuous public goods. 
+ For example, in a room of dancers, a volume must be chosen for the music so that it can provide the best social efficiency. Each person
+ has a valuation function of the form 
+ $$u_i= v_i(volume) + \alpha_i\sum_{j\neq i}v_j(volume)$$
+ Here, the $\alpha_i$ is the altruist coefficient of agent $i$. We will see how to implement social efficiency in this case later in
+ the paper. \parencite{Ely2006} is a work dedicated to similar problems. We are going to mention it when we draw on some of their results
+ later.
+
+
+ 
+ Our intuition is mainly taken from \parencite{Maskin00} Vickery Mechanism and auction theory. 
+Simpleness often means less mistakes. Also, a simple mechanism is  easy to supervise. For an outsider, it is not easy to judge who should win the goods in a very complicated mechanism
+, so a corrupted social planner might manipulate the result. That is one motivation for us to construct a direct revelation
+
+In interdependent value settings, a winner often suffers from winners' curse. In this paper, we first introduce the notion and model
+of interdependent value goods, then for some kind of setting, we find a unique expost Implementation of 
+the socially efficient results. Finally, we find an application of the model in the mineral rights assignment problem by aggregating
+signals in the designed market.
+
+
+
+
+\section{Key concepts and notations}
+First, we give some description of the notations used in this chapter. It's similar to the general framework described in the first chapter. In the meantime of depicting the notations here, we give out the settings for this 
+chapter in more detail.
+The economic environment consists of
+$A$: the set of choice possibilities.
+
+$Z=Z_1\times \dots\times Z_n$:the outcome space. For this chapter, implementation with money transfer means that the 
+outcome $z$ has the form $(a, t_1,\cdots,t_n)$ where $a$ is from the set of choice possibilities $A$, $t_i$ is 
+the payment agent $i$ has to make.
+
+$U=U_1\times \cdots\times U_n$: the set of all admissible utility functions  $u = \{u_i(\cdot, \cdot)\}_{i=1}^n$ whose 
+domain is $Z\times S$. In this paper, quasilinearity is assumed, that is , $u_i((a,t), s)$ takes the form $v_i(a,s)-t_i$. 
+$v=\{v_i(\cdot, \cdot)\}_{i=1}^n$ is in a space $V=R^+\times R^+$.
+
+$S=S_1\times \cdots\times S_n$: the set of all admissible signals $s=(s_1,\cdots,s_n)\in S$ that determine types of 
+parametric utility functions $u_i(\cdot, s)$, and so it is called the space of signals or called the state of the world. 
+In many papers, notation $\theta$ is used in stead of $s$. We adopt the notation $s$ of \parencite{Maskin00} in this paper.
+Here, apparently both independent value and interdependent value models are both incorporated in this framework.
+
+$E$: a set of  environments(states of the economy) $e=(\{u_i(\cdot, \cdot)\}_{i=1}^n,s)$. In this paper, 
+$e=(\{v_i(\cdot, \cdot)\}_{i=1}^n,s)$ since $v_i$ can identify $u_i$. Moreover,
+as will be discussed in the information structure part, the $v$ can be elicit out easily by the social
+planner, we simply let $e=s=(s_1,\cdots,s_n)$, which is the decentralized information part of the model that need 
+mechanism design to tackle.
+
+The information structure of the paper is specified by
+
+(1)$s_i$is privately observed by agent $i$.
+
+(2)$v=\{v_i(\cdot, \cdot)\}_{i=1}^n$ is common knowledge among the agents.To elicit the common
+knowledge part of their information, the social planner can adopt methods similar to those \parencite{Repullo90} propose for Nash
+implementation of social choice rules. If very agent reports the same, then the result is believed to be the truth. Otherwise,
+some kind of punishment is given to everyone.  
+
+Given economic environments, each agent participates economic activities, makes deci-
+sions, receives benefits and pays costs on economic activities.The designer wants to reach
+some desired goal that is considered to be socially optimal by some criterion. Let
+
+$F:E\rightarrow \rightarrow Z$: the social goal or called social choice correspondence in which
+$F(e)$ is the set of socially desired outcomes at a certain state of the economy under some
+criterion of social optimality. For this paper, the social goal is denoted
+$$F(s)=\{(a^*,t_1,\cdots,t_n)|a^*\ is\ a \ solution\ to \ \max_a \sum_{i=1}^n v_i(a,s)\}$$
+We call this the social goal of efficiency in the paper. Since money transfer is not the concerned part.  we can use 
+transfers freely to implement the goal.
+
+
+
+
+ 
+
+A mechanism consists of a message space and an outcome function. 
+
+$M_i$: the message space of agent i. 
+
+$M=M_1\times \cdots\times M_n$: the message space in which communications take place.
+
+$m_i \in M_i$: a message reported by agent $i$.
+
+$m=(m_1, \cdots,m_n)\in M$: a profile of Messages.
+
+$h:M\rightarrow Z$: outcome functions that translate messages into an outcome.
+
+$\Gamma=\langle M, h\rangle$: a mechanism.
+
+A very important class of mechanisms is the direct revelation mechanism in which $M_i$ is just the possible world state information 
+that agent $i$ has. In this paper, the direct revelation mechanism has a message space $M_i=\{(v, s_i)|v\in V, s \in S \}$. The most
+important case of $m$ is where all reported $v$ is the same, and for this case the outcome function can be written as 
+$h(m)=(a(v,s),t(v,s))$.
+
+Let $b(e, \Gamma)$ be the set of equilibrium messaging strategies that describes the self-interested behavior of individuals.
+For instance, Nash equilibrium $N(e,\Gamma)$ is the most frequently adopted equilibrium concept.
+
+A Mechanism $\langle M, h\rangle$ is said to implement a social choice correspondence $F$ in equilibrium strategy 
+$b(e, \Gamma)$ on Environment space $E$ if for every $e\in E$, $h(b(e,\Gamma))\in F(e)$.
+Incentive compatibility is another way of saying implementation. A Mechanism is said to be incentive-compatible with a social choice
+correspondence $F$ on $E$ if it implements $F$ in some kind of equilibrium on $E$. 
+
+
+
+
+
+
+
+
+\section{The sufficient and necessary condition for implementation with money transfer}
+
+
+
+Obviously, for a direct revelation mechanism to implement the social efficiency, every agent must tell truth. 
+
+
+We assume outside choice is $a_0$, and $v_i(a_0,s)=v_i(a_0,s_{-i})$, that is, the agent $i$'s value of the outside choice does not
+depend on $s_i$.
+\begin{thm} \label{thm}
+The social goal of maximizing $\Sigma v_i(a, s)$ can be partially implemented in ex post equilibrium with money transfer if and only if there is a transfer scheme $t(s)$(taken as a tax from agent to the social planner), such that for 
+the chosen $a(s)$ maximizing $\Sigma v_i(a, s)$ the following formula holds for all $i$ , $s$ and $s'_i$
+
+\[v_i(a(s), s) - t(s) \geq v_i(a(s'_i, s_{-i}), s) - t(s'_i, s_{-i}) \]
+\end{thm}
+\begin{proof}
+Just use the $t(s)$ as a taxation and according to the definition of ex post equilibrium,  tell truth about one's private signal is an ex post equilibrium.
+
+\end{proof}
+
+In order to facilitate the proof, we give the following fundamental theorem of this paper.
+It is roughly saying that the value sum of you pretending another type(who have different value when truth telling)
+and that type pretending you is less than the value sum of 
+you and that type truthfully report your types.
+
+\begin{prop}[single crossing condition]\label{prop}
+A social goal of efficiency $G$ can be ex post implememted on $E$  by some mechanism only if $\forall s, \forall v, \forall i$, when 
+$v_i(a(v,s), s)\neq v_i(a(v,s'),s')$ where  $s=(s_i, s_{-i})$ and 
+$s'=(s'_i, s_{-i})$ (i.e., they only differ in agent's private signal), then
+
+\begin{equation*}\label{equ}
+v_i(a(s'),s)-v_i(a(s), s)<v_i(a(s'),s')-v_i(a(s), s')
+\end{equation*}
+
+\end{prop}
+
+\begin{proof}
+By the necessary and sufficient condition\ref{thm}, there must be a $t(\cdot)$ such that
+
+\[v_i(a(s), s) - t(s) \geq v_i(a(s'), s) - t(s') \]
+
+and
+
+\[v_i(a(s'), s') - t(s') \geq v_i(a(s), s') - t(s) \]
+
+Add the above two inequality together and exchange some terms from both sides, then you get the single crossing condition.
+
+
+\end{proof}
+
+
+\section{Continuous cases}
+Let us begin with some examples
+\begin{example}
+ Consider there are two chess players living $L$ miles apart from each other along a road in a city. They drive their cars to meet
+ each other every sunday to play chess face to face, and then go back home. Suppose that they can choose anywhere on the road to meet.
+The city governer tries to assign a meeting place minimizing the pollution of their car causing to the city, so he wants to
+chose a meeting spot to minimize $c_il_i+c_j(L-l_i)$. They all care about the 
+ pollution but they also care about their oil expenditure, player i wants to minimize $v_i= c_il_i+ \alpha(c_il_i+c_j(L-l_i))$. What
+ is the transfer scheme that can make the two players telling truth about their private $c_i$ an ex post equilibrium.
+\end{example}
+when extending the two player game of chess to four player game like bridge, and the four people meet each other,
+it is more complicated. 
+\begin{example}
+ $n$ firms at $n$ corners of a regular n polygon area transporting their produced goods to a city for sale.
+The city planner tries to build the city in a place such that it can minimize the pollution caused by transportation of the goods, 
+and the firms cares about its own transportation cost as well as the total pollution(the reason why a firm care about pollution
+may be that the goods are vegetables and pollution can hurt the production). The oil consumption and thus pollution caused 
+by a given amount of goods transportation for each firm is a private value . Each day the goods transported to the city is also
+private information for each firm. What is the taxation scheme that can make each firm report their true private information so that the city 
+planner can choose the best place to build the city in order to reduce transporation pollution. Here the meaning of the taxation is not
+to reduce pollution directly, but to lead the firms to tell truth about their private information such that the planner can choose a
+pollution minimizing choice for building the city.
+\end{example}
+
+Another economically more interesting example is as following 
+\begin{example}
+A country has N oligopoly firms producing the same goods ,say oil. They face an exogenous demand function. Competition among them hurt
+aggregate profits of the firms. 
+The country want to devise a taxation scheme such that every firm reveal their true production cost so that the country can plan
+the production quantity for each firms to maximize total profit of the country. This is the private value case that can be implemented
+using classical Clark mechanism. 
+\end{example}
+Now change the scenario to another case where the firms' CEOs know the private cost informations of their own firms. They are all 
+shareholders, and all have a large percent of their own firm's stock and a different amount of share on other firms, and these shares
+are common knowledge.  Now the valuation of each firm's CEO on the country's production assignment plan are dependent upon all
+the cost information and each firm's final production quantity as specified by the country.
+ 
+Now the taxation scheme is a true challenge. In this paper, we try to classify these interdependent value problems into two category,
+the ones that can be implemented with money transfer(suitable taxation)in ex post equilibrium, and the ones that can not. For those
+that can be implemented with money transfer, we give the taxation scheme that can be used to implement the socially efficient choice.
+
+One interesting finding is that the money transfer scheme is unique up to a shifting constant if the functions involved are
+continuously differentiable.
+
+\begin{thm}
+Assuming all the partial derivatives exists and are continuous, then solve the following 
+differential equations
+ $$\frac{\partial t_i}{\partial s_i} = \frac{\partial v_i(a(s_i,s_{-i}),s_i,s_{-i})}{\partial a } \frac{\partial a}{\partial s_i}$$
+ $i=1,\cdots,n$ 
+ 
+ gives us a transfer scheme $t(\cdot)$.
+A sufficient and necessary condition for implementation with money transfer in such continuous case is that, for all $i$,$s$
+by shifting up or down the $t(\cdot,s_{-i})$ to let it be tangent with $ v_i(a(\cdot,s_{-i}),s_i,s_{-i})$ at $s_i$, the curve
+$t_i(\cdot,s_{-i})$ is below $ v_i(a(\cdot,s_{-i}),s_i,s_{-i})$, namely, $v_i(a(\cdot,s_{-i}),s_i,s_{-i})-t(\cdot,s_{-i})$ is
+maximized at $s_i$.
+
+ 
+\end{thm}
+\begin{proof}
+ If truth telling is a ex post equilbrium, it must be the case that $s_i$ is the solution to
+ $$\max_{s'_i} \{v_i(a(s'_i,s_{-i}),s_i,s_{-i})-t(s'_i,s_{-i})\}$$
+ solving it, we get the conclusions in the theorem.
+\end{proof}
+
+The theorem is simple, but it contains much information. One thing is that not every continuously differentiable
+social goal $a(s)$ is implementable in ex post equilibrium with money transfer. It must satisfy the conditions in the theorem 
+to be implemented with money transfer. The second thing is that even if it can be implemented with money transfer, the scheme for 
+implementing it is unique in essence. They only differ by a constant(the solution to the differential equations are some specific
+function plus a something of the form $f(s_{-i})$ that is not changing with $s_{-i}$).
+
+Now let us consider the oil producers example. We should give a mathematical structure to it in order to show how the process of mechanism
+design is done in this case. Market demand function is $q(p)$, inverse demand function is $p(q)$. The cost function 
+facing firm i is $c(q_i,s_i)$, the parameter $s_i$ is privately known. The share of firm $j$
+that the leader of firm  $i$ holds is $m_{ij}$, and  the leader $i$ cares the overall profit 
+$v_i(q,s)=\sum_{j=1}^{n} m_{ij}(q_jp(q)-c(q_j,s_j))$. The country's goal is 
+$$\max_{\{q_1,\cdots,q_n\}}\sum_{j=1}^{n} (q_jp(q)-c(q_j,s_j)) $$
+The solution to this maximization problem must satisfy the first order conditions
+$$q_j \frac {\partial p(q)}{\partial q}+p(q)=\frac {\partial c(q_j,s_j)}{\partial q_j}$$
+$$j=1,\cdots,n$$
+
+For many function forms, the above conditions are also sufficient, and we calculate out ${q_1(s),\cdots,q_n(s)}$ from the above 
+equations. Next, by using the conditions in the above theorem, we get 
+$$\frac{\partial t}{\partial s_i} = \sum_{j=1}^{n} m_{ij}\{q_j\frac {\partial p(q)}{q}(\frac{\partial q_1}{s_i}+\cdots+\frac{\partial q_n}{s_i})-\frac {\partial c(q_j,s_j)}{\partial q_j}\frac{\partial q_j}{s_i}\}$$
+Now that the transfer scheme is calculated, we only need to verify whether it satisfies the requirement that $s_i$ maximizes  
+$$\sum_{j=1}^{n} m_{ij}\{q_j(\cdot,s_{-i})p(q(\cdot,s_{-i}))-c(q_j(\cdot,s_{-i}),s_j)\}-t_i(\cdot,s_{-i})$$
+
+For this continuously differentiable situation, the private value case of the problem always has the unique solution, the uniqueness
+has been shown by the above more general result. And the unique mechanism is the well-known VCG mechanism. This has been shown by
+Laffont and Maskin(Econometrica, 1980). Tian
+
+And for private value case, 
+ex post implementation is indeed dominant strategy implementation. A specialness of the private value situation is that the calculated
+VCG money transfer mechanism can always satisfy the additional requirement for implementability. We will show why now. 
+\section{Discrete social goal}
+The discrete social choice possibility set $A$ does not allow differential analysis like we do above in the continuous social choice
+possibility set case. However, the allocation of discrete social resources, or the determination of whether a project should be carried
+are important social choice problem we have to face. We are also interested at whether we can implement such social choices with money
+transfer. We start from allocation of one good.
+
+\subsection{Allocation of one good  }
+
+Imagine the following scenario : there is a group of agents who are familiar with each other, and the social planner has
+one good to allocate to one of them. The socially efficient outcome is to give it to the one who 
+values it the most. Suppose each agent can only detects one of the qualities of the good, and the total value of the 
+good for any agent is only determined by all the qualities of the good and the importance of each quality to the agent 
+himself. This is a situation completely covered by our model framework in the previous section. The social choice possibility
+set $A=\{(1,0,\cdots,0),\cdots,(0,\cdots,0,1)\}$. Every body only cares about getting the object, and when one does not get it his or
+her utility gain is 0 from the allocation. Now what the social planner want is a mechanism to implement the socially efficient outcome. 
+
+\parencite{Maskin00} has partly solved the problem and give us an auction mechanism to implement a rather large economic 
+environment set $E$ in this one good allocation environment. However, as the authors pointed out in the footnote 26 of 
+their paper, some utility forms can not be implemented by their auction mechanism. In this section, through combining the 
+insights of the two authors with the power of revelation mechanism, we try and find a direct revelation mechanism  which
+enlarge the $E$ on which the social goal of efficiency $G$ is implementble, for example, the economic environment in footnote
+26 of their paper.
+In Theorem~\ref{thm}, we have shown what is the sufficient and necessary condition for implementation with money 
+transfer. In this simple case, we give some simple assumptions parallel to the sufficient and necessary condition
+so that we can implement the social efficiency.
+
+In this one good allocation problem,let $v_i(s)=v_i(\epsilon_i,s)$ where $\epsilon_i$ is the allocation of the good to i. Then we
+have the following sufficient condition for ex post implementation of efficient result in an auction.
+\begin{prop}
+The efficient allocation of one good can be implemented  as an ex post equilibrium
+if  
+ $$\forall i,\forall s_{-i}, \exists s_i^* \in S_i, such\ that $$
+ $$(a) v_i(s_i^*, s_{-i}) = max_{j\not = i} v_j(s_i^*, s_{-i}); $$
+ $$(b) When\ v_i(s_i, s_{-i}) > v_i(s_i^*, s_{-i}), $$
+  $$\forall j \not = i, v_i(s_i, s_{-i}) - v_i(s_i^*, s_{-i}) > v_j(s_i, s_{-i}) - v_j(s_i^*, s_{-i});$$
+  $$When\ v_i(s_i, s_{-i}) < v_i(s_i^*, s_{-i}), $$
+  $$\forall j \not = i, v_i(s_i, s_{-i}) - v_i(s_i^*, s_{-i}) < v_j(s_i, s_{-i}) - v_j(s_i^*, s_{-i});\\
+  $$
+ 
+\end{prop}
+\begin{proof}
+The proof is through  constructing the needed mechanism and then examining how the mechanism works in all possible situations.
+We only need to find an appropriate mechanism to implement it. Now we give it as follows and then prove it can indeed
+ implement the social goal of efficiency.
+ 
+ Step 1. Every agent reports a $(v,s_i)$ from the set $V\times S_i$;
+ 
+ Step 2. If the $v$ reported by every agent has some disagreement, then the result is that no body gets the good.
+ 
+ Step 3. If the $v$ reported by every agent is the same, then solve the maximization problem 
+ $$\max_{i \in \{1,\cdots,n\}}v_i(s)$$
+ and give the good to the solution agent. The winner pays $v_i(s_i^*, s_{-i})$ 
+ which $s_i^*$ is the solution to the following minimization problem
+ \begin{equation}
+ \min_{s_i^*\in S_i} v_i(s_i^*, s_{-i})\quad
+ s.t.\quad  v_i(s_i^*, s_{-i})\geqslant \max_{j\neq i, j \in \{1,\cdots,n\}} v_j(s_i^*, s_{-i})
+ \end{equation}\label{pay}
+Explanation of this mechanism being able to induce truthful revelation of every agent's private signal is not
+difficult with the help of case analysis for all possibilities.
+
+Devide the actually received signal $s_i^*$ into three cases:
+
+(i)When $v_i(s_i, s_{-i})> v_i(s_i^*, s_{-i})$, given others truthfully revealing their private signals $s_{-i}$, the agent i
+wishes to win the auction. Truthful revelation of $i$'s private signal is enough to insure the win, since the $s_i^*$
+is enough to guarantee a tied first according to assumption (a), further by the first part of assumption (b), the true $s_i$ gives
+agent $i$ the clear first. Therefore truthful revelation of the signal $s_i$ in this case is incentive compatible.
+
+(ii)When $v_i(s_i, s_{-i})< v_i(s_i^*, s_{-i})$, given others truthfully revealing their private signals $s_{-i}$, the agent i's best choice is to lose the auction.
+Truthful revelation of $i$'s private signal is sure to make him lose the auction, since  the $s_i^*$ only gives him a tied first according to assumption (a), 
+further by the second part of assumption (b), the true $s_i$ will not make him the first. Therefore truthful revelation of the signal $s_i$ in this case is also incentive compatible.
+
+(iii)When $v_i(s_i, s_{-i}) = v_i(s_i^*, s_{-i})$, given others truthfully revealing their private signals $s_{-i}$, winning or losing the auction has the same net value of 0. 
+Therefore truthful revelation of the signal $s_i$ in this case is incentive compatible trivially.
+
+\end{proof}
+
+
+
+
+The improvement of our mechanism on \parencite{Maskin00} is that they have four assumptions for implementation, but we only need two 
+assumptions which are essentially parallel to their first three assumptions and less demanding. 
+
+Their three assumptions are listed below.
+
+(i)$\frac{\partial v_i}{\partial s_i} > 0$;
+
+(ii) $\forall i, j \not = i, \frac{\partial v_i}{\partial s_i}(s_1,...,s_n)
+> \frac{\partial v_j}{\partial s_i}(s_1,...,s_n)$;
+
+at any point where $v_i(s_1,...,s_n) = v_j(s_1,...,s_n)= max_k v_k(s_1,...,s_n)$
+(iii)$ \forall s_{-i} \in S_{-i}, \exists s_i' \in S_i, such\ that\ v_i(s_i', s_{-i}) > max_{j\not=i}v_j(s_i', s_{-i})$;
+
+
+Therefore, we can implement social
+ goal of efficiency on all the economic  environments $E$ that their auction mechanism can implement and can implement beyond their
+ scope. As a demonstration of the power of our direct revelation mechanism as shown in the proof, we now implement the efficiency 
+ goal for \parencite{Maskin00} footnote 26.
+ 
+\begin{example}[Footnote 26 of the paper Efficient Auctions]
+$$v_1(s_1,s_2)=s_1-2s_2+5$$
+$$v_2(s_1,s_2)=s_2-\frac{1}{2}s_1+5$$
+The $v$ clearly satisfy Assumption 1 and 2, therefore it is implementable using our direct revalation mechanism described above. By
+using the minimization value in Formula~\ref{pay}, we get the pay that the winner has to make,  which is a constant $5$. It is easy to verify that truthful report is a Nash Equilibrium.
+ 
+\end{example}
+For the above example, the reason why the auction in \parencite{Maskin00} cannot implement social goal of efficiency, is perhaps that 
+their contingent biding function loses the information revelation role in this case, since 
+$b_1(v_2)=15-2v_2,\quad b_2(v_1)=\frac{15-v_1}{2}$.
+
+The next section will be with multiple goods, and there we will provide a sufficient condition for ex post implementation. When that condition is applied to the one object case($1$ is a special case of $n$), we will have a further relaxed condition than the one we proposed in this part.
+\subsection{Allocation of multiple goods}
+\label{sec:allocation_of_multiple_goods}
+
+Now we extend the previous result to the allocation of multiple goods.  The problem is actually the assignment model with a special kind of interdependency. \footnote{For the private value assignment problem, the knowledge of which may help the understanding of this section, see Chapter 8 \parencite{Roth1990}for reference.}
+
+Suppose that there are $m$ agents and $n$ goods such that $m > n$. Each agent can get at most one object.   Agent $i$'s valuations of the n goods is given by $(v_{i1}(s),v_{i2}(s),...,v_{in}(s))$ respectively, where $s=(s_1,s_2,...,s_m)$ is a vector of signals held privately by agent $1$,agent $2$,..., agent $m$ respectively. Allocation result is a $m \times n$matrix $X$ where $\sum_{i\in\{1,...,m\}}x_{ij} \leq 1\ for\ all\ j$ and  $\sum_{j\in\{1,...,n\}}x_{ij} \leq 1\ for\ all\ i$. The social goal is to allocate the goods to maximize the social efficiency $\sum_{ij}x_{ij}v_{ij}(s)$.
+
+This problem is generally not ex post implementable. However, we find under the following condition, we can design a mechanism to implement the socically efficient goal in ex post equilibrium.
+
+Condition $\rho$:
+
+$\forall i,\forall s_{-i}, \exists s_i^* \in S_i,k \in \{1,\cdots,n\}, such\ that $
+
+To maximize  $\sum_{ij}x_{ij}v_{ij}(s)$,
+
+if $s_i = s_i^*$, agent $i$ will be given the certain good $k$ or have no good allocated in all the maximizing allocation schemes.
+
+if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no good allocated in all the maximizing allocation schemes.
+
+if $v_{ik}(s_i) > v_{ik}(s_i^*)$, agent $i$ will be given the certain good $k$ in all the maximizing allocation schemes.
+
+
+\begin{proof}
+The proof is through  constructing the needed mechanism and then examining how the mechanism works in all possible situations.
+We only need to find an appropriate mechanism to implement it. Now we give it as follows and then prove it can indeed
+ implement the social goal of efficiency.
+ 
+ Step 1. Every agent reports a $(v,s_i)$ from the set $V\times S_i$.\footnote{Here $v$ is the matrix
+   \begin{matrix}
+     v_{11}& \cdots & v_{1n}\\
+     \vdots& \ddots & \vdots\\
+     v_{m1}& \cdots & v_{mn}
+   \end{matrix}
+   , where $v_{ij}$ is the value function of agent $i$ getting good $j$.
+ }
+ 
+ Step 2. If the $v$ reported by every agent has some disagreement, then the result is that no body gets any good.
+ 
+ Step 3. If the $v$ reported by every agent is the same, randomly pick an integer solution matrix $x$ of  the assignment maximization problem \footnote{By Dantzig's linear programming theory, such a solution exists.} 
+ $$\max_{i,j}x_{ij}v_{ij}(s)$$
+ s.t.
+ $$\sum_i x_{ij} \leq 1\ for\ all\ j $$
+ $$\sum_j x_{ij} \leq 1\ for\ all\ i $$
+ $$x_{ij} \geq 0\ for\ all\ i,j $$
+
+ Then assign the goods according to the matrix $x$ such that if $x_{ij}=1$, agent $i$ is assigned good $j$, and $i$ is
+ charged $v_{ij}(s_i^*(s_{-i}), s_{-i})$.
+ 
+Explanation of this mechanism being able to induce truthful revelation of every agent's private signal is not
+difficult with the help of case analysis for all possibilities.
+
+Devide the actually received signal $s_i$ into three cases:
+
+(i)When $v_{ik}(s_i, s_{-i})> v_{ik}(s_i^*, s_{-i})$, given others
+truthfully revealing their private signals $s_{-i}$, the agent i
+wishes to be assigned good $k$ otherwise he will be assigned
+nothing. Truthful revelation of $i$'s private signal is enough to
+insure the assignment of $k$ to $i$, since according to Condition
+$\rho$, $k$ will be allocated to $i$ in all the social value
+maximizing schemes which will be enforced by the mechanism. Therefore
+truthful revelation of the signal $s_i$ in this case is incentive
+compatible.
+
+(ii)When $v_{ik}(s_i, s_{-i})< v_{ik}(s_i^*, s_{-i})$, given others
+truthfully revealing their private signals $s_{-i}$, the agent i's
+best choice is to be allocated nothing and pay nothing. Truthful
+revelation of $i$'s private signal $s_i$ is enough to insure that he
+is allocated nothing, since according to Condition $\rho$, nothing
+will be allocated to $i$ in all the social value maximizing schemes
+which will be enforced by the mechanism. Therefore truthful revelation
+of the signal $s_i$ in this case is also incentive compatible.
+
+(iii)When $v_{ik}(s_i, s_{-i}) = v_{ik}(s_i^*, s_{-i})$, given others
+truthfully revealing their private signals $s_{-i}$, winning or losing
+the assignment of good $k$ has the same net value of 0. Therefore
+truthful revelation of the signal $s_i$ in this case is incentive
+compatible trivially.
+
+\end{proof}
+
+Condition $\rho$ does not seem to be easy to satisfy. Nevertheless, in
+the following we give a more concrete $v$ which satisfy Condition
+$\rho$ to show that it is indeed satisfiable in some situations so
+that we can ex post implement the socially efficient goal.
+\begin{corollary}
+  \label{rho}
+  The social efficient goal of $\max_{i,j}x_{ij}v_{ij}(s)$ can be ex post implemented if:
+For all $i$ and $j$,
+$$v_{ij}=b_{ij} + o_i(s_i) + \sum_{k \not = i} r_k(s_k) $$
+where $b_{ij}>0$ is the base value, $s_i \in [0, + \infty)$, $\forall i,o_i(0)=r_i(0)=0$
+
+Assumptions are listed below.
+
+(i)For all $i$, $\frac{\partial o_i}{\partial s_i} > 0$, $\frac{\partial r_i}{\partial s_i} > 0$;
+
+(ii) $\forall i, \frac{\partial o_i}{\partial s_i}
+> \frac{\partial r_i}{\partial s_i}$;
+
+(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
+\end{corollary}
+
+
+The intuition of these assumptions implying Condition $\rho$ is that
+the own effect of a signal $s_i$ is larger than its effect to the rest
+of the agents. And therefore there exists a threshold $s_i^*$ as
+required by Condition $\rho$ for agent $i$ to get into the group of
+good winners. As for the fixedness of the good $k$ won by agent $i$,
+it's in part due to the fact that as $s_i$ increases, the increasing
+rate of $v_{ik}$ is at least as large as any other $v_{ab}$, where
+$ab$ stands for arbitarty agent and good combination not equal to
+$ik$. The formal proof can be seen in Appendix \ref{Appendix_B}
+
+
+
+
+
+\begin{comment}
+\parencite{Jacques88} has characterized
+auctions for a single indivisible object in the case where the
+bidders have information about each other which is not available to the seller, and the seller can get full extraction of the surplus in bayesian and dominant strategy auctions. 
+\end{comment}
+
+
+
+
+\section{Conclusion}
+
+The whole chapter builds on the assumption of quasilinearity of agents' value function. Under such preference,  money can be utilized 
+as a tool to help elicit true information about the world that are scattered among the agents.
+When the mechanism designer cares more on efficiency than fairness, our mechanism is ideal. Since the redistributional effect of money 
+transfer has no influence on the aggregate social value.
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+

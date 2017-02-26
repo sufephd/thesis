@@ -1,0 +1,649 @@
+% Chapter 6
+
+\chapter{cooperative equilibria}  % Main chapter title
+
+\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter6} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+\section{introduction}
+ 
+There exists a class of economic model with the multi-leader-multi follower framework.
+For example, a very common multi-leader-multi-follower game is the incumbent firms competing entrant firms story. In this story, when facing competition from both incumbent firms
+and entrant firms, incumbents are compelled to decide what they must do in their markets. After seeing the incumbents' action, the potential entrant firms make their decision as to
+whether they will enter and what are their adopted strategies in the markets if they enter. Another instance where our model is the correct setting is in international economics, some countries
+import goods from other countries. The importing countries set tariff rates, and we
+we can view them as leaders. After seeing the tariffs, exporting countries make their exporting decisions. There are also many other
+situations where our framework suit. Since the purpose of this paper is to discuss equilibrium of these kinds of games in general, we will not present more 
+examples of the multi-leader-multi-follower game in economics or elsewhere.
+
+
+Recently, multi-leader-follower games have been widely researched by many authors.
+Pang and Fukushima [1] introduced a class of
+multi-leader-follower games that can be formulated as generalized Nash games.
+Hu and Fukushima [2] obtained some existence theorems
+of equilibrium for a class of multi-leader-follower games by means of
+variational inequalities.
+Yu and Wang [3]  proved an equilibrium existence theorem of
+a two-leader-multi-follower game in locally convex topological spaces.
+Ding [4] established some equilibrium existence theorems, by extending above results to noncompact FC--spaces.
+Recently, Jia et al. [5] studied the existence and stability of weakly Pareto-Nash
+equilibria for generalized multiobjective
+multi-leader-follower games.
+
+
+Above-mentioned all papers focused on noncooperative equilibria of multi-leader-follower games,
+in this paper, we mainly study the existence of cooperative equilibria for multi-leader-follower games.
+In order to study the cooperative solutions, the game must be
+described as specifying the set of utility vectors which is achieved by coalition.
+Aumann [6] described {\it blocking} as follows: A coalition is said to block a given social state if
+it has a feasible strategy with which the coalition can ensure a
+social state preferred by all the agents in it regardless of the
+strategies the other agents outside the coalition may choose. The
+core is the set of social states that cannot be
+blocked. Kajii [7] showed the existence of cooperative equilibria
+in games without the assumption of transitivity or completeness
+on the agents' preference relations.
+
+Wu and Jiang [8] and Jiang [9] introduced the notion of essential equilibria
+in finite games and proved that any finite game can be approximated arbitrarily
+by a game whose Nash equilibria are all essential.
+This result has been extended to infinite-action games and
+different nonlinear problems, (see [10-25]).
+It is well-known that the concept of essentiality has been widely used
+in studying the stability of Nash equilibria. However, 
+one could also argue that a cooperative equilibria of 
+multi-leader-multi-follower games should be stable
+against slight perturbations in the payoffs of 
+multi-leader-multi-follower games. In this paper,
+we will provide existence and generic stability results 
+for cooperative equilibria in multi-leader-multi-follower games.
+
+
+
+
+In this paper, we first introduce the concept of
+cooperative equilibria for multi-leader-multi-follower games,
+and prove its existence and generic stability.
+The organization of this paper is as follows: In Sect. 2, we introduce
+the notion of cooperative equilibria for multi-leader-follower games.
+In Sect. 3, we establish their existence results for cooperative equilibria in multi-leader-multi-follower games.
+In Sect. 4, we identify a class of multi-leader-multi-follower games containing a dense residual subset of multi-leader-multi-follower games whose cooperative equilibria are all essential.
+
+\section{The model}
+
+Consider the multi-leader-multi-follower game
+\begin{eqnarray*}
+\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+where $I$ is the finite set of leaders, and $J$ is
+the finite set of followers;
+\begin{eqnarray*}
+&&X = \prod_{i\in I}X_i,\ X_{-i}=\prod_{j\in I\backslash\{i\}}X_j,\ X^B=\prod_{i\in B}X_i,\ X^{-B}=\prod_{i\not\in B}X_i,\\
+&&Y = \prod_{j\in J}Y_j,\ Y_{-j}=\prod_{j'\in J\backslash\{j\}}Y_{j'},\ Y^{B'}=\prod_{j\in B'}Y_j,\ Y^{-B'}=\prod_{j\not\in B'}Y_j.
+\end{eqnarray*}
+each $X_i$ is the set of actions for leader $i$,
+each $Y_j$ is the set of actions for follower $j$;
+each $f_i:X\times Y\longrightarrow \mathbb{R}$ is the payoff function of leader $i$, and
+$g_j:X\times Y\longrightarrow \mathbb{R}$ be the payoff function of follower $j$.
+
+In this multi-leader-multi-follower game,
+the leaders first  make the decision and
+the followers can receive leaders' action $x\in X$.
+After knowing the leaders' decision $x$, the followers play
+a parametric game.  For any leaders' action $x\in X$, let $\mathcal{C}(x)$
+be the set of cooperative equilibria of the parametric followers' game, which
+yields a correspondence $\mathcal{C}:X\rightrightarrows Y$. Specifically,
+${y}\in \mathcal{C}(x)$ means that, for any $B\subseteq J$, there exists no $u^B\in Y^B$ such that
+$$g_j(x,u^B,v^{-B})>g_j(x,y),\forall v^{-B}\in Y^{-B},\forall j\in B.$$
+
+Following the idea of {\it blocking} in [6,7],
+a coalition $B\subseteq I$ is said to block $x\in X$ in
+multi-leader-multi-follower games if, there exists $u^B\in X^B$ such that,
+\begin{eqnarray*}
+f_i(u^B,z^{-B},y)>f_i(x,y),\forall y\in \mathcal{C}(x),\forall z^{-B}\in X^{-B},\forall i\in B.
+\end{eqnarray*}
+A action $x\in X$ is a cooperative equilibria of
+multi-leader-multi-follower games if no coalition $B\subseteq I$ can $block$ $x$.
+\\
+
+We next recall some known results concerning correspondences from [26] and [27].
+\\
+
+\noindent{\bf Lemma~2.1 (17.8, 17.10 of [26])}~~{\it (i) The image of a compact set under
+a compact-valued upper semicontinuous set-valued
+mapping is compact. (ii) If an upper semicontinuous set-valued mapping possess compact-valued, then it is closed.}
+\\
+
+
+
+\noindent{\bf Lemma~2.2 (17.8, 17.10 of [26])}~~{\it
+Let $X, Y$ be two Hausdorff topological spaces.
+If the correspondence $G : X\rightrightarrows Y$ is continuous with nonempty
+compact values, and
+$f : X \times Y \longrightarrow \mathbb{R}$ is continuous. Then
+$m(x) = \min_{y\in G(x)}f(x, y)$ is also continuous on $X$.}
+\\
+
+\noindent{\bf Lemma~2.3 ([27])}~~{\it Suppose that $X$ is a complete
+metric space and $Y$ a topological space.
+Suppose further that $F : X \rightrightarrows Y$ is a compact-valued and upper semicontinuous correspondence
+with $F(x)\neq\emptyset$ for all $x\in X$. Then there exists a dense residual subset $Q$ of $X$ such that $F$ is lower
+semicontinuous at every point in $Q$.}
+
+
+\section{Existence of cooperative equilibria}
+
+In this section, we establish some existence results of cooperative equilibria for
+multi-leader-multi-follower games.
+\\
+
+\noindent{\bf Theorem~3.1}~~{\it Assume that the
+multi-leader-multi-follower game
+\begin{eqnarray*}
+\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+satisfies the following conditions:
+\\
+
+(i) for each $i\in I$ and each $j\in J$, $X_i$ and $Y_j$ are nonempty, convex and
+compact subsets of normed linear spaces, respectively;
+
+(ii) for each $i\in I$, $f_i$ is continuous on $X\times Y$;
+
+(iii) for each $i\in I$ and each $y\in Y$, $f_i(\cdot,y)$ is quasi-concave on $X\times Y$;
+
+(iv) for each $j\in J$, $g_j$ is continuous on $X\times Y$;
+
+(v)  for each $j\in J$ and each $x\in X$, $g_j(x,\cdot)$ is quasi-concave on $Y$.
+\\
+\\
+Then the multi-leader-multi-follower game
+has at least a cooperative equilibrium.}
+\\
+
+\noindent{\it Proof}~~The proof of Theorem 3.1 is divided into four steps.
+In the first step, we construct the cooperative equilibrium correspondence
+of the parametric game for the followers. Moreover, by Proposition 1 in [7],
+the cooperative equilibrium correspondence is nonempty-valued.
+In the second step, we show that the cooperative equilibrium correspondence is
+compact-valued and upper semicontinuous. In the third step,
+we show that the multi-leader-multi-follower game
+has at least a cooperative equilibrium.
+
+
+{\it Step 1.}~~For any $x\in X$ and any $j\in J$, we define the preference
+correspondence $P^F_j(x,\cdot):Y\rightrightarrows Y$ for follower $j$
+by
+\begin{eqnarray*}
+P^F_j(x,y)=\{z\in Y|g_j(x,z)>g_j(x,y)\}.
+\end{eqnarray*}
+The continuity of $g_j$ and quaiconcavity $g_j(x,\cdot)$ yield that the graph of
+$P^F_j(x,\cdot)$ is open in $Y\times Y$ and, for any $y\in Y$, $y\not\in P^F_j(x,y)$, and
+$P^F_j(x,y)$ is convex.
+
+By Proposition 1 in [7], for any $x\in X$, there exists $y\in Y$ such that, for any $B\subseteq J$,
+there exists no $u^B\in Y^B$ for which
+\begin{eqnarray*}
+(u^B,Y^{-B})\subset P^F_j(x,y),\ \forall j\in B,
+\end{eqnarray*}
+that is,
+\begin{eqnarray*}
+g_j(x,u^B,v^{-B})>g_j(x,y),\forall v^{-B}\in Y^{-B},\forall j\in B.
+\end{eqnarray*}
+Let $y\in \mathcal{C}(x)$, where
+$\mathcal{C}(x)$ is the set of
+cooperative equilibria of followers when the leader take action $x$.
+
+
+{\it Step 2.}~~The cooperative equilibrium correspondence $\mathcal{C}$ is
+compact-valued and upper semicontinuous.
+
+By Lemma 2.1, it suffices to show the graph of $\mathcal{C}$
+is closed. Suppose that $\{(x^n,y^n)\}$ be a sequence in $X\times Y$ with
+$(x^n,y^n)\longrightarrow (x,y)\in X\times Y$ and $y^n\in \mathcal{C}(x^n)$.
+The step will is completed if we show that $y\in \mathcal{C}(x)$.
+
+Suppose that $y\not\in \mathcal{C}(x)$. Then there exists a coalition $B\subseteq J$
+and $u^B\in Y^{-B}$ such that
+\begin{eqnarray*}
+g_j(x,u^B,v^{-B})>g_j(x,y),\forall v^{-B}\in Y^{-B},\forall j\in B,
+\end{eqnarray*}
+which, along with the continuity of $g_j$ and the compactness of $Y$, yields that
+\begin{eqnarray*}
+\min_{v^{-B}\in Y^{-B}}g_j(x,u^B,v^{-B})>g_j(x,y),\forall j\in B,
+\end{eqnarray*}
+By Lemma 2.2, $(x,u^B)\longrightarrow \min_{v^{-B}\in Y^{-B}}g_j(x,u^B,v^{-B})$
+is also continuous. For $n$ enough large, we have
+\begin{eqnarray*}
+\min_{v^{-B}\in Y^{-B}}g_j(x^n,u^B,v^{-B})>g_j(x^n,y^n),\forall j\in B,
+\end{eqnarray*}
+implying that $y^n\not\in \mathcal{C}(x^n)$. It is a contradiction.
+
+
+{\it Step 3.}~~For each $i\in I$, we define the preference correspondence
+$P^L_i:X\rightrightarrows X$ for leader $i$ by
+\begin{eqnarray*}
+P^L_i(x)=\{z\in X|f_i(z,y)>f_i(x,y),\ \forall y\in \mathcal{C}(x)\}.
+\end{eqnarray*}
+Clearly, $x\not\in P^L_i(x)$ for any $x\in X$ and any $i\in I$.
+
+We next show that $P^L_i(x)$ is convex for any $x\in X$ and any $i\in I$.
+To see this, given $x\in X$, $i\in I$, $z^1,z^2\in P^L_i(x)$ and $t\in [0,1]$.
+As $z^1,z^2$ are in $P^L_i(x)$, then, for each $j=1,2$, we have
+\begin{eqnarray*}
+f_i(z^j,y)> f_i(x,y),\ \forall\ y\in \mathcal{C}(x).
+\end{eqnarray*}
+The quasiconcavity of $f_i(\cdot,y)$ yields that, for any $y\in \mathcal{C}(x)$,
+\begin{eqnarray*}
+f_i(tz^1+(1-t)z^2,y)\geq\min\{f_i(z^1,y),f_i(z^2,y)\}> f_i(x,y).
+\end{eqnarray*}
+Therefore, $tz^1+(1-t)z^2\in P^L_i(x)$.
+
+
+We next claim that the graph of $P^L_i$ is open in $X\times X$ for each $i\in I$.
+To see this, suppose that $z^n\not \in P^L_i(x^n)$ with
+$(x^n,z^n)\longrightarrow (x,z)\in X\times X$,
+it suffices to show that $z\not \in P^L_i(x)$.
+
+For $z^n\not \in P^L_i(x^n)$ for each $n$, we have
+\begin{eqnarray*}
+f_i(z^n,y^n)\leq f_i(x^n,y^n),\ \mbox{for\ some}\ y^n\in \mathcal{C}(x^n).
+\end{eqnarray*}
+
+Since $\mathcal{C}$ is upper semicontinuous
+with nonempty compact values, by Lemma 2.2, $\mathcal{C}(X)$ is compact.
+It follows that there is a sequence $\{y^{n_k}\}$ of $\{y^n\}$
+converging to some  $y \in \mathcal{C}(x)$.
+Therefore, for $k$ enough large, we have
+\begin{eqnarray*}
+f_i(z,y)\leq f_i(x,y),\ \mbox{for\ some}\ y\in \mathcal{C}(x),
+\end{eqnarray*}
+implying that $z\not \in P^L_i(x)$. Therefore,
+the graph of $P^L_i$ is open in $X\times X$ for each $i\in I$.
+
+Finally, applying Proposition 1 in [7], there exists $\widetilde{x}\in X$
+such that, for any $B\subseteq I$, there exists no $u^B\in X^{-B}$ for which
+\begin{eqnarray*}
+\{u^B\}\times X^{-B}\subset P^L_i(\widetilde{x}),\ \forall i\in B,
+\end{eqnarray*}
+implying $\widetilde{x}$ is a cooperative equilibrium.
+\\
+
+As a special case of Theorem 3.1,
+if $J$ is a singleton, we obtain the existence
+results for cooperative equilibria in
+multi-leader-single-follower games.
+\\
+
+\noindent{\bf Theorem~3.2}~~{\it Assume that the
+multi-leader-single-follower game
+\begin{eqnarray*}
+\langle I,X_i,Y,f_i,g\rangle,
+\end{eqnarray*}
+satisfies the following conditions:
+\\
+
+(i) for each $i\in I$, $X_i$ and $Y$ are nonempty, convex and
+compact subsets of normed linear spaces, respectively;
+
+(ii) for each $i\in I$, $f_i$ is continuous on $X\times Y$;
+
+(iii) for each $i\in I$ and each $y\in Y$, $f_i(\cdot,y)$ is quasi-concave on $X$;
+
+(iv) $g$ is continuous on $X\times Y$;
+
+(v)  for each $x\in X$, $g_j(x,\cdot)$ is quasi-concave on $Y$.
+\\
+\\
+Then the multi-leader-multi-single-follower game
+has at least a cooperative equilibrium.}
+\\
+
+As a special case of Theorem 3.1,
+if $I$ is a singleton,
+we obtain the existence
+results for cooperative equilibria in
+single-leader-multi-follower games.
+\\
+
+\noindent{\bf Theorem~3.2}~~{\it Assume that the
+multi-leader-single-follower game
+\begin{eqnarray*}
+\langle J,X,Y_j,f,g_j\rangle,
+\end{eqnarray*}
+satisfies the following conditions:
+\\
+
+(i) for each $j\in J$, $X$ and $Y_j$ are nonempty, convex and
+compact subsets of normed linear spaces, respectively;
+
+(ii) $f$ is upper semicontinuous on $X\times Y$;
+
+(iii) $g_j$ is continuous on $X\times Y$;
+
+(iv)  for each $x\in X$, $g_j(x,\cdot)$ is quasi-concave on $Y$.
+\\
+\\
+Then the multi-leader-multi-single-follower game
+has at least a cooperative equilibrium.}
+\\
+
+
+
+
+\noindent{\it Remark~3.1}~~Many experts established
+existence results of noncooperative equilibria in
+games (see, for instance [1-5]). However, our
+Theorems 3.1-3.3 provide some existence results for
+cooperative equilibria
+for multi-leader-multi-follower games.
+
+There exist some differences between references [1-5] and our paper.
+
+(i) We derive the property of cooperative equilibrium correspondence
+for followers from some conditions of the payoff functions of followers.
+However, in [1-5],
+the authors gave directly some conditions of the noncooperative equilibrium correspondence
+for followers, rather than implying the noncooperative equilibrium correspondence
+from the payoff functions of followers.
+
+(ii) Reference [1-5] focused on the existence of noncooperative equilibria
+in multi-leader-multi-follower games.
+However, in this paper, we first define the notion of cooperative equilibria
+in multi-leader-multi-follower game. On this basis, their existence theorems
+are proved. Noncooperative equilibria and cooperative equilibria
+in multi-leader-multi-follower game are two different concepts.
+
+Following the statement of multi-leader-multi-follower games
+\begin{eqnarray*}
+\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+The leaders first make the decision and
+the followers can receive leaders' action $x\in X$.
+After knowing the leaders' decision $x$, the followers play
+a parametric game. For any leaders' action $x\in X$, let $\mathcal{N}(x)$
+be the set of noncooperative equilibria of the parametric followers' game, which
+yields a correspondence $\mathcal{N}:X\rightrightarrows Y$. Specifically,
+${y}\in \mathcal{N}(x)$ means that
+\begin{eqnarray*}
+g_j(x,y_j,y_{-j})=\max_{v_j\in Y_j}g_j(x,v_j,y_{-j}),\forall j\in J.
+\end{eqnarray*}
+A action $x\in X$ is a cooperative equilibria of
+multi-leader-multi-follower games if
+\begin{eqnarray*}
+f_i(x_i,x_{-i},y)=\max_{u_i\in X_i}\max_{v\in \mathcal{N}(u_i,x_{-i})}f_i(u_i,x_{-i},v),\forall i\in I.
+\end{eqnarray*}
+Using the following example, we will show this noncooperative equilibria is
+different from cooperative equilibria in multi-leader-multi-follower games.
+\\
+
+\noindent{\it Example~3.1}~~Consider the multi-leader-multi-follower game
+\begin{eqnarray*}
+\Gamma=\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+where $I=\{1,2\}$, $J=\{1,2\}$, $X_1=X_2=Y_1=Y_2=[0,1]$,
+and
+\begin{eqnarray*}
+&&f_1(x_1,x_2,y_1,y_2)=\sqrt{x_1y_2},\ \forall  (x_1,x_2,y_1,y_2)\in X\times Y,\\
+&&f_2(x_1,x_2,y_1,y_2)=\sqrt{x_2y_1},\ \forall  (x_1,x_2,y_1,y_2)\in X\times Y,\\
+&&g_1(x_1,x_2,y_1,y_2)=g_1(x_1,x_2,y_1,y_2)=0,\ \forall  (x_1,x_2,y_1,y_2)\in X\times Y.
+\end{eqnarray*}
+Then
+\begin{eqnarray*}
+\mathcal{N}(x)=\mathcal{C}(x)=[0,1]\times [0,1],\ \forall x\in X.
+\end{eqnarray*}
+Clearly, the multi-leader-multi-follower game $\Gamma$
+satisfies all conditions of Theorem 3.1.
+It is obvious to verify the set of noncooperative equilibria is $\{(1,1)\}$. However
+the set of cooperative equilibria $[0,1]\times [0,1]$.
+
+
+
+
+
+\section{Generic stability of cooperative equilibria}
+
+Throughout this section,
+given $I$, $J$, $A\subset X$, $X$, $Y$ and $\varepsilon>0$, let $K(X)$ be the set of
+all nonempty compact subsets of $X$ and $$N_\varepsilon(A)=\{x\in X:d(x,A)<\varepsilon\}.$$
+
+By a s light abuse of notation, we often represent a multi-leader-multi-follower game
+\begin{eqnarray*}
+\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+simply as $\Gamma=(f,g)$.
+
+We shall consider the following class of multi-leader-multi-follower games:
+\begin{eqnarray*}
+\bullet\ \mbox{The\ set}\ \mathcal{M}\ \mbox{of\ multi-leader-multi-follower game}\\
+\Gamma\ \mbox{that}\ \mbox{satisfy\ all\ conditions\ of\ Theorem 3.1}.
+\end{eqnarray*}
+Let $\mathcal{F} :\mathcal{M}\rightrightarrows X$ be
+the cooperative equilibrium correspondence, which assigns the set of
+cooperative equilibria of $\Gamma$,
+$\mathcal{F}(\Gamma)$, to each multi-leader-multi-follower game $\Gamma
+$ in $\mathcal{M}$. The associated
+metric $\rho:\mathcal{M}\times \mathcal{M}\longrightarrow\mathbb{R}$ is
+defined by
+\begin{eqnarray*}
+\rho(\Gamma,\Gamma')=\sum_{i\in I}\sup_{(x,y)\in X\times Y}|f_i(x,y)-f'_i(x,y)|+\sum_{j\in J}\sup_{(x,y)\in X\times Y}|g_j(x,y)-g'_j(x,y)|.
+\end{eqnarray*}
+It is easy to verify that $(\mathcal{M},\rho)$ is a complete metric
+space.
+
+To obtain the generic stability of cooperative equilibria
+in multi-leader-multi-follower games, we give the following lemmas.
+\\
+
+\noindent{\bf Lemma~4.1}~~{\it Given $(\Gamma,x)\in \mathcal{M}\times X$.
+For any for any $\varepsilon>0$, there exists $\delta>0$ such that
+$\mathcal{C}'(x')\subset N_\varepsilon(\mathcal{C}(x))$ for each
+$(\Gamma',x')\in \mathcal{M}\times X$ with $\rho(\Gamma,\Gamma')+d(x,x')<\delta$,
+where
+$\mathcal{C}'(x')$ is the set of cooperative equilibria
+of followers for the multi-leader-multi-follower game
+$\Gamma'$, when the leaders choose the action $x'$.}
+\\
+
+\noindent{\it Proof}~~Suppose not. Then there exists $\varepsilon_0>0$ such
+that, there exists a sequence $(\Gamma^n,x^n)$ in $\mathcal{M}\times X$
+such that $(\Gamma^n,x^n)\longrightarrow (\Gamma,x)\in \mathcal{M}\times X$
+and $\mathcal{C}^n(x^n)\not\subset N_\varepsilon(\mathcal{C}(x))$ for any $n$,
+implying there exists $y^n\in \mathcal{C}^n(x^n)$ for which
+$y^n\not\in N_\varepsilon(\mathcal{C}(x))$. Since $Y$ is compact,
+we may assume that $y^n\longrightarrow y\in Y$, which, along with
+the fact that $N_\varepsilon(\mathcal{C}(x))$
+is open in $Y$, implies that $y\not\in N_\varepsilon(\mathcal{C}(x))$.
+
+To complete the proof, we next claim that $y\in \mathcal{C}(x)$. To see this,
+we suppose that $y\not\in \mathcal{C}(x)$, implying that
+there exists a coalition $B\subseteq J$ and $u^B\in Y^B$ such that
+\begin{eqnarray*}
+g_j(x,u^B,v^{-B})>g_j(x,y),\forall j\in B.
+\end{eqnarray*}
+This, along with the continuity of $g_j$ and the compactness of $Y^{-B}$, implies
+that
+\begin{eqnarray*}
+\Psi(x,y):=\min_{i\in B}\min_{v^{-B}\in Y^{-B}}[g_j(x,u^B,v^{-B})-g_j(x,y)]>0,
+\end{eqnarray*}
+and $\Psi(x,y)$
+is continuous on $X\times Y$. Therefore, there exists $\gamma>0$ such that
+$\Psi(x,y)>\gamma>0$. As $\Psi(x,y)$
+is continuous on $X\times Y$, it follows that there exists $n_0>0$ such that
+$\Psi(x^n,y^n)>\gamma>0$ for each $n>n_0$. Moreover, since $\Gamma^n$ converges to $\Gamma$,
+then, for $\frac{\gamma}{2}>0$, there exists $n_1>0$ such that
+\begin{eqnarray*}
+\sup_{(x,y)\in X\times Y}|\Psi^n(x,y)-\Psi(x,y)|<\frac{\gamma}{2}.
+\end{eqnarray*}
+Consequently, for each $n>\max\{n_0,n_1\}$, we have
+\begin{eqnarray*}
+\Psi^n(x^n,y^n)>\Psi(x^n,y^n)-\frac{\gamma}{2}>\gamma-\frac{\gamma}{2}=\frac{\gamma}{2}>0,
+\end{eqnarray*}
+implying that
+\begin{eqnarray*}
+g^n_j(x^n,u^B,v^{-B})>g^n_j(x^n,y^n),\forall j\in B.
+\end{eqnarray*}
+It contradicts the fact that $y^n\in \mathcal{C}^n(x^n)$.
+This completes the proof.
+\\
+
+
+\noindent{\bf Lemma~4.2}~~{\it The correspondence
+$\mathcal{F}:\mathcal{M}\rightrightarrows X$ is
+nonempty-valued, compact-valued and upper semicontinuous.}
+\\
+
+\noindent{\it Proof}~~By Lemma 2.2, it suffices to show
+the graph of $\mathcal{F}$ is closed. To see this,
+suppose that $\{(\Gamma^n,x^n)\}^\infty_{n=1}$ is a
+sequence in $\mathcal{M}\times X$ with $x^n\in \mathcal{F}(\Gamma^n)$ and
+$(\Gamma^n,x^n)\longrightarrow (\Gamma,x)\in \mathcal{M}\times X$.
+The proof will be completed if we show that $x\in \mathcal{F}(\Gamma)$.
+
+Suppose that $x\not\in \mathcal{F}(\Gamma)$.
+Then,  there exists a coalition $B\subseteq I$ and $u^B\in X^B$ such that,
+\begin{eqnarray*}
+f_i(u^B,z^{-B},y)>f_i(x,y),\forall y\in \mathcal{C}(x),\forall z^{-B}\in X^{-B},\forall i\in B,
+\end{eqnarray*}
+This, together with the continuity of $f_i$ and the compactness of $X^{-B}$ implies that
+$\Phi(x,y)$ is continuous on $X\times Y$ and there exists $\gamma>0$
+\begin{eqnarray*}
+\min_{y\in \mathcal{C}(x)}\Phi(x,y)>\gamma>0,
+\end{eqnarray*}
+where
+\begin{eqnarray*}
+\Phi(x,y):=\min_{i\in B}\min_{z^{-B}\in X^{-B}}[f_i(u^B,z^{-B},y)-f_i(x,y)].
+\end{eqnarray*}
+As $\Phi(x,y)>0$ for any $y\in \mathcal{C}(x)$, there exists
+ an open neighborhood
+$O(y)$ of $y$ and an open neighborhood $O_y(x)$ of $y$ and such that
+ $$\Phi(x',y')>\gamma>0$$ for any $(x',y')\in O(x)\times O(y)$.
+ Since $\mathcal{C}(x)$ is compact, then there is
+a finite set $\{y_1,\cdots,y_m\}$ such that $$F(x)\subset \bigcup^m_{i=1}O(y_i),$$
+Then there exists $\delta>0$ such that
+$$F(x)\subset N_\delta(F(x))\subset \bigcup^m_{i=1}O(y_i),$$
+which, along with Lemma 4.1, yields that
+there exists $n_0>0$ such that
+$$F^n(x^n)\subset N_\delta(F(x))\subset\bigcup^m_{i=1}O(y_i)$$
+for each $n>n_0$.
+
+Let $$O(x)=\bigcap^m_{i=1}O_{y_i}(x).$$ For any
+$(x',y')\in O(x)\times \bigcup^m_{i=1}O(y_i)$, we have
+$$\Phi(x',y')>0,$$
+implying there exists $n_1>n_0$ such that,
+for any $n>n_1$ and for
+any $y^n\in F^n(x^n)\subset\bigcup^m_{i=1}O(y_i)$,  one has that
+$\Phi(x^n,y^n)>\gamma>0$. Furthermore, as $\Gamma^n\longrightarrow \Gamma$,
+then there exists $n_2>0$ such that
+\begin{eqnarray*}
+\sup_{(x,y)\in X\times Y}|\Phi^n(x,y)-\Phi(x,y)|<\frac{\gamma}{2}.
+\end{eqnarray*}
+
+Therefore, for any $n>\max\{n_1,n_2\}$, we have that, for any
+$y^n\in F^n(x^n)$,
+\begin{eqnarray*}
+\Phi^n(x^n,y^n)>\Phi(x^n,y^n)-\frac{\gamma}{2}>\gamma-\frac{\gamma}{2}=\frac{\gamma}{2}>0,
+\end{eqnarray*}
+implying that $x^n\not\in \mathcal{F}(\Gamma^n)$.
+It is contradiction.
+This completes the proof.
+\\
+
+\noindent{\bf Definition~4.1}~~A point $x$
+of $\Gamma\in \mathcal{M}$ is a cooperative equilibrium of
+$\Gamma$ relative to $\mathcal{M}$
+if, for any open neighborhood $N(x)$ of $x$, there is $\delta>0$ such that $N(x)\cap
+\mathcal{F}(\Gamma')\neq\emptyset$ for any $\Gamma'\in \mathcal{M}$ with
+$\rho(\Gamma,\Gamma')<\delta$.
+A multi-leader-multi-follower game $\Gamma$ in $\mathcal{M}$ is
+essential relative to $\mathcal{M}$ if every cooperative equilibrium
+of $\Gamma$ is essential relative to $\mathcal{M}$.
+\\
+
+\noindent{\bf Definition~3.2 (Rudin 1991)}~~
+(i) A subset $Q$ of $\mathcal{M}$ is dense if
+$cl(Q)=\mathcal{M}$; (ii) $Q$ is residual if $Q\subset \mathcal{M}$ is
+a countable intersection of open dense subsets in $\mathcal{M}$.
+\\
+
+Obviously, for the class $\mathcal{M}$ of multi-leader-multi-follower games,
+the essentiality is equivalent to the
+lower semicontinuity of the cooperative equilibrium correspondence.
+\\
+
+Applying Lemmas 2.4 and 4.2, we obtain the following result.
+\\
+
+\noindent{\bf Theorem~4.1}~~{\it There exists a dense residual
+subset $\mathcal{G}$ of $\mathcal{M}$ such that, $\Gamma$
+is essential for each $\Gamma\in \mathcal{G}$.}
+\\
+
+\noindent{\it Proof}~~Since $(\mathcal{M},\rho)$ is
+a complete metric space, and
+$\mathcal{F}:\mathcal{M}\rightrightarrows X$ is nonempty-valued,
+ compact-valued and upper semicontinuous, then, by Lemma~2.4, there exists
+a dense residual subset $\mathcal{G}$ of $\mathcal{M}$ such that the
+correspondence $\mathcal{F}$ is lower semicontinuous on $\mathcal{G}$. Therefore,
+each $\Gamma\in \mathcal{G}$ is essential.
+\\
+
+The following example shows that not all  multi-leader-multi-follower games in $\mathcal{M}$
+have essential cooperative equilibria relative to $\mathcal{M}$,
+and so $\mathcal{M}\neq \mathcal{G}$.
+\\
+
+\noindent{\it Example~4.1}~~Consider the multi-leader-multi-follower game
+\begin{eqnarray*}
+\Gamma=\langle I,J,X_i,Y_j,f_i,g_j\rangle,
+\end{eqnarray*}
+where $I=\{1,2\}$, $J=\{1,2\}$, $X_1=X_2=Y_1=Y_2=[0,1]$,
+and
+\begin{eqnarray*}
+&&f_1(x_1,x_2,y_1,y_2)=f_2(x_1,x_2,y_1,y_2)=0,\ \forall (x,y)\in X\times Y,\\
+&&g_1(x_1,x_2,y_1,y_2)=g_2(x_1,x_2,y_1,y_2)=0,\ \forall (x,y)\in X\times Y.
+\end{eqnarray*}
+Clearly, the multi-leader-follower game $\Gamma\in \mathcal{M}$,
+and $\mathcal{F}(\Gamma)=[0,1]\times [0,1]$.
+
+For each $n\in \mathbb{N}$, consider the multi-leader-multi-follower game
+\begin{eqnarray*}
+\Gamma^n=\langle I,J,X_i,Y_j,f^n_i,g^n_j\rangle,
+\end{eqnarray*}
+where
+\begin{eqnarray*}
+&&f^n_1(x_1,x_2,y_1,y_2)=\frac{1}{n}x_1,\ \forall (x,y)\in X\times Y,\\
+&&f_2(x_1,x_2,y_1,y_2)=\frac{1}{n}x_2,\ \forall (x,y)\in X\times Y,\\
+&&g^n_1(x_1,x_2,y_1,y_2)=g^n_2(x_1,x_2,y_1,y_2)=0,\ \forall (x,y)\in X\times Y.
+\end{eqnarray*}
+Then $\Gamma^n=\{I,Y,\mathcal{C},(X_i,f^n_i)_{i\in I}\}\in \mathcal{M}$, $\Gamma^n\longrightarrow \Gamma$, and
+$\mathcal{F}(\Gamma^n)=(1,1)$. Therefore, $([0,1]\times [0,1])\backslash (1,1)$
+is not essential.
+
+Similarly, for each $n\in \mathbb{N}$, define
+\begin{eqnarray*}
+&&f^n_1(x_1,x_2,y_1,y_2)=-\frac{1}{n}x_1,\ \forall (x,y)\in X\times Y,\\
+&&f_2(x_1,x_2,y_1,y_2)=-\frac{1}{n}x_2,\ \forall (x,y)\in X\times Y.
+\end{eqnarray*}
+Then $\Gamma^n\in \mathcal{M}$, $\Gamma^n\longrightarrow \Gamma$, and
+$\mathcal{F}(\Gamma^n)=(0,0)$. Therefore, $([0,1]\times [0,1])\backslash (0,0)$
+is not essential.
+
+We conclude that every point of $\mathcal{F}(\Gamma)$ is not essential.
+Of course, $\Gamma$  is not essential.  So $\mathcal{M}\neq \mathcal{G}$.
+
+
+
+
+
+
+
+

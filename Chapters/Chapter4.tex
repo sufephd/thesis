@@ -1,0 +1,816 @@
+% Chapter 4
+
+\chapter{Matching}  % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+
+\section{Introduction of the basic concepts}
+
+
+
+%I would like to introduce Coq Proof Assistant for this purpose, 
+% for there are many theorems in matching theory which can be proved
+% more strictly and without errors with its help. My motivation comes
+% from the fact that proof error is easy to creep into human proofs 
+
+% and most proofs can only be best understood and checked by the original author when the body of theorems and propositions in matching theory become more and more abstract in quality and large in
+% quantity. 
+ 
+% The adoption of Coq for this subject is an idea inspired by the 2002 Fields Medal Winner Vladimir Voevodsky's recent project Univalent foundations for mathematics. He uses Coq to formalize the proofs of theorems
+% in homotopy theory and try to build another foundation of mathematics which can be viewed as equal to the set theory but is much easier for the computer to check the correctness of proofs. 
+ 
+% first, we consider the easy one. Man woman marriage market as defined in the classical work of (Alvin Roth and SotoMayor). 
+% We define these markets as a type with m men and n woman as follows
+% Inductive Market (m n: nat) :=
+% |mkt: Men n -> Women m -> Market m n
+We only consider two-sided matching in this paper. There was a monograph dedicated to it, see \parencite{Roth1990}. However,  in this section, I would like to summarize some of the most important theoretical concepts and results. 
+
+First, we need to provide a setting of discussion. Usually, the two
+distinctive sides of matching are assumed to be men and women,
+students and schools, workers and employers, tenants and houses,
+etc. Here, students and colleges are chosen as the economic
+background. Actually, any other pairs are OK. Choosing a specific one
+is to avoid too much abstractness in theory and provide motivation for
+the discussion.  For this specific topic, there
+is \parencite{Sonmez2003}  which give a description of the literatures
+in this field
+till that time. 
+
+Now let us give the model and relevant notations. There is a finite set of students and a finite set of colleges denoted by  $S = \{1,...,n\}$ and $C = \{1,...,m\}$, respectively. For any $j \in C$, college $j$ has $q_j$ quota, which is college $j$'s seats for students. Students wish to enter at most one college and have an option not to enter any college at all. This outside option is formally represented by a null college, denoted by $0$. This null college has unlimited quota, ie, $q_0 = \infty$. 
+
+A matching(sometimes also called assignment or allocation) is a
+mapping $\mu : S \rightarrow C\cup\{0\}$ such that for any $j \in C$,
+$|\mu^{-1}(j)| \leq q_j$. Denote by $\mu(0)$ the set of colleges with
+seats that is not assigned to any student at matching $\mu$. The null
+college is always included in this set, as its seat supply is
+unlimited. Hence:
+\[ \mu(0) = \{j \in C : |\mu^{-1}(j)| < q_j\}\cup \{0\}\]
+
+
+ Now for simplicity, we only assume the price of each college is the same and students have preferences on colleges. Later we will add  price  consideration for colleges. Denote by $R_i$ student $i$'s preference on the set of colleges $C \cup \{0\}$. The corresponding strict preference and indifference relations are denoted by $P_i$ and $I_i$, respectively. The meaning of the notation is as follows: if $c,c'\in C \cup \{0\}$ and $c R_i c'$, then student $i \in S$ weakly prefers college $c$ to college $c'$. Change ``weakly prefers'' to ``strictly prefer'' we get the meaning for the strict $P_i$. Change ``weakly prefers'' to ``are indifferent'' we get the meaning for the indifferent $I_i$. Preferences are assumed to be rational in the sense that for all $i \in S$, $R_i$ is complete, reflexive and transitive. A preference profile is a list $ R = (R_1,...,R_n)$ of the students' preferences. All the discussions here and after are based on the strict preference assumption. That is , if $c I_i c'$, then $c=c'$.
+
+ Here, a priority structure $\pi$ is assumed for the colleges, that is, for each college $j \in C$, there is an exogenously given strict priority-order $\pi_j$. Formally, $\pi_j: S \rightarrow S$ is a bijection where the highest-ranked student  is the student $i\in S$ with $\pi_j(i)=1$, the second highest ranked student $i' \in S$ has $\pi_j(i')=2$, and so on. When $\pi_j$ is the same for all $j\in C$, we get the serial dictator matching mechanism. A priority structure is a list $ \pi = (\pi_1,...,\pi_m)$ of the colleges' priority-order.
+
+ A matching $\mu$ is stable(or called priority respecting as in \parencite{Svensson2014}) if there is no student $i \in S$ who strictly prefers some college $j$ to $\mu(i)$ and $\mu^{-1}(j)$ contains some other student $i' \in S$ who has lower priority for college $j$ than student $i$(i.e., $\pi_j(i')>\pi_j(i)$), and furthermore, all students weakly prefer their assigned college seats to any unassigned seats in $\mu(0)$(seats from the same college are obviously equal). 
+
+ Formally ,we have the following definition of stableness.
+
+\begin{definition}
+A matching $\mu$ is stable for a given preference profile $R$ and a given priority structure $\pi$, if :
+
+(i) for all $i,i' \in S$, $\mu(i')P_i \mu(i)$ only if $\pi_{\mu(i')}(i') < \pi_{\mu(i')}(i)$;
+
+(ii)for all $i \in S$, $\mu(i)R_i j$ if $j \in \mu(0)$.
+
+\end{definition}
+
+Condition (i) is called fairness condition, with the meaning that
+there is no justified envy(justified envy means that you envy somebody
+else's college and according to your priority in that school, you
+should be admitted prior to that person). Condition (ii) is the combination of
+individual rationality and non-wastefulness. Rationality means that
+the current assignment of college for a student must be weakly better than the outside
+option of null college 0. Non-wastefulness means that the current
+assignment of college for a student  must be weakly better than any
+unocuppied college seat. For more detailed discussion of these concepts
+, see also \parencite{Sonmez1999}. 
+
+The next important concept is Pareto efficiency or simply
+efficiency. A matching is pareto efficient if no other matching can
+make at least one student get a strictly more preferred college while
+no student get a strictly less preferred college. 
+
+Formally, we have the following definition.
+\begin{definition}
+A matching $\mu$ is efficient for a given preference profile $R$, if
+for all $\mu'$ such that there exists $i \in S$ satisfying $\mu'(i)
+P_i \mu(i)$, then there must be some other $i' in S$ satisfying
+$\mu(i') P_{i'} \mu'(i')$
+\end{definition}
+
+It is clear that efficiency does not take into account of priority while stableness does need it. Stableness is priority respecting and includes a flavor of fairness in it. Now that we have some idea about matching, we begin to investigate mechanism that can lead to stable and efficient matching. An important difference between matching mechanism design and other mechanism design such as auction is that efficiency is usually not the only requirement, stableness or priority respecting is at least of equal importance. We will illustrate this later in examples.
+
+Why do we care about priority? In the previous chapter, we only care about efficiency. which means to maximize the sum of all participants' utilities. However, there is a well known saying that the whole is more than the parts put together. Priority should belong to the more-than part of the whole. suppose that only students entering their most preferred college will study hard, and any students would feel the same happiness when they enter their most preferred college but those with high scores will contribute more to the society. Then just by the narrow efficiency criterion we would send any one to their most preferred college, but from the society as a whole giving the high scored students high priority is a better choice.
+
+When it comes to mechanism design, the usual problem of unilaterally misreporting one's private information(here is one's preference) emerges. In the literature, a mechanism that is immune to such problem is often called strategyproof. Viewing the reporting of one's preference under a mechanism as a game among the students, strategyproofness  means that it is a dominant strategy to report one's true preference. 
+
+There is also a related concept called group-strategyproof. What is the connotation of this concept? It means that no group can get a pareto improvement by unilaterally changing the reports of students in this group under the mechanism. Viewing the reporting of one's preference under a mechanism as a game among the students, group-strategyproofness means that it is a core equilibrium for everyone to report the private true preference.
+
+
+
+\section{Popular matching mechanisms}
+
+There are many matching mechanisms. Three kinds are
+most studied. They are the Deferred Acceptance Mechanism(DA), the Top
+Trading Cycle Mechanism(TTC), and the serial dictatorship mechanism(SD).
+These three mechanism are all related to the later analyzed Chinese
+student-college matching mechanism, especial the DA mechanism. Why are they most popular? 
+One reason is that all of these mechanisms are
+strategyproof. Therefore the reported preference profile are true preferences
+for rational agents.  Combined with the fact that  the property of the resultant matching result
+relative to the reported preference profiles are relatively easy to
+study, these mechanisms are suitable to do research on. According to 
+
+ Another reason
+is due to Revelation  Principle.  If a social result can be
+implemented in dominant strategy equilibrium in a mechanism, then it
+can be truthfully implemented in a direct mechanism. For designing new
+mechanisms, it seems that considering only strategyproof direct mechanism is
+enough.  However, when studying existing mechanisms which are not
+designed by modern theorists, we have to face other mechanisms.  To
+give expected results for such mechanisms, I created a special term called
+successful manipulation, which will be provided later in the analysis
+of Chinese student-college matching mechanisms subsection and as you
+can see is just the best response concept in Nash equilibrium but
+which can be better understood literally here. 
+
+\subsection{Deferred Acceptance Mechanism}
+In the seminal work \parencite{Gale1962}, DA mechanism is first
+proposed. This mechanism is the first and probably the most studied
+mechanism in modern matching theory. 
+
+In the setting of student-college matching, it is also called
+student-optimal stable mechanism (SOSM) for it always finds the stable
+matching that is most favorable to each student. Its outcome can be
+calculated via the following Deferred
+Acceptance (DA) algorithm for a given problem:
+
+ Step 1: Each student applies to his or her favorite school. For each
+college $j$, up to $q_j$  applicants who have
+the highest college $j$ priority are tentatively assigned to college $j$. The remaining applicants are
+rejected.
+
+Step k ($ k \geq 2$ ): Each student rejected from a college at step k -1 applies to her next favorite college.
+For each college $j$, up to $q_j$  students who have the highest college
+$j$ priority among the new applicants and those tentatively on hold from an earlier step, are
+tentatively assigned to college $j$. 
+The remaining applicants are rejected.
+
+The algorithm terminates when no student applies to any new college in
+some step. That is, every  student is either tentatively placed to a college
+or has been rejected by every college that is better than null college
+in his or her preference list. 
+
+We list important properties concerning the DA mechanism here.
+
+Under strict preference( that is, no two colleges have  the same utility
+level for a student.), the following properties
+hold. \parencite{Gale1962} first proposed the two theorems and proved
+them. The proofs for the theorems are short and elegant, and therefore
+provided here following the main theorems.
+
+\begin{thm}
+The matching given by DA mechanism is stable.
+\end{thm}
+
+\begin{proof}
+We will prove it by proof of contradiction. Suppose not, then there is
+a student $i$ and  a college $j$  such that $i$ strictly prefers $j$ to his
+final assignment and $|\mu^{-1}(j)|< q_j\ or\  \exists i' \in
+\mu^{-1}(j)\  satisfying\ \pi_{j}(i') < \pi_{j}(i)$.  However,
+according to the student side operation of DA mechanism,  $j$ must have been applied before the
+final assignment college. And  according to the college side operation
+of DA mechanism, if  $|\mu^{-1}(j)|< q_j\ or\  \exists i' \in
+\mu^{-1}(j)\  satisfying\ \pi_{j}(i') < \pi_{j}(i)$, then $i$ must not
+be rejected by $j$ which contradicts to the fact that he or she was
+rejected(implied by the fact that his or her final college is lower in
+the application order than college $j$).
+\end{proof}
+\begin{thm}
+Every student is at least as well off under the assignment given by
+the DA mechanism as he would be under any other stable assignment.
+\end{thm}
+
+\begin{proof}
+Call a college $j$ achievable for a student $i$ in a particular
+environment if the student can be assigned the college in some stable
+matching result. 
+
+The proof is to show the following proposition. Up to a certain step $ n $, no student has ever
+been rejected by a college achievable for the student, then no student
+will be rejected by a college achievable for the student in the step
+$n$ too. 
+
+Since up to step $1$, no student has been rejected by any
+college obivously, we can show that up to  any finite step no student
+will ever be rejected by  a college achievable for the student by
+repeatedly applying the previous proposition.  The
+end step is a finite number, so in the final result no student is ever
+rejected by a college achievable for the student. And the students apply colleges from the most favorite to the least favorite, we therefore know that the final assignment is most favorite for every
+student among the stable matchings.
+
+Now we will prove that up to a certain step $ n $, no student has ever
+been rejected by a college achievable for the student, then no student
+will be rejected by a college achievable for the student in the step
+$n$ too.  
+%We will do it by way of reduction to absurdity. 
+That is
+eqivalent to
+say, suppose a
+student $i$ is rejected by a college  $j$ in the
+step $n$, then the college is not achievable for the student. Since
+$j$ reject $i$, that means that  after
+step $n$ every student assigned to $j$ is higher in priority than $i$,
+and the quota of $j$ has been full. If $i$ is assigned to $j$ in some
+stable 
+matching result, then some $i'$ that is assigned to $j$ in the step
+$n$ must be assigned to some college that is less preferred than $j$
+because up to $n$ no student is rejected by an achievable college. A
+contradiction occurs here for such a matching result cannot be
+a stable matching result due to the existence of pair $i', j $ which
+blocks $i, j$. Therefore by reduction to absurdity,  we show that $i$
+cannot be assigned to $j$  in any stable matching result, i.e., $j$ is
+not achievable to$i$.
+\end{proof}
+
+See \parencite{Gale1962} for more details.
+These two theorems can be combined into one concise statement. The SOSM
+matching produced by the DA mechanism is the optimal stable matching.
+An alternative way to express this is that if you want to find a
+matching that is stable, the SOSM matching selected by the DA  mechanism is the only most
+efficient matching(constrained efficiency).
+
+\begin{thm}
+\label{thm1}
+The DA mechanism is strategy-proof.
+\end{thm}
+
+See \parencite{Roth1982a} for proof.
+
+However, the DA mechanism is not pareto efficient.  This fact can be shown by an example.
+
+\begin{example}
+There are two colleges $A$ and $B$, each with 1 seat for students. A null college $0$ with unlimited seats and accepts who ever applies for it. There are
+3 students 1,2,3. The preferences of the students are
+as follows.
+
+    \begin{center}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        $1$ & $2$ & $3$ \\
+        \hline
+        $A$ & $B$ & $A$ \\
+        
+        $B$ & $A$ & $B$ \\
+
+        $0$ & $0$ & $0$ \\
+
+        \hline
+        
+      \end{tabular}
+    \end{center}
+
+The two colleges' base priority structure is the same as in the following
+table
+
+ \begin{center}
+      \begin{tabular}{|c|c|}
+        \hline
+         $A$ & $B$ \\
+        \hline
+        $2$ & $1$\\
+        
+        $3$ & $3$ \\
+
+        $1$ & $2$ \\
+       
+        \hline
+        
+      \end{tabular}
+    \end{center}
+ 
+The DA mechanism is run round by round as in the table below.
+
+ \begin{center}
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        &$1$ & $2$ & $3$\\
+        \hline
+       round1&   & $B$ & $A$ \\
+        
+        round2&$B$ &  & $A$ \\
+
+        round3&$B$ & $A$  & \\
+
+        round4&$B$ & $A$ & $0$\\
+        \hline
+        
+      \end{tabular}
+    \end{center}
+
+Because 3 is the only student not tentatively accepted after 3 rounds,
+and 3 has been rejected by both A and B, the DA algorithm with quota
+terminates with student 1 entering B, 2 entering A, and 3 entering null college $0$.
+
+Now consider the following alternative preference profile.
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    $1$ & $2$ & $3$ \\
+    \hline
+    $A$ & $B$ & $0$ \\
+    
+    $B$ & $A$ & $A$ \\
+
+    $0$ & $0$ & $B$ \\
+
+    \hline
+    
+  \end{tabular}
+\end{center}
+
+With this profile, the DA mechanism is run as below.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    &$1$ & $2$ & $3$\\
+    \hline
+    round1& $A$  & $B$ & $0$ \\
+    
+    \hline
+    
+  \end{tabular}
+\end{center}
+
+Just 1 round, and the DA process is terminated.
+
+
+
+
+
+\end{example} 
+
+ If a mechanism is able to produce every possible results, then not pareto efficient obviously means that the mechanism is not group-strategyproof, since reporting the profile that can result in a pareto improvement assignment is a profitable group-deviation.
+
+
+
+%\subsection{Top Trading Cycle Mechanism}
+%This mechanism is given in \parencite{shapley1974}. It is also an
+%important mechanism and being studied and modified by scholars across
+%the matching area since 1974 
+
+%In the student-college matching setting, the TTC matching result is
+%determined after the following process.
+
+
+%\subsection{Serial Dictatorship Mechanism}
+
+\section{Analysis of Chinese student-college matching mechanisms}
+
+As an application of  matching theory, we will focus
+on the Chinese student-college matching mechanisms for the college
+admission of high school students in this section.
+
+The Chinese college admission is a centralized matching mechanism with
+an entrance exam taken national wide as a means of student-priority
+deciding for the colleges.
+In China, students from high school need to take an entrance exam to
+decide the priority structure of colleges, and the priority structure
+is also influenced by the application form that the students write to
+inform authority their own preferences. Starting from the early 1950s,
+the mechanisms adopted has gone
+through series of reforms,  and what kind of mechanism should be adopted is
+currently still in hot debate.
+
+The college entrance exam, or Gaokao in Chinese Pinyin,  forms the 
+foundation of the priority determination process for the current
+admission system.  There are millions of high school seniors compete
+for  seats at various colleges and universities in China each
+year. The matching of students to these colleges and universities has
+profound implications for the education and labor market outcomes for
+these students.  The fairness and efficiency of this matching process,
+is of great importance to the society.
+
+Many Chinese scholars have writen articles discussing problems related
+to Gaokao. \parencite{Zhong2004} has done the efficiency comparison of
+the three preference reporting  mechanisms, i.e. reporting preference
+before the exam, after the exam but not knowing the exact scores,  and
+after
+the scores are known.  This kind of study apparently focused on the
+strategical interaction of studnets in the games, not on how to induce
+the truthful reporting.  As to the strategical importance of
+preference reporting,  Haifeng Nie has written many articles.  Both \parencite{Nie2007a}
+and \parencite{Nie2007b} has stressed the point that a good score may
+not be as useful as a good strategy for reporting the preference of
+the university. This somewhat strange phenomenon has motivated me
+in studying the issue of reducing manipulation and inducing better
+and fairer results.
+
+The Chinese  matching mechanisms has recently caught attention of scholars from
+the economic field of matching overseas. \parencite{YanChenJPE} has
+done much to analyze theoretically the sutleties of the different
+mechanisms adopted, and has gone even further to design experiments
+for studying features of these mechanisms,
+see \parencite{YanChen2016}. 
+
+\subsection{A simple model of the Chinese student-college matching}
+
+
+
+The mechanisms are hard to analyze with all the details on, so I have
+decide on a simple classification of the mechanisms with details
+removed in this subsection. And I have managed to find a theorem that
+is enlightening.
+
+First, we introduce two most important mechanisms: sequential mechanism, parallel mechanism. The sequential mechanism, or Boston or Immediate Acceptance (IA) mechanism,
+had been the only mechanism used in Chinese student assignments both at the high school
+and college level \parencite{Nie2007b}. However, this mechanism has a serious limitation: “a good score in
+the college entrance exam is worth less than a good strategy in the ranking of colleges” \parencite{Nie2007a}. In our paper's wording, a successful manipulation is often more important than your score level. The problem arise from the special priority structure in the mechanism. Priority of a student in a college is based on your reported preference list firstly and based on your score secondly, a dictionary order that put too much emphasis on preference reporting. Given in \parencite{Nie2007b}, and also cited in \parencite{YanChenJPE}, one parent has the following explanation of the problem.
+
+``My child has been among the best students in his school and school district. He
+achieved a score of 632 in the college entrance exam last year. Unfortunately, he was
+not accepted by his first choice. After his first choice rejected him, his second and third
+choices were already full. My child had no choice but to repeat his senior year.''
+
+To alleviate this problem of high-scoring students not being accepted by any universities, the
+parallel mechanism was proposed. 
+In the parallel mechanism, students select several
+“parallel” colleges within each choice-band. The priority structure is changed. The priority of a student in a college of the same choice-band is the same. A more detailed description from \parencite{YanChenJPE} is cited here for the importance of fully understanding the mechanism.
+
+``a student’s first choice-band may
+contain a set of three colleges, A, B, and C while her second choice-band may contain another set
+of three colleges, D, E, and F (in decreasing desirability within each band). Once students submit
+their choices, colleges process the student applications, using a mechanism where students gain
+priority for colleges they have listed in their first band over other students who have listed the same
+college in the second band. Assignments for parallel colleges listed in the same band are considered
+temporary until all choices of that band have been considered. Thus, this mechanism lies between
+the IA mechanism, where every choice is final, and the DA mechanism, where every choice is
+temporary until all seats are filled.''
+
+In 2003, Hunan fisrt implemented the parallel mechanism, allowing 3
+parallel colleges in the first choice-band(or called group), 5 in the second choice-band, 5 in the third choice-band, 5 in the fourth choice-band, and so on, see \parencite{YanChenJPE}.  The parallel mechanism is soon to be widely perceived as having improved allocation outcomes for students. Citing a parent from a newpaper report \footnote{Li Li. “Ten More Provinces Switch to Parallel College Admissions Mechanism This Year.” Beijing Evening News,
+June 8, 2009.},
+
+``My child really wanted to go to Tsinghua University. However,  in order not to
+take any risks, we unwillingly listed a less prestigious university as her first choice.
+Had Beijing allowed parallel colleges in the first choice band, we could at least give
+Tsinghua a try.''
+
+ In the paper  \parencite{YanChenJPE}, they have formulated the IA
+ mechanism, parallel mechanism, and DA mechanism as a parametric
+ family of application-rejection mechanisms. That is a correct
+ description. However, I would like to describe all the three mechanisms
+ as generalized DA mechanisms with different priority structures. The IA mechanism
+ and parallel mechanism as kinds of DA are very special. The priority
+ structure are closely related with the  reported
+ preference. The underlying idea for the colleges may be ``I like
+ those who like me''. This is where manipulation can creep in.
+
+Formally, under the setting of student-college matching, we have the following definition.
+
+\begin{definition}
+A mechanism of matching is non-manipulable, if given any preference
+$R$, and priority structure $\pi$, $\mu = h(R, \pi(R))$ and for any $i
+\in S$, denote $h(R_i',R_{-i}, \pi(R_i',R_{-i}))$ by $\mu'$, then we have $\mu(i)R_i \mu'(i)$.
+\end{definition}
+
+We have the following proposition.
+
+\begin{prop}
+IA and parallel mechanisms are manipulable. DA is non-manipulable.
+\end{prop}
+
+%The proof is relegated to Appendices.
+ 
+Now let us define the concepts of efficient mechanism and stable
+mechanism in the setting of student-college matching.
+
+\begin{definition}
+A mechanism is efficient if for any reported preference profile $R$ and
+priority structure $\pi$, the resulting matching result is pareto
+efficient according to the $R$.
+\end{definition}
+
+
+\begin{definition}
+A mechanism is stable if for any reported preference profile $R$ and
+priority structure $\pi$, the resulting matching result is stable according to the $R$ and $\pi(R)$.
+\end{definition}
+
+According to these definition, we have the following proposition.
+
+\begin{prop}
+IA is efficient. IA , parallel and DA are all stable.
+\end{prop}
+
+The proof is relegated to Appendices.
+
+\begin{remark}
+The efficiency and stableness concept here is apparently not very useful if
+the reported $R$ is not true. What we are concerned is the status of the matching
+result in the perspective of true $R$.
+\end{remark}
+
+Here I would like to view the mechanisms from a new perspective. The concept is from ex post Nash equilibrium. For ex ante Nash equilibrium or Bayesian Nash equilibrium, there is a  best reponse concept.
+A best response is a strategy for your type that maximize the ex ante payoff given the others' probability distribution on all probable types and each type's strategy choice. An ex ante Nash equilibrium or
+Bayesian equilibrium is a strategy profile in which every player type chooses the best response. 
+For ex post equilibrium,  a successful manipulation is similar in meaning to a best response to  ex ante Nash equilibrium. It means that given the other students' actual choice(action), the action you have
+chosen is best to your interest. It deprives the intermediary probability distribution structure. This way we can concentrate on the final assignment or allocation result. In real life situations, 
+we have to use probability to make decisions ex ante, but when we can avoid it in mechanism design, we had better design a sure way to implement a certain social criteria or goal, not relying on 
+probability distribution. The only exception should be entertainment activity like mahjong, poker games, or lottery where no prescribed social goals need to be fulfilled. Here, the ex post should not be taken 
+literally, it does not mean that 
+evaluating the action after some particular time. Actually, it means that assuming that every action of the other players have been known, the player still insists his choice due to its optimality with respect
+to the others' actual action or choice. In fact, it may happen that the player will never know all the actions of the other players and therefore there is not a time point after which all information is revealed. 
+The important thing is that the action or manipulation can be called successful when all information is known.
+Formally, we give the following definition in the student-college matching setting. 
+\begin{definition}
+A student i has a successful manipulation 
+if let $R$ denote the true preference, $R'$ the reported preference, $\mu' = h(R')$, then for any $R_i''$, let $\mu''= h(R_i'',R_{-i}')$, we have  $\mu'(i) R_i \mu''(i)$
+\end{definition}
+
+Here, I would like to explain this seemingly trivial concept. I think it is even more basic than ex post Nash Equilibrium. In fact, I extract it from the definition of ex post Nash equilibrium and find it more applicable than Nash equilibrium in my every day life. Its definition is in fact half of the Nash Equilibrium.
+
+You may say that it is just the best response function. Almost, best response function is a way of getting a successful manipulation when the others' action choice is known. But calling it a successful manipulation is more appropriate in most cases as this concept does not assume that you know the payoff or the strategies of the others. 
+Nash equilibrium usually assumes that the payoffs are known. That is, it may not be a purposeful response but just happen to be successful and optimal. It is an ex post equilibrium but it maybe the case that 
+nobody knows the payoffs of the game fully. Here, our ``ex post'' requires that the strategies to be considered must be pure.
+
+In this chapter, I only consider deterministic game forms and only consider pure strategies. 
+
+Why this concept deserves a special mention? Well, that is because in most real life situation it is the player who always choose a successful manipulation wins the game. 
+\begin{example}
+Consider a 
+\end{example}
+
+ 
+However, when you have clear social criteria in mind, it is not good to devise a mechanism in which the social criteria are satisfied only when every agents have a successful manipulation. Not everyone 
+is adapted at manipulation.
+
+
+In this chapter, I find that in the Chinese style college admission, the Boston mechanism, the parallel mechanism and the DA mechanism have the same assignment result in their expost equilibrium. However, it is not 
+easy to achieve the expost equilibrium for the Boston mechanism and the parellel mechanism because they are not direct mechanisms while the DA can be seen as an almost direct mechanism which makes the ``truthful
+revealation'' the expost equilibrium strategy and easy to find for every student.
+
+Then we can have an important concept defined now.
+\begin{definition}
+under a preference reporting direct mechanism $h(.)$, and students report some preference profile $R$, therefore the matching result is $\mu=h(R)$.
+If all students have successful manipulation in this case, then the matching result $\mu$ is called achievable with perfect manipulation under the mechanism $h(.)$.
+\end{definition}
+
+In fact, the concept is just a special Nash implementation in
+an indirect mechanism. The difference is that when in a direct
+mechanism, you nash implement a result and know whether it satisfies a
+social goal $f(p)$, but in a indirect mechanism even if you know that
+is successfully manipulated by everyone, you do not know if it
+satisfies a social goal $f(p)$, because you do not know the economics
+environment $p$!
+
+
+If you see carefully, you will know that this concept is  a kind of ex post nash
+implementation in the particular case of matching mechanism.  For
+general priority structures, what
+kind of matching results can be achieved with perfect manipulation
+under the IA mechanism, see \parencite{Ergin2006}; what kind of
+matching results can be achieved with perfect manipulation under the
+parallel mechanism, see \parencite{YanChenJPE}.  In this chapter, we
+focus our attention on a very important kind of priority structure,
+the score-based priority structure and discuss what kind of matching
+results can be achieved with perfect manipulation under such
+score-based priority. 
+
+DA mechanism just use the score high-low comparison to determine
+priority of students for every college. The more score you get, the
+high priority you get.
+
+To determine a student $i$'s priority in college $j$, parallel
+mechanism fisrt group the colleges according to $i$'s reported
+preference list. For example, in Tibetan's parallel mechanism, every
+group has 10 colleges, then you group the first 10 together and label
+every college in this Group 1, group the second 10 together and label
+every college in this Group 2, and so on. A student's priority in a
+college is determined in a dictionary order. First, compare the group
+number of the college for the student. For instance, if Beijing
+University is in the first 10 college group for a tibetan student, 
+then this student has a higher priority in Beijing Unversity than
+tthose who has not put  Beijing University in the first 10 college
+group. If two students put the college in the same Group $n$, then
+comes the second procedure of comparison. The student with higher
+score(or high original priority) has higher priority. IA mechanism is
+just a parallel mechanism with every group size equal to $1$.
+
+
+We have the following important theorem.
+
+\begin{thm}\label{same}
+If every college has the same base priority for the students, and only
+modify the priority structure as is necessary for the IA and parallel
+mechanism, then the only matching achievable with perfect
+manipulation under the IA and parallel mechanism  is the same with the one under  the DA mechanism, which is  unique , efficient and stable. 
+\end{thm}
+
+To get this result, we first propose a property of the DA mechanism which is convenient for discussion of its matching result. 
+
+\begin{prop}
+ The final
+matching result of the DA mechanism is not influenced by the number and order of applications of the students in each step, as long as there is some student in each step  who applies for the college that is his or her favorite among the colleges having not rejected him.
+\end{prop}
+
+Because of the finiteness of the problem, any mechanism with the above requirement will end, and we can say that the result is the same as the ordinary DA according to this  proposition. 
+%The proof is relegated to the appendix C. 
+We call this group of mechanisms as the DA family of mechanisms.
+
+As a direct result of the above propostion and the optimal stableness and non-manipulability, we have the following corollary.
+
+\begin{corollary}
+The DA family of mechanisms are all optimally stable, and non-manipulable.
+\end{corollary}
+
+\begin{proof}
+Now is the proof of the above theorem \ref{same}.
+In fact, the Serial dictatorship mechanism is just a member of the DA family of mechanisms and has the property mentioned in the above corollary. Therefore, in the following discussion, we take the Score-based serial dictatorship mechanism for producing the DA matching result.
+
+Now we give a intuitionistic proof of the important theorem. The perfect manipulation of DA mechanism is just non-manipulation, that is, stating the true 
+preference according to \ref{thm1}. For the parallel mechanism, we would first prove that for everyone to report as his or her favorite  the college that the DA matching mechanism assigns is a perfect manipulation. 
+
+To prove perfect manipulation, we only need to show that every student has got a successful manipulation by doing so. Using induction on the students' score list(without loss of generality, assuming no same scores).
+
+First, the student with the highest score, anounce his or her true favorite college as his or her favorite, has successfully manipulated. His or her true favorite is obviously the DA matching result. Therefore, this top student has done a successful manipulation by reporting as his or her favorite  the college that the DA matching mechanism assigns. 
+
+Second, for  an arbitrary student $i$. Suppose every student higher in the score list hasreported as his or her favorite  the college that the DA matching mechanism assigns. Then since the DA result is the same as the score-based serial dictatorship result, these students will get what they get in the DA. Now the student $i$ can only expect as the best the DA result, and can indeed get it if reporint it as his or her favorite. Therefore reporting  as his or her favorite  the college that the DA matching mechanism assigns is a successful manipulation for him.
+
+Having proved that the DA matching result is achievable with perfect manipulation, next we prove the uniqueness of the achievable matching result with perfect manipulation. We use terms of the DA matching result and the score-based serial dictatorship matching result interchangeably since they are the same in our setting.
+The proof of unique. Take any other matching result ,we would prove that it is not acheivable with perfect manipulation. Because the score-based serial dictatorship matching result is pareto-efficient, and the preference is strict, in any other matching result there must be some students who are worse off thanin the DA matching result. There must be a student with highest score among them, then we would like to show that this student has not successfully manipulated. Still using induction, 
+
+first, if this student is the top scored student, then he or she definitely has not successfully manipulated because if he or she report whatever college as his or her first choice, then he or she will get it.
+
+second, if all the higher scored students has successfully manipulated, then they will get the score-based serial dictatorship matching college, so this student can get the score-based serial dictatorship matching result. If he or she gets a worse college, he or she definitely has not successfully manipulated.
+ 
+Done.
+\end{proof}
+
+Now let us go to the next subsection where we put some details on.
+
+\subsection{Student-college matching with affirmative actions of bonus-score
+  and quota}
+
+In this subsection, we would like to consider extending the previous
+model to cover affirmative actions of bonus-score and quota.
+When there are bonus-score given to some student, if the bonus-score
+is accepted in every college, then we can just take his or her total score as
+original score + bonus-score. The rest is the same as the serial
+dictatorship case analyzed in the previous subsection. However, if
+there is difference between the accepted bonus-score
+among colleges, then the priority structure again goes into the
+chaotic state that the score-based serial dictatorship mechanism has
+successfully avoided in our previous simple model.
+
+Next is the more discussed affirmative action of quota, 
+A prevalent affirmative action policy in school choice limits the number of ad-
+mitted majority students to give minority students higher chances to attend their
+desired schools. To circumvent the inefficiency caused by majority quo-
+tas, \parencite{Hafalir2013} offered a different interpretation of the affirmative action policies based on
+minority reserves. With minority reserves, schools give higher priority to minor-
+ity students up to the point that the minorities fill the reserves.
+we would like to adopt the minority reserve definition
+in \parencite{Hafalir2013} with a little extension. we will give every group(including the majority group) a reserve (or
+called quota, whatever) that gives a student of this group priority
+over other group whenever the reserve number has not been reached.
+Using this definition of quota, we give the following enlightening
+example.
+
+\begin{example}
+There are two colleges $A$ and $B$, each with two seats for students. There are
+two students groups $a$ and $b$. Students $1,2,3$ are in group $a$ and
+students $4,5$ are in group $b$. The preferences of the students are
+as follows.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $1$ & $2$ & $3$ & $4$ & $5$\\
+    \hline
+    $A$ & $A$ & $A$ & $B$ & $B$ \\
+    
+    $B$ & $B$ & $B$ & $A$ & $A$ \\
+    \hline
+    
+  \end{tabular}
+\end{center}
+
+As can be seen, the students in group $a$ all prefer college $A$ while
+the students in group $b$ all prefer college $B$. 
+
+The two colleges' base priority structure is the same as in the following
+table
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    $A$ & $B$ \\
+    \hline
+    $1$ & $1$\\
+    
+    $2$ & $2$ \\
+
+    $3$ & $3$ \\
+
+    $4$ & $4$ \\
+
+    $5$ & $5$ \\
+    \hline
+    
+  \end{tabular}
+\end{center}
+The quota structure
+of A and B are both 1 seat for group $a$, 1 seat for group $b$. Now
+the DA mechanism is run round by round as in the table below.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    &$1$ & $2$ & $3$ & $4$ & $5$\\
+    \hline
+    round1& $A$ & $A$ &  & $B$ & $B$ \\
+    
+    round2&$A$ & $A$ & $B$ & $B$ &  \\
+
+    round3&$A$ &   & $B$ & $B$ &  $A$\\
+
+    round4&$A$ & $B$ &  & $B$ &  $A$ \\
+    \hline
+    
+  \end{tabular}
+\end{center}
+
+Because 3 is the only student not tentatively accepted after 4 rounds,
+and 3 has been rejected by both A and B, the DA algorithm with quota
+terminates.
+
+Now consider the IA mechanism. If the quota priority is first compared
+and considered, then the result is the same as DA. This fact can be
+easily verified and we omit it here.  If the reported preference
+order is first considered, as the name of Instant Accept is
+indicating, then the result is as the table below.
+
+\begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        &$1$ & $2$ & $3$ & $4$ & $5$\\
+        \hline
+       round1& $A$ & $A$ &  & $B$ & $B$ \\
+        
+        \hline
+        
+      \end{tabular}
+    \end{center}
+
+\end{example}
+
+From the above example, we see that the matching result of DA mechanism with quota is not pareto efficient for the students. In fact, the comparison of the tables' 
+matching results shows that IA 
+mechanism's result is a pareto improvement. Student $2$ and $5$ gets strictly better result in IA mechanism than in DA mechanism. Why the efficiency result of the
+the previous subsection lost. The reason is that the efficiency in previous subsection comes from the serial dictatorship nature of DA in that special priority
+ structure. Now with quota included, the priority structure is changed and that property is lost in the process. However, the resulted matching is still priority-respecting(as \parencite{Svensson2014} call ``stable''), and constrained efficient(pareto efficient among the priority-respecting matchings). Meanwhile, there is not way for the student to manipulate to get a better result for this example. 
+
+This is true for the DA mechanism with quota.
+Because of its importance, we state it as a formal theorem here.
+
+\begin{thm}
+A DA mechanism with quota is priority-respecting, constrained efficient and non-manipulable.
+\end{thm}
+
+The proof is relegated to the Appendices.
+
+\subsection{Policy suggestions}
+
+For student-college matching mechanisms, when no affirmative actions are taken, and the scores in the nationwide college entrance examination is the base priority criterion, then the achievable result under perfect
+manipulation is the same, which is efficient, stable and
+unique. However, only for the DA or score-based serial dictatorship,
+the perfect manipulation is easily fulfilled in reality, since the
+perfect manipulation is just non-manipulation, i.e., reporting the
+true preference. Therefore, it's very easy to teach how to do a
+successful manipulation in a score-based serial dictatorship, and even
+a researcher cannot tell how to do a successful manipulation in
+another mechanism such as IA mechanism and parallel mechanism. As a
+result, a kind of unfairness caused by manipulation occurs. We do not
+want to judge students by manipulation, but these IA and parallel
+mechanism allow students' matching results to be influenced by a large
+extent to such undesired manipulation abilities, especially for the
+majority of students
+who are not the top students. 
+
+Where there is manipulation, there is
+corruption. A successful manipulation(reporting of preference) in IA
+and parallel mechanism needs information about other students'
+preference reporting. So there might be buying and selling of such
+information and even without corruption of relevant institutions, some
+other unnecessary  businesses, like strategy
+consulting of preference  reporting  for  the college admission
+mechanisms.  These things  burden the family
+of senior high school students unnecessarily both economically and
+spiritually.
+
+
+
+
+ 

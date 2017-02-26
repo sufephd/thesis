@@ -1,0 +1,407 @@
+
+% Chapter 1
+
+\chapter{An Introduction to Mechanism Design Theory} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+\newtheorem{definition}{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem*{example*}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{assumption}{Assumption}
+\newtheorem*{assumption*}{Assumption}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{conjecture}{conjecture}
+\newtheorem*{conjecture*}{conjecture}
+\newtheorem*{remark}{Remark}
+
+
+
+%----------------------------------------------------------------------------------------
+
+
+ 
+%------------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+The starting point of analysis in traditional economics is often the
+present state of economic institutions and mechanisms, for example,
+market theory, auctions and resource allocation. In mechanism design
+theory, an alternative framework and perspective is used. We view the
+present state of affairs just as a possibility and has an intention to
+design a better mechanism with respect to a social goal or
+criterion. Mechanism design is kind of engineering side of
+economics. To do that, a framework must be provided. Now the framework
+has become a theory with a large body of literatures. That theory is
+mechanism design theory. The mechanism design theory was established
+by leonid Hurwicz, later expanded by Roger B.Myerson, Eric S. Maskin,
+Guoqiang Tian and many other  scholars of the field.
+
+ The most important
+component of Mechanism design theory is implementation
+theory. \parencite{Liang2010} has done a survey of this field
+.  The present paper is not another attempt to summarize the
+implementation theory of mechanism design, but uses it as  a central tool for formalizing ideas
+in this paper. This paper aims  to analyze some
+common economic mechanisms for situations where information  is not
+fully known to the social planner. In the process, the author creates some new
+concepts which the author thought is necessary. However, a little
+background of the mechanism design theory is needed. This is what the next
+section is about.
+
+\section{A survey of the literatures}
+
+A formal study of the informational requirements and informational optimality of resource
+allocation processes was initiated by Hurwicz (1960). The interest in such a study was greatly
+stimulated by the socialist controversy  the debate over the feasibility of central planning
+between Mises-Hayek and Lange-Lerner (von Hayek, 1935, 1945; Lange, 1936-7, 1944; Lerner,
+1944). In the Mises-Hayek-Lange-Lerner debate, the marginal cost pricing doctrine was proposed
+in response to Mises-Hayek's criticism of a socialist system's information problem, a centrally
+planned system has to use immense information (infinite dimension of message space) to make
+2
+production decisions.  In line with the prevailing tradition, interest in this area was focused
+on the design of Pareto-satisfactory (non-wasteful) and privacy-preserving mechanisms, i.e.,
+mechanisms that result in Pareto efficient allocations and use informationally decentralized
+decision making processes.  Allocative efficiency and informational efficiency are two highly
+desired properties for an economic system to have.  The importance of Pareto optimality is
+attributed to what may be regarded as a minimal welfare property. Pareto optimality requires
+resources be allocated efficiently. If an allocation is not efficient, there is a waste in allocating
+resources and thus at least one agent is better off without making others worse off under given
+resources. Informational efficiency requires an economic system have the minimal informational
+cost of operation. The informational requirements depend upon two basic components: the class
+and types of economic environments over which a mechanism is supposed to operate and the
+particular outcomes that a mechanism is required to realize.
+
+For informational decentralized systems, \parencite{Hurwicz1972}
+proved a very important theorem: For the neoclassical pri-
+vate goods economies, there is no mechanism < M, h > that implements Pareto efficient
+and individually rational allocations in dominant strategy. Consequently, any revelation
+mechanism < M, h > that yields Pareto efficient and individually rational allocations is
+not strongly individually incentive compatible. (Truth-telling about their preferences is not
+Nash Equilibrium).
+
+A mechanism can be viewed as an abstract planning procedure; it consists of a message
+space in which communication takes place, rules by which the agents form messages, and an
+outcome function which translates messages into outcomes (allocations of resources). Mecha-
+nisms are imagined to operate iteratively. Attention, however, may be focused on mechanisms
+that have stationary or equilibrium messages for each possible economic environment. A mecha-
+nism realizes a prespeciØed welfare criterion (also called performance, social choice rule, or social
+choice correspondence) if the outcomes given by the outcome function agree with the welfare
+criterion of the stationary messages. The realization theory studies the question of how much
+communication must be provided to realize a given performance, or more precisely, the minimal
+informational cost of operating a given performance in terms of the size of the message space.
+It determines which economic system or social choice rule is informationally the most efficient
+in the sense that the minimal informational cost is used to operate the system.
+\parencite{Gibbard1973 }
+and \parencite{Satterthwaite1975} proved a very important theorem:If
+the assignment results has at least 3 alterna-
+tives, a social choice function which is strongly individually incentive compatible and
+defined on a unrestricted domain is dictatorial.
+\section{General model framework}
+ In this section, we give the framework of analysis which will
+ reappear many times later in the paper with slightly different
+ forms. Our framework is comprised of 5 parts: 
+ economic environments, social goals or criteria,  mechanism, 
+expected outcomes(often equilbirums of all kinds), and the concept of
+implementation of social goals.
+The following subsections will give a detailed discussion and relative
+notations of these components.
+\subsection{Economic environments}
+Economic environments consists of economic entities and their features
+as well as the state of some relevant things in the world. The
+entities are of two kinds. One is the principal (or called the social
+planner),  and the other is  the agents (or called economic
+participants).  Usually, we have the following notations.
+
+$N=\{1,...,n\}$: denote the set of the agents.
+
+$e_i\in E_i$: denote the economic feature of agent $i\in N$. It may be preferences, economic status or some other relevant feature.
+
+$E=E_1\times \dots \times E_2$: denote the set of profiles of economic features.
+
+ The social planner does not know much information of
+the participants' profile $e$. These information are decentralized
+among the agents. 
+If the agents all know the whole profile $e$, then it is the perfect information case; if every agent $i$ knows his own $e_i$ and knows the distribution of $e$, then this is the imperfect information case which can be dealt with using Bayesian method; else if every agent $i$ only knows his own $e_i$, then it is only good to be dealt with using strategyproof mechanisms. The details will be in later chapters.
+
+\subsection{Social criteria}
+
+Given an economic environment $e$, every agents participate in economic activities, make economic decisions, pay the cost and get the profits. The social planner hope that the results satisfy some criteria.
+Let us give some notations and talk about it.
+
+$A$: denote the set of social allocations, or economic results.
+
+$F : E \mapsto A$: denote a social criterion, or social goal, which is a correpondence from the set of environments to the set of results. Given any environment $e$, there will be a subset of $A$ that satisfy the social criterion, $F$ just denotes this function.
+
+If randomized results on $A$ are acceptable as social results, then we can use 
+$\Delta A$ instead of just $A$. 
+
+\subsection{Mechanism for information collection}
+
+ The social planner lacks information, so he or she need to design incentive
+compatible rules of the game to induce everyone reveal their true private information. 
+
+If the social planner knows completely the environment, then he or she
+can simply choose a result that is in the set $F(A)$. However, he or
+she usually does not know much about these things. That is where
+mechanism for information collection functions.  A mechanism, or  a
+game form, usually contains the following components.
+
+$M_i$: denote the message space of agent $i \in N$. An agent can only emit 
+message $m_i \in M_i$.
+
+$M=M_1\times\dots\times M_n$: denote the space of message profiles. Every message profile $m=(m_1,\dots,m_n)\in M$.
+
+$h:M\rightarrow A$: denote the assignment function for the mechanism, which assigns a result for a given message profile $m$.
+
+$ \Gamma = \langle M,h\rangle$: denote the information collection mechanism, which is just the combination of the space of message profiles and the assignment function that lies on top of it.
+
+Thus, a mechanism prescribes rule of the game. Every agent $i$ chooses a message
+$m_i \in M_i$ to send, and then the social planner collects all the messages in the message profile $m$, and finally decides on the allocation result $h(m)$ as the social choice. The $\Gamma$ must be declared openly to let every agent know, then it is up to every agent $i$ to choose from his or her $M_i$ the $m_i$ to report.
+
+A very important class of mechanisms is the direct revelation
+mechanism(or simply called direct mechanism) in which $M_i$ is just the possible world state information 
+that agent $i$ has.  later we will introduce a very important theorem
+about this mechanism.
+\subsection{Expected outcomes}
+
+When a mechanism $\Gamma=\langle M, h\rangle$ is given, we have a game
+with rules for the agents to report $m \in M$. The strategy of an
+agent $i$ is usually denoted $\sigma^i(e_i,\Gamma)$ or $\rho^i(e_i,\Gamma)$. Taking this
+form is for the reason that different environments $e_i$ may induce
+$i$ to choose different message for a given mechanism $\Gamma$. For a given $\Gamma$, the $\Gamma$ in the above notation can usually
+be omitted as the default $\Gamma$ is clear.
+When the agents send messages to the social planner, they have strategical interaction in choosing which message to send. Now we need to know what will result from the strategical interaction, these are the expected outcomes. Usually the solution concept of equilibriums in games are ideal for this role.
+
+Here, one point concerning the $e$ should be stressed.  There is requirement on the preference
+information which is contained in $e_i$ for every $i \in N$.
+When people game with each other, the hypothesis for human behavior is
+very important. A fundamental hypothesis is that human being are
+self-interested, that is, they will try to maximize some kind of
+self-utility. With this hypothesis, it is usually implied that human
+being will not deliberately contribute to the society without
+considering the returns to himself or herself. Or put it another way,
+a human being will only concentrate on maximizing self-interest, only
+a good mechanism can make this self-interesting behavior also
+beneficial to the society. Let $\succeq_{e_i}$ denote the preference
+in $e_i$ for agent $i$. It must be an order relation on the results
+set $A$. Put it another way, it must satisfy the following 3
+conditions.
+
+\begin{itemize}
+\item Reflexivity. For any outcome $a \in A$, $a\succeq a$.
+\item Completeness. For any two outcomes $a$ and $b$ from $A$, either $a\succeq
+  b$ or $b\succeq a$. That is , any two outcomes are comparable.
+\item Transitivity. For any three outcomes $a$, $b$ and $c$, if both
+  $a \succeq b$ and $b \succeq c$ hold, then $a \succeq c$ hold. This
+  eliminates unwanted circles.
+\end{itemize}
+
+Two other relations $\succ$ and $\sim$ can be generated from a given
+$\succeq$.
+For any $a$ and $b$ from the results set $A$, $a \succ b$ if and only
+if $a \succeq b$ and $b \not \succeq a$; $a \sim b$ if and only if  $a
+\succeq b$ and $b \succeq a$. 
+
+The three relations $\succeq, \succ,\sim$ are also frequently denoted
+with a single letter $R, P, I$ respectively. Later, we will use these
+single letter forms for consistency with matching literature in that
+chapter.
+
+
+With this kind of preference, every agent $i$ can rank the results in
+$A$ in such a way that equilibriums are definable.
+
+With this hypothesis, the equilibrium concepts of game theory best suit our needs for the expected outcomes. The equilibriums are the expected outcomes. For different situations, different equilibrium concepts should be taken as the expected outcomes. Dominant strategy equilibrium, Nash equilibrium, Subgame perfect Nash equilibrium, Bayesian Nash equilibrium, Perfect Bayesian equilibrium and so on all have their chances of being the expected outcomes depending on the problem situation. Notations are as follows.
+
+$b(e,\Gamma)$: denote the equilibrium message choices $M* \subset M$ under the economic environment $e$ and mechanism $\Gamma$.
+
+$h(b(e,\Gamma))$: denote the expected outcomes of the assignment.
+
+For a given $\Gamma$, the $\Gamma$ in the above notation can usually
+be omitted as the default $\Gamma$ is clear.
+
+
+
+
+
+
+  
+
+\subsection{Implementation of social criteria}
+
+Finally, comes the concept of implementation. An important goal of
+mechanism design is to make individual incentives and social criteria
+compatible.  Roughly speaking, if a social criteria is satisfiable under certain
+equilibrium solution of a mechanism, then we say that that social
+criteria is implementable with that mechanism.
+The idea can be illustrated by the following graph.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [->] [thick] (1,0) --  (7,0);
+\node [below] at (4,0) {$F(e)$};
+\draw [->] [thick] (1,0)--(4,2);
+\node [left] at (2.5,1) {$b(e, \Gamma)$};
+\draw [->][thick] (4,2)--(7,0);
+\node [right] at (5.5,1) {$h(b(e,\Gamma))$};
+
+\node [above] at (4,2) {$M$};
+\node [left] at (1,0) {$E$};
+\node [right] at (7,0) {$A$};
+
+\end{tikzpicture}
+
+\end{center}
+
+In the above graph, $e \in E$ is the economic environment, $A$ is the
+possible allocation set. Social criteria $F$ choose what is desirable
+allocation for the society. The social planner need to design a
+mechanism to implement the criteria. Under such a mechanism,  the
+strategic interaction of agents should result in an outcome in the
+equilibrium set $b(e, \Gamma)$ mapped by $h$, i.e.,
+$h(b(e,\Gamma))$. If $h(b(e,\Gamma))$ is in the set $F(e)$,  then the
+social criteria have been implemented. Formally, we have the following
+definition
+
+\begin{definition}
+A mechanism $\Gamma=\langle M,h\rangle$ is said to have implemented the social
+criteria $F$ in the economic environments space $E$ under the
+equilibrium $b$, if for all $e \in E$, we have $h(b(e,\Gamma)) \subset F(e)$.
+\end{definition}
+
+Our implementation concept in this paper is weak compared to most in
+the literature.  And what we call social criteria $F$ is usually
+called social choice, by choosing the wording ``criteria''  we want to convey the idea that not
+every  point  in $F(e)$ must be implemented.  However, we still
+distinguish between two forms of weak implementation. 
+
+Here is the weaker implementation concept definition that we call
+partial 
+implementation.
+
+ \begin{definition}
+A mechanism $\Gamma=\langle M,h\rangle$ is said to have partially implemented the social
+criteria  $F$ in the economic environments space $E$ under the
+equilibrium $b$, if for all $e \in E$, we have $h(b(e,\Gamma)) \cap
+F(e) \not = \emptyset$.
+\end{definition}
+
+
+Below is the strongest implementation concept that we call full
+implementation.
+
+ \begin{definition}
+A mechanism $\Gamma=\langle M,h\rangle$ is said to have fully implemented the social
+choice rule  $F$ in the economic environments space $E$ under the
+equilibrium $b$, if for all $e \in E$, we have $h(b(e,\Gamma)) = F(e)$.
+\end{definition}
+
+
+
+The above five-component framework covers  the messaging
+mechanisms of auction and matching we will later discussed in-depth in
+Chapter2 and Chapter3.The above five-component framework covers  the messaging
+mechanisms of auction and matching we will later discussed in-depth in
+Chapter2 and Chapter3.
+
+For these kind of mesaging mechanism, there is a very famous
+theorem called revelation principle. I will give here its definition
+and proof.
+
+\begin{thm}
+revelation principle:
+
+if a Mechanism $\langle M, h\rangle$ implements the social criteria 
+$F$ in dominant strategy
+equilibrium. Then there is a direct revelation mechanism which
+implements $F$ truthfully in dominant strategy equilibrium(truth
+telling is a dominant strategy equilibrium). 
+
+\end{thm}
+\begin{proof}
+ Since $F$ can be implemented in dominant strategies by  $\langle M, h\rangle$, there is a profile of strategies $(\sigma^1,\cdots,
+ \sigma^n)\in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$
+ that forms an dominant strategy  equilibrium in the game induced by $\langle M, h\rangle$. Thus, for
+ all $e=(e^1, \cdots,e^n)\in E=E_1\times \cdots\times E_n$, we have
+ $$h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
+ Furthermore, implementability in dominant strategies means that  in
+ the mechanism $\langle M, h\rangle$, for
+ all $i\in N$, $e\in E$, and any  strategy profile
+ $\rho=(\rho^1,\cdots,\rho^n) in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$,
+ \begin{align}\label{domi}
+ h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n)) \succeq_{e_i} h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))
+ \end{align}
+Consider the following direct mechanism $(E_1\times\cdots\times E_n, g)$ where for all $(e_1,\cdots,e_n)\in E_1\times\cdots\times E_n$,
+$$g(e_1,\cdots,e_n)=h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
+It suffices to show that in the game induced by
+$(E_1\times\cdots\times E_n, g)$, it is a dominant strategy  for each agent 
+$i$ with type $e_i$ to report $e_i$. Suppose not. Then there is a
+profile $e=(e_1,\cdots, e'_i, \cdots, e_n)\in E_1\times\cdots \times
+E_i \times \cdots \times E_n$ and an
+agent $i\in N$ and another type $e'_i$ such that
+$$g(e_1, \cdots, e'_i, \cdots, e_n) \succ_{e_i} g(e)$$
+$$\Longleftrightarrow$$
+$$h(\sigma^1(e_1),\cdots,\sigma^i(e'_i),\cdots,\sigma^n(e_n))\succ_{e_i} h(\sigma^1(e_1),\cdots,\sigma^i(e_i),\cdots,\sigma^n(e_n))$$
+Choose  $\rho=(\rho^1,\cdots,\rho^i,\cdots,
+ \rho^n)\in (E_1\mapsto M_1)\times \cdots\times (E_i\mapsto M_i)
+ \times \cdots\times (E_n\mapsto M_n)$ such that
+ $\rho^j(e_j)=\sigma^j(e_j)$ for every $j \in N, j\not = i$ and $\rho^i(e_i)=\sigma^i(e'_i)$. Then, the last inequality can be rewritten as
+$$h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))\succ_{e_i}h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n))$$
+which contradicts inequality \ref{domi}.
+ \end{proof}
+
+The final two chapters talk about mechanism design or relevant fields. 
+
+Chapter 4 and Chapter 5 will be with 
+In chapter 4, I would like to talk about constrained mechanism
+design where the designed mechanism must satisfy some prescribed requirement.
+In chapter 5,  we give some alternative ways of collecting information
+for the social planner other than mechanism design as a remind that
+there is more than one way to do it. And it  should be the social
+planner's responsibility to choose the most suitable way. we will be more concerned with the economic agents'
+features and give
+some behavioral economics discussion which may help social planner to
+better know the economic agents and design suitable mechanisms. Here
+unlike messaging mechanism design, we would like to collect
+information that is shown in agents' everyday decesion making, and in
+experimental economic laboratory.
+ 
+
+
+\section{Mechanisms we will discuss}
+
+In this section, I would like to talk about the scope of my
+thesis. The main focus will be around mechanisms for dealing with
+decentralized information problem. The last chapter is a diversion to
+some
+mechanisms that are designed for special purpose and under special requirements.
+
+
+
+
+
+

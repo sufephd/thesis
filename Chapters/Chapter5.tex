@@ -1,0 +1,298 @@
+% Chapter 5
+
+\chapter{A popular mechanism for mental competition--- finite games with perfect information}  % Main chapter title
+
+\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter5} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+\section{Introduction}
+ Go, chess, Chinese chess, draughts etc occupy a lot of leisure time of many people around the world, and all kinds of match and tournaments are held everywhere around the world. 
+ These game forms share many things in common as mechanism for determining win,lose,or draw between two players.
+ Many books, articles and manuals are published about them. However, most centered around how to win with concrete moves in certain positions, how to devise traps for the opponents and how to 
+ play certain popular openings. In this chapter, we analyze these finite games with perfect information through a typical and popular game,chess. 
+ As a mechanism for mental competition, chess is analyzed from game theoretic point of view and the propositions and theorems can be applied to general finite games with perfect information easily.
+
+ Let us begin with a comparison of chess with student-college matching mechanism. That mechanism is to collect true preference from students and allocate student according to the reported preference 
+ and their priority(often determined by score in the entrance examination). It
+ aims at making the truth telling dominant strategy and tries to
+ garentee that the game has no manipulation or less. Chess is different, it determines the result of win, loss, or draw just by how well two players can manipulate under the rules of the mechanism. 
+ To make it a real mental competition, it is deliberately designed with a strategy space that seems infinite to human beings or even computers.
+ Therefore the implementation theory employed to analyse student-college matching mechanism is not suitable here. Incentive is usually not the problem, the players all want to win.
+ The problem is how strong the desire to win is and mental efforts put in. Usually, the expected results are also not  as the previous chapter.
+ We do not expect a Nash equilibrium for such game forms. We expect a result of win,loss,or draw based on the extent of successfulness of manipulation  from both sides in chess.
+ While in student-college matching we try to design mechanism that avoid the manipulation factor, in chess we encourage manipulation skill of the game and that is where the enjoyment lies.
+
+Zermelo first analyzed the game of chess in 1913 in German. \parencite{walker2001} give a survey of the early studies which are mostly based on Zermelo's seminal article  and translated Zermelo's article into English in the appendix 
+of that paper. 
+
+
+
+
+
+
+\section{Finite games with perfect information: chess as a simple model}
+
+In this model, we do not consider time factor, do not consider the moves limit factor, and agreed draw or resign.
+
+First, the definition of position
+
+\begin{definition}
+A position $q$ on a chess board, is a certain placement of pieces on the board along with the information that it is who's turn to move.
+\end{definition}
+
+Here, the only relevant thing is which piece is placed in which square, and who is to move. 
+
+Let us then consider the ending position which should be first analysed in backward induction method. An ending position is a position that the referee must be called to register the result,i.e.,the game is finished according to chess rule.
+
+ Let $A$, $B$ denote the opposing sides. Let $q$ denote the ending position that is $B$'s turn to move. There are only the following cases:
+
+1. $A$ has checkmated $B$, then A win.
+
+2. $A$ has stalemated $B$, then draw.
+
+3. Both sides have insufficient material(pieces) to give the opponent checkmate, then draw.
+
+4. Three repetition of the same position, that is, the same position $q$ has been reached twice before, then draw.
+
+Now, in order to analyze the game of chess, we need the concept of a winning position for a side. Similar concept can be found in \parencite{walker2001}, but ours here is for all positions, 
+not just positions that is due to move for that side.
+
+\begin{definition} 
+
+
+A position $q$ is a winning position for side $A$ if and only if one of the
+following case is true:
+
+1. It is an ending position that $A$ win($A$ has checkmated $B$).
+
+2. When it is $B$'s turn to move, $B$ can make a legal move, but for
+every move he can produce according to chess rule, it leads to a position that
+is a winning position for side $A$.
+
+ 3.When it is $A$'s turn to move, $A$ has a legal
+move that leads to a winning position for $A$.
+
+\end{definition}
+
+Here, we take it for granted that this definition is well
+defined. Later on , we will prove it.
+
+The definition of a winning position for $B$ is just the above definition with $A$ and $B$ interchanged.
+With the concept of a winning position, we can define the concept of a losing
+position.
+
+\begin{definition}
+A position $q$ is a losing position for $A$ if and only if it is a winning position for $B$.
+\end{definition}
+
+The definition of a losing position for $B$ is just the above definition with $A$ and $B$ interchanged.
+
+Now the only possible other positions is defined as following:
+\begin{definition}
+A position that is neither a winning position nor a losing position for any side is called a drawing position.
+\end{definition}
+
+Now there is a lemma for chess.
+\begin{lemma}
+every chess game end in finite moves
+\end{lemma}
+
+\begin{proof}
+Suppose not. Then there is a game with infinite moves.
+According to chess rule, three repetition of a same position makes the game end in draw, therefore there must be infinite positions.
+However, with limited squares to place limited kinds of pieces for the two sides, the positions of chess is finite. A contradiction. 
+\end{proof}
+
+Chess as a mechanism to assign win, loss, and draw is not used to elicit preferences from both sides.  We assume all the players of chess has the preference $win\succ draw \succ loss$. 
+It is rationality and mental abilities that decides the choice of moves. Now we propose the following important theorem. 
+
+\begin{thm}
+
+For two players with perfect rationality and immense mental power, a winning position for a player will end in win of the player, a losing position for a player will end in loss of the player, and a draw position of a player will end in a draw.
+
+\end{thm}
+
+\begin{proof}
+For two players(you and an opponent) with perfect rationality and immense mental power, classifying a given position into three clear defined category is easy. Then:
+
+In the winning position, when it is your turn to move, you just chooses the move that lead to another winning position that has not been on board before in the game( avoiding cycle)
+, then since the potential positions are finite, an ending winning position(checkmate) can be reached finally; when it is the opponent's turn to move, any legal move will lead to a winning position for you. 
+
+In the losing position , when it is your turn to move, any legal move will lead to a losing position: when it is the opponent's turn to move,
+the opponent player just chooses the move that lead to another losing position that has not been on board before in the game( avoiding cycle), then since the potential positions are finite, an ending losing position (be checkmated)can be reached finally. 
+
+In the drawing position, since no winning position for the side that is to move, and the side is not losing position, so he or she must be able to find a move leading to another drawing position, a cycle is emerging and three repetitions reached (draw acording to the rule) or
+ a drawing ending is reached(insufficient material).  
+\end{proof}
+
+All the arguments so far relied on the well-definedness of our winning position concept. Apparently, it is a recursively defined term. First, an edge case, the checkmate, this is easily found 
+according to chess rules. Then, after finding all the checkmate position, we can produce all the position that can reach this position according to the chess rule.
+
+Now,when all the positions that can produce the checkmate position is found. We now need to produce all the position that can lead to all the position that can produce the checkmate. 
+Here, another step is needed since these position is the opponent's turn to move. We still need to check these positions against another criterion. 
+All the position that can be produced must belong to those that is already found in the winning positions... and so on. The process continued until no new winning positions can be found.
+After these informal description, I would like to formalize these with mathematical notations below. A proposition regarding a winning position is as follows.
+
+
+\begin{prop}
+The winning position concept is well defined, that is, for every position that can arise on the chessboard according to chess rule, it has a deterministic answer whether it is a winning position or not.
+\end{prop}
+
+First, an explanation. Why do we ask the question of well definedness? Russell's Paradox is the reason, not every recursively defined set is consistent. In naive set Theory, the following definition is possible.
+let $R=\{x|x \not\in x\}$, that is $R$ is a set of sets that does not contain itself. It is a definition on the space of all sets. Do we have a deterministic answer whether $R$ is a set in $R$ or not.
+Unfortunately it cannot be determined, since $R \in R \iff R \not \in R$ which is a contradiction.
+
+
+
+
+
+To prove the recursive definition of a winning position is well defined, we only need to show that every position can be detemined whether it is a winning position or not.
+
+\begin{proof}
+
+Let $X$ denote the set of positions that can possibly be reached from
+the start of the game by finite alternative moves from both sides. We
+first prove that this set is well defined. Let $f(q)$ stand for the
+set of a chess position $q$'s next possible positions. For all
+$A\subset X$. let $f(A)=\cup_{x\in A}f(x)$. Then,
+
+Step 0, $X_0={x_o}$, the starting position.
+
+Step 1, $X_1=f(X_0)\cup X_0$, the positions that is reachable in two
+moves.
+
+Step 2, $X_2=f(X_1)\cup X_1$, the positions that is reachable in three
+moves.
+
+...
+
+Step n, $X_n=f(X_{n-1})\cup X_{n-1}$,
+
+
+$X=lim_{n\rightarrow \infty}X_n$. This set is decidable, since $X(\cdot)$ is well defined by chess rule, and possible chess placements is finite( therefore for all $n \in N$, $|X_n|<M$).
+With the increasing of $n$, whenever $X_n=X_{n-1}$, you can see according to the definition the $X$ is found. And since $X_0,X_1...$ is a sequence of sets with bound for the number of elements.
+This $n$ will occur inevitably. So $X$ is well defined.
+
+ For a finite set, you need to be able to identify all the elements
+ satisfying a certain definition, or else that definition is not well
+ defined. Now we devise an algorithm to find all the positions that is
+ a winning position. We search for the winning positions from the
+ ending position.
+
+Step 0, filter out all the checkmate positions from $X$, this can be
+done by applying chess rule, put these positions into $W_0$.
+
+Step 1, $W_1=\{x|f(x)\cap W_0 \not = \emptyset\}$.
+
+Step 2, $W_2=\{x|f(x)\not=\emptyset and f(x)\subset W_1\}\cup W_0$.
+
+...
+
+Step 2n-1, $W_{2n-1}=\{x|f(x)\cap W_{2n-2} \not = \emptyset\}$.
+
+Step 2n, $W_{2n}=\{x|f(x) \not=\emptyset and f(x)\subset W_{2n-1}\}\cup W_0$.
+
+Obviously,  $W_0 \subset W_2 \subset W_4 \cdots$ and $W_1 \subset W_3
+\subset W_5 \cdots$. Since these are increasing sets, and the number
+of potential position is finite, there must be somewhere that the
+$\subset$ can be replaced with $=$ for the first time, and in fact
+after that all the $\subset$ can be replaced with $=$. The set of
+winning positions is $W=lim_{n\rightarrow\infty} W_{2n-1}\cup W_{2n}$.
+
+\end{proof} 
+
+Chess is too complicated for us to tell all the winning
+positions. A simple finite game with perfect information is provided
+in the following example to illustrate the use of the winning
+positions concept.
+
+\begin{example}
+The game of taking out stones. There is a pile of stones and two
+players. Each is required to take 1 or 2 stones out of the pile one
+time. They take turns to do it alternatively. The one player who takes
+the last stone out is the winner. For a pile of 20 stones, can the
+first player to move the stones win?How?
+
+One may feel headless if not having a pattern to do it.  The way of
+solving this problem is just the way of finding the winning positions
+in the above proof by way of backward induction. In the following we
+use the notation $n_o$  to represent positions when there are
+$n$ stones left in the pile while it is the opponent to move ; the notation $n_s$  to represent positions when there are
+$n$ stones left in the pile while it is self to move .
+
+Step 0, we need to find the ``checkmate'' positions $W_0$.  There is only one
+``checkmate'' situation in this game: it is the opponent  to move, but
+he or she find that there
+is no stone . We denote it with $0_o$ meaning  a position of 0 stones with the
+oppenent turn to move. Therefore $W_0={0_o}$.
+
+Step 1, the positions that can directly be led into a position in
+$W_0$ after self's well chosen move,   $W_1=\{1_s,2_s\}$.
+
+Step 2,  the positions that the opponent is to move but have  to face a
+position in $W_0$ or every move will result in a position in $W_1$,
+$W_2=\{0_o, 3_o\}$.
+
+Step 3, the positions that can directly be led into a position in
+$W_2$ after self's well chosen move, $W_3=\{1_s, 2_s, 4_s,5_s\}$.
+
+Step 4,  the positions that the opponent is to move but have to face a
+position in $W_0$ or every move will result in a position in $W_1$,
+$W_4=\{0_o, 3_o, 6_o\}$.
+
+...
+
+We can therefore get $W_{2n}=\{0_o,\dots,3(n-1)_o, 3n_o\}$ 
+
+and
+$W_{2n-1}=\{1_s,2_s,4_s,5_s,\dots, 3n-2_s,3n-1_s\}$.
+
+In informal words, the winning positions include the positions with
+a pile of stone with a number of multiples of $3$ when it is the
+opponent to move, and the positions with a pile of stone with a number
+of nonmultiples of  $3$ when it is self to move.
+
+The moving strategy is to move to a winning position whenever is
+possible, and it is possible when the starting position is a winning
+position. Since $20$ is a nonmultiple of $3$, the first person is to
+move will win following the ``from winning to winning'' strategy.
+
+
+\end{example}
+
+
+For chess, typical winning position are collected 
+as finite move checkmate problems in chess books. These kind
+of books can train a player's ability to find winning positions and
+identify the move order to transpose to the final checkmate
+ending. Besides, even if you cannot find out the path of transition,
+you can remember them after seeing the answer, thus enrich your
+database of winning positions and the transposing moves.  It is widely
+admitted among chess players that when the amount of such positions
+are accumulated to some certain degree(different players may have a
+different threshold), they feel much easier to detect winning
+positions and the transposing moves.  This is an important
+phenomenon: the brain can nearly automatically extract patterns from
+remembered winning chess positions.
+
+
+%I would like to introduce Coq Proof Assistant for this purpose, 
+% for there are many theorems in matching theory which can be proved more strictly and without errors with its help. My motivation comes from the fac|t that proof error is easy to creep into human proofs 
+% and most proofs can only be best understood and checked by the original author when the body of theorems and propositions in matching theory become more and more abstract in quality and large in
+% quantity. 
+ 
+% The adoption of Coq for this subject is an idea inspired by the 2002 Fields Medal Winner Vladimir Voevodsky's recent project Univalent foundations for mathematics. He uses Coq to formalize the proofs of theorems
+% in homotopy theory and try to build another foundation of mathematics which can be viewed as equal to the set theory but is much easier for the computer to check the correctness of proofs. 
+ 
+% first, we consider the easy one. Man woman marriage market as defined in the classical work of (Alvin Roth and SotoMayor). 
+% We define these markets as a type with m men and n woman as follows
+% Inductive Market (m n: nat) :=
+% |mkt: Men n -> Women m -> Market m n

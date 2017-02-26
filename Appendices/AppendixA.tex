@@ -1,0 +1,34 @@
+% Appendix A
+
+\chapter{Appendix A: revelation principles} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\begin{prop}
+revelation principle in an interdependent value environment:
+
+if a Mechanism $\langle M, h\rangle$ implements the social choice rule $F$ in ex post 
+equilibrium. Then there is a direct revelation mechanism which implements $F$ truthfully in ex post equilibrium(truth telling is a ex
+post equilibrium). 
+
+\end{prop}
+\begin{proof}
+ Since $F$ can be implemented in ex post strategies by  $\langle M, h\rangle$, there is a profile of strategies $(\sigma^1,\cdots,
+ \sigma^n)\in (S_1\mapsto M_1)\times \cdots\times (S_n\mapsto M_n)$ that forms an ex post equilibrium in the game induced by $\langle M, h\rangle$. Thus, for
+ all $(s^1, \cdots,s^n)\in S_1\times \cdots\times S_n$, we have
+ $$h(\sigma^1(s_1),\cdots,\sigma^n(s_n))\in F(s_1,\cdots,s_n)$$
+ Furthermore, implementability in ex post strategies means that for all $i\in N$, $s\in S$, and $\rho^i:S_i\mapsto M_i$,
+ \begin{align}\label{expost}
+ v_i(h(\sigma^1(s_1),\cdots,\sigma^i(s_i),\cdots,\sigma^n(s_n)),s)\geqslant v_i(h(\sigma^1(s_1),\cdots,\rho^i(s_i),\cdots,\sigma^n(s_n)),s)
+ \end{align}
+Consider the following direct mechanism $(S_1\times\cdots\times S_n, g)$ where for all $(s_1,\cdots,s_n)\in S_1\times\cdots\times S_n$,
+$$g(s_1,\cdots,s_n)=h(\sigma^1(s_1),\cdots,\sigma^n(s_n))\in F(s_1,\cdots,s_n)$$
+It suffices to show that in the game induced by $(S_1\times\cdots\times S_n, g)$, it is ex post incentive compatible for each agent 
+$i$ with type $s_i$ to report $s_i$. Suppose not. Then there is a profile $(s_1,\cdots,s_n)\in S_1\times\cdots\times S_n$ and an
+agent $i\in N$ and a type $q\in S_i$ such that
+$$v_i(g(q,s_{-i}),s)>v_i(g(s),s)$$
+$$\Longleftrightarrow$$
+$$v_i(h(\sigma^1(s_1),\cdots,\sigma^i(q),\cdots,\sigma^n(s_n)),s)>v_i(h(\sigma^1(s_1),\cdots,\sigma^i(s_i),\cdots,\sigma^n(s_n)),s)$$
+Choose any $\rho^i:S_i\mapsto M_i$ such that $\rho^i(s_i)=\sigma^i(q)$. Then, the last inequality can be written as
+$$v_i(h(\sigma^1(s_1),\cdots,\rho^i(s_i),\cdots,\sigma^n(s_n)),s)>v_i(h(\sigma^1(s_1),\cdots,\sigma^i(s_i),\cdots,\sigma^n(s_n)),s)$$
+which contradicts inequality~\ref{expost}.
+ \end{proof}
