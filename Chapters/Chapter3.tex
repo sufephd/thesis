@@ -430,7 +430,7 @@ This problem is generally not ex post implementable. However, we find under the 
 
 Condition $\rho$:
 
-$\forall i,\forall s_{-i}, \exists s_i^* \in S_i,k \in \{1,\cdots,n\}, such\ that $
+$\forall i,\forall s_{-i}, \exists s_i^*,k \in \{1,\cdots,n\}, such\ that $
 
 To maximize  $\sum_{ij}x_{ij}v_{ij}(s)$,
 
@@ -503,11 +503,11 @@ Condition $\rho$ does not seem to be easy to satisfy. Nevertheless, in
 the following we give a more concrete $v$ which satisfy Condition
 $\rho$ to show that it is indeed satisfiable in some situations so
 that we can ex post implement the socially efficient goal.
-\begin{corollary}
+\begin{prop}
   \label{rho}
   The social efficient goal of $\max_{i,j}x_{ij}v_{ij}(s)$ can be ex post implemented if:
 For all $i$ and $j$,
-$$v_{ij}=b_{ij} + o_i(s_i) + \sum_{k \not = i} r_k(s_k) $$
+$$v_{ij}=b_{ij} + o_i(s_i) + \sum_{l \not = i} r_l(s_l) $$
 where $b_{ij}>0$ is the base value, $s_i \in [0, + \infty)$, $\forall i,o_i(0)=r_i(0)=0$
 
 Assumptions are listed below.
@@ -517,8 +517,8 @@ Assumptions are listed below.
 (ii) $\forall i, \frac{\partial o_i}{\partial s_i}
 > \frac{\partial r_i}{\partial s_i}$;
 
-(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
-\end{corollary}
+%(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
+\end{prop}
 
 
 The intuition of these assumptions implying Condition $\rho$ is that

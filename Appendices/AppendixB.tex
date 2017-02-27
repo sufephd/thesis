@@ -3,11 +3,11 @@
 \chapter{Appendix B: Proof of corollary \ref{rho}} % Main appendix title
 
 \label{Appendix_B} % For referencing this appendix elsewhere, use \ref{AppendixA}
-\begin{corollary*}
+\begin{prop*}
   The social efficient goal of $\max_{i,j}x_{ij}v_{ij}(s)$ can be ex post implemented if:
   
 For all $i$ and $j$,
-$$v_{ij}=b_{ij} + o_i(s_i) + \sum_{k \not = i} r_k(s_k) $$
+$$v_{ij}(s)=b_{ij} + o_i(s_i) + \sum_{l \not = i} r_l(s_l) $$
 where $b_{ij}>0$ is the base value, $s_i \in [0, + \infty)$, $\forall i,o_i(0)=r_i(0)=0$
 
 Further assumptions are listed below.
@@ -15,12 +15,53 @@ Further assumptions are listed below.
 (i)For all $i$, $\frac{\partial o_i}{\partial s_i} > 0$, $\frac{\partial r_i}{\partial s_i} > 0$;
 
 (ii) $\forall i, \frac{\partial o_i}{\partial s_i}
-> \frac{\partial r_i}{\partial s_i}$;
+> \frac{\partial r_i}{\partial s_i} > 0$;
 
-(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
-\end{corollary*}
+%(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
+\end{prop*}
+
+Before the proof of this corollary,  two lemmas which are useful later is given and proved first.
+\begin{lemma*}
+  (u)For the $v$, $s$ described in the main proposition, when $s= s'$, a good $k$ will be allocated to agent $i$ in a maximizing scheme, then when $s_i > s_i'$ and $s_{-i}=s_{-i}'$, the good $k$ will also be allocated to agent $i$ in the maximizing schemes. 
+\end{lemma*}
+\begin{proof}
+  Notice that $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$;for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$.
+
+  Now Suppose when $s= s'$, a good $k$ will be allocated to agent $i$ in the maximizing scheme, but contrary to lemma(u)'s assertion, for some $s_i > s_i'$ and $s_{-i}=s_{-i}'$,  no good is allocated to agent $i$ or a good $q \not= k$ is allocated to agent $i$ in a maximizing scheme. Let $x'$ denote the value maximizing allocation scheme when $s=s'$ and $k$ is allocated to agent $i$, $x$ denote the value maximizing allocation scheme when $s_i>s_i'$, $s_{-i}=s_{-i}$ and a good $q \not= k$ is allocated to agent $i$. We must have $\sum x_{ij}v_{ij}(s_i,s_{-i}) \geq \sum x_{ij}'v_{ij}(s_i,s_{-i})$,  
+\end{proof}
+
+\begin{lemma*}
+  (d)For the $v$, $s$ described in the main proposition, when $s= s'$, no good will be allocated to agent $i$ in a maximizing scheme, then when $s_i < s_i'$ and $s_{-i}=s_{-i}'$, it is also the case that no good will be allocated to agent $i$ in the maximizing schemes. 
+\end{lemma*}
+
+
+
+  
+
 
 \begin{proof}
- We only need to show that
+  We only need to show that the assumptions imply Condition $\rho$, which is also listed here for ease of reading
+  Condition $\rho$:
+
+$\forall i,\forall s_{-i}, \exists s_i^* ,k \in \{1,\cdots,n\}, such\ that $
+
+To maximize  $\sum_{ij}x_{ij}v_{ij}(s)$,
+
+if $s_i = s_i^*$, agent $i$ will be given the certain good $k$ or have no good allocated in all the maximizing allocation schemes.
+
+if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no good allocated in all the maximizing allocation schemes.
+
+if $v_{ik}(s_i) > v_{ik}(s_i^*)$, agent $i$ will be given the certain good $k$ in all the maximizing allocation schemes.
+
+% (iii)implies that $k$, $s_i^*$ exist for every $s_{-i}$
+To verify Condition $\rho$, we have to find $s_i^*$, $k$ for each $s_{-i}$.
+Case (a):Given $s_{-i}$ , suppose a good $k$ must always be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$,  then the $s_i^*$ is chosen to be $-\epsilon$, where $epsilon$ is a small positive number.%\footnote{$epsilon$ should be chosen small enough so that $v_{ik}(-\epsilon, s_{-i})
+
+Case (b):Given $s_{-i} $, suppose no good will be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$, then the $s_i^*$ is chosen to be $+\infty$, and $k$ can be chosen arbitrarily for it is not relevant in this case;
+In the above two cases, Condition $\rho$ hold trivially as can be easily verified. The last case is more complex:
+Given $s_{-i}$, for some $s_i \in [0,+\infty)$ no good will be allocated to agent $i$ in the maximizing scheme, and for other $s_i \in [0,+\infty)$ some good will be allocated to agent $i$ in the maximizing scheme._
+
  
+
+
 \end{proof}
