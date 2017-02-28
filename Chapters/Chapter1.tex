@@ -66,23 +66,16 @@ theory. \parencite{Liang2010} has done a survey of this field
 .  The present paper is not another attempt to summarize the
 implementation theory of mechanism design, but uses it as  a central tool for formalizing ideas
 in this paper. This paper aims  to analyze some
-common economic mechanisms for situations where information  is not
+economic mechanisms for situations where information  is not
 fully known to the social planner. In the process, the author creates some new
 concepts which the author thought is necessary. However, a little
 background of the mechanism design theory is needed. This is what the next
 section is about.
 
-\section{A survey of the literatures}
+\section{A survey of the background}
 
 A formal study of the informational requirements and informational optimality of resource
-allocation processes was initiated by Hurwicz (1960). The interest in such a study was greatly
-stimulated by the socialist controversy  the debate over the feasibility of central planning
-between Mises-Hayek and Lange-Lerner (von Hayek, 1935, 1945; Lange, 1936-7, 1944; Lerner,
-1944). In the Mises-Hayek-Lange-Lerner debate, the marginal cost pricing doctrine was proposed
-in response to Mises-Hayek's criticism of a socialist system's information problem, a centrally
-planned system has to use immense information (infinite dimension of message space) to make
-2
-production decisions.  In line with the prevailing tradition, interest in this area was focused
+allocation processes was initiated by Hurwicz (1960).  In line with the prevailing tradition, interest in this area was focused
 on the design of Pareto-satisfactory (non-wasteful) and privacy-preserving mechanisms, i.e.,
 mechanisms that result in Pareto efficient allocations and use informationally decentralized
 decision making processes.  Allocative efficiency and informational efficiency are two highly
@@ -108,18 +101,10 @@ space in which communication takes place, rules by which the agents form message
 outcome function which translates messages into outcomes (allocations of resources). Mecha-
 nisms are imagined to operate iteratively. Attention, however, may be focused on mechanisms
 that have stationary or equilibrium messages for each possible economic environment. A mecha-
-nism realizes a prespeciØed welfare criterion (also called performance, social choice rule, or social
+nism realizes a prespecified welfare criterion (also called performance, social choice rule, or social
 choice correspondence) if the outcomes given by the outcome function agree with the welfare
-criterion of the stationary messages. The realization theory studies the question of how much
-communication must be provided to realize a given performance, or more precisely, the minimal
-informational cost of operating a given performance in terms of the size of the message space.
-It determines which economic system or social choice rule is informationally the most efficient
-in the sense that the minimal informational cost is used to operate the system.
-\parencite{Gibbard1973 }
-and \parencite{Satterthwaite1975} proved a very important theorem:If
-the assignment results has at least 3 alterna-
-tives, a social choice function which is strongly individually incentive compatible and
-defined on a unrestricted domain is dictatorial.
+criterion of the stationary messages. 
+
 \section{General model framework}
  In this section, we give the framework of analysis which will
  reappear many times later in the paper with slightly different
@@ -322,17 +307,15 @@ equilibrium $b$, if for all $e \in E$, we have $h(b(e,\Gamma)) = F(e)$.
 
 
 
-The above five-component framework covers  the messaging
+The above five-component framework covers both the literature review of chapter 2 as well as the messaging
 mechanisms of auction and matching we will later discussed in-depth in
-Chapter2 and Chapter3.The above five-component framework covers  the messaging
-mechanisms of auction and matching we will later discussed in-depth in
-Chapter2 and Chapter3.
+Chapter3 and Chapter4.
 
 For these kind of mesaging mechanism, there is a very famous
 theorem called revelation principle. I will give here its definition
-and proof.
+and the proof is given in Appendix \ref{Appendix_A}.
 
-\begin{thm}
+\begin{thm*}
 revelation principle:
 
 if a Mechanism $\langle M, h\rangle$ implements the social criteria 
@@ -341,56 +324,9 @@ equilibrium. Then there is a direct revelation mechanism which
 implements $F$ truthfully in dominant strategy equilibrium(truth
 telling is a dominant strategy equilibrium). 
 
-\end{thm}
-\begin{proof}
- Since $F$ can be implemented in dominant strategies by  $\langle M, h\rangle$, there is a profile of strategies $(\sigma^1,\cdots,
- \sigma^n)\in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$
- that forms an dominant strategy  equilibrium in the game induced by $\langle M, h\rangle$. Thus, for
- all $e=(e^1, \cdots,e^n)\in E=E_1\times \cdots\times E_n$, we have
- $$h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
- Furthermore, implementability in dominant strategies means that  in
- the mechanism $\langle M, h\rangle$, for
- all $i\in N$, $e\in E$, and any  strategy profile
- $\rho=(\rho^1,\cdots,\rho^n) in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$,
- \begin{align}\label{domi}
- h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n)) \succeq_{e_i} h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))
- \end{align}
-Consider the following direct mechanism $(E_1\times\cdots\times E_n, g)$ where for all $(e_1,\cdots,e_n)\in E_1\times\cdots\times E_n$,
-$$g(e_1,\cdots,e_n)=h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
-It suffices to show that in the game induced by
-$(E_1\times\cdots\times E_n, g)$, it is a dominant strategy  for each agent 
-$i$ with type $e_i$ to report $e_i$. Suppose not. Then there is a
-profile $e=(e_1,\cdots, e'_i, \cdots, e_n)\in E_1\times\cdots \times
-E_i \times \cdots \times E_n$ and an
-agent $i\in N$ and another type $e'_i$ such that
-$$g(e_1, \cdots, e'_i, \cdots, e_n) \succ_{e_i} g(e)$$
-$$\Longleftrightarrow$$
-$$h(\sigma^1(e_1),\cdots,\sigma^i(e'_i),\cdots,\sigma^n(e_n))\succ_{e_i} h(\sigma^1(e_1),\cdots,\sigma^i(e_i),\cdots,\sigma^n(e_n))$$
-Choose  $\rho=(\rho^1,\cdots,\rho^i,\cdots,
- \rho^n)\in (E_1\mapsto M_1)\times \cdots\times (E_i\mapsto M_i)
- \times \cdots\times (E_n\mapsto M_n)$ such that
- $\rho^j(e_j)=\sigma^j(e_j)$ for every $j \in N, j\not = i$ and $\rho^i(e_i)=\sigma^i(e'_i)$. Then, the last inequality can be rewritten as
-$$h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))\succ_{e_i}h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n))$$
-which contradicts inequality \ref{domi}.
- \end{proof}
+\end{thm*}
 
-The final two chapters talk about mechanism design or relevant fields. 
-
-Chapter 4 and Chapter 5 will be with 
-In chapter 4, I would like to talk about constrained mechanism
-design where the designed mechanism must satisfy some prescribed requirement.
-In chapter 5,  we give some alternative ways of collecting information
-for the social planner other than mechanism design as a remind that
-there is more than one way to do it. And it  should be the social
-planner's responsibility to choose the most suitable way. we will be more concerned with the economic agents'
-features and give
-some behavioral economics discussion which may help social planner to
-better know the economic agents and design suitable mechanisms. Here
-unlike messaging mechanism design, we would like to collect
-information that is shown in agents' everyday decesion making, and in
-experimental economic laboratory.
- 
-
+The importance of revelation principle lies in the fact that it narrowes the search space for an implementation mechanism to a special kind of mechanism. This makes the finding of a mechanism implementing some social goal more easily or give a method of proving the nonexistence of such mechanism in general by just proving the unavailability of such mechanism for the revelation games.
 
 \section{Mechanisms we will discuss}
 
@@ -398,8 +334,16 @@ In this section, I would like to talk about the scope of my
 thesis. The main focus will be around mechanisms for dealing with
 decentralized information problem. The last chapter is a diversion to
 some
-mechanisms that are designed for special purpose and under special requirements.
+mechanisms that are designed for special purpose and under special requirements.4 chapters follow this introductory one.
 
+ Chapter 2 is a review of important results in literatures that influence this paper most, especially those
+impossibility results. These results establish the impossibility of implementability with most general conditions. And this lead us to put effort in the consideration of more specific environments and conditions. The chapter concludes with an example of this kind of analysis in an environment with more assumptions.
+
+Chapter 3 is a whole chapter devoted to the study of ex post implementation of socially efficient allocation goal through money transfer under the interdependent value environment. Both continuous and discrete cases are considered. A sufficient condition called Condtion $\rho$ for ex post implementation with interdependent values via money transfer is given for the multiple goods assignment problem with interdependent information as an attempt to contribute to the field. 
+
+Chapter 4 is devoted to a discussion of matching mechanisms design. Then the focus of attention is turned on an application of the theory to the Chinese college admission mechanism. A few derived propositions show that the score-dictating mechanism is perhaps the best choice among three popular mechanisms.
+
+Chapter 5 is a chapter reflecting upon a special class of mechanisms in which the implementation goal is not preset. It is up to the agents to show their techniques to compete in these mechanism to win . Focus is put upon finite dynamic games with perfect information with chess as a model for the convenience of discussion.
 
 
 

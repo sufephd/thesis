@@ -1,6 +1,6 @@
 %Chapter 3
 
-\chapter{Expost implementation in economies with  interdependent valuations}  % Main chapter title
+\chapter{Expost implementation in economies with  interdependent values}  % Main chapter title
 
 \label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter2} 
 
@@ -422,7 +422,7 @@ The next section will be with multiple goods, and there we will provide a suffic
 \subsection{Allocation of multiple goods}
 \label{sec:allocation_of_multiple_goods}
 
-Now we extend the previous result to the allocation of multiple goods.  The problem is actually the assignment model with a special kind of interdependency. \footnote{For the private value assignment problem, the knowledge of which may help the understanding of this section, see Chapter 8 \parencite{Roth1990}for reference.}
+For allocation of multiple goods under interdependent value environment, not much has been done to our knowledge. \parencite{Che2015} involve assigning indivisible objects to individuals without monetary transfer under interdependent values setting. Now in this subsection we extend the previous result to the allocation of multiple goods with money transfer under interdependent value environment.  The problem we'll consider is actually the assignment model with a special kind of interdependency. \footnote{For the private value assignment problem, the knowledge of which may help the understanding of this section, see Chapter 8 \parencite{Roth1990}for reference.} 
 
 Suppose that there are $m$ agents and $n$ goods such that $m > n$. Each agent can get at most one object.   Agent $i$'s valuations of the n goods is given by $(v_{i1}(s),v_{i2}(s),...,v_{in}(s))$ respectively, where $s=(s_1,s_2,...,s_m)$ is a vector of signals held privately by agent $1$,agent $2$,..., agent $m$ respectively. Allocation result is a $m \times n$matrix $X$ where $\sum_{i\in\{1,...,m\}}x_{ij} \leq 1\ for\ all\ j$ and  $\sum_{j\in\{1,...,n\}}x_{ij} \leq 1\ for\ all\ i$. The social goal is to allocate the goods to maximize the social efficiency $\sum_{ij}x_{ij}v_{ij}(s)$.
 
@@ -430,21 +430,21 @@ This problem is generally not ex post implementable. However, we find under the 
 
 Condition $\rho$:
 
-$\forall i,\forall s_{-i}, \exists s_i^*,k \in \{1,\cdots,n\}, such\ that $
+$\forall i,\forall s_{-i}, \exists s_i^*,for all k \in \{1,\cdots,n\}, such\ that $
 
-To maximize  $\sum_{ij}x_{ij}v_{ij}(s)$,
+From the maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$, one can designate an allocation scheme, such that
 
-if $s_i = s_i^*$, agent $i$ will be given the certain good $k$ or have no good allocated in all the maximizing allocation schemes.
+%if $s_i = s_i^*$, agent $i$ will be given the certain good $k$ or have no good allocated in a value maximizing allocation schemes.
 
-if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no good allocated in all the maximizing allocation schemes.
+if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no probability to be allocated the good $k$. %in all the maximizing allocation schemes.
 
-if $v_{ik}(s_i) > v_{ik}(s_i^*)$, agent $i$ will be given the certain good $k$ in all the maximizing allocation schemes.
+if $v_{ik}(s_i) > v_{ik}(s_i^*)$, agent $i$ will have a probability to be allocated the certain good $k$ and charged $ v_{ik}(s_i^*)$. However, the probability does not depend on $s_i$. % in all the maximizing allocation schemes.
 
 
 \begin{proof}
-The proof is through  constructing the needed mechanism and then examining how the mechanism works in all possible situations.
-We only need to find an appropriate mechanism to implement it. Now we give it as follows and then prove it can indeed
- implement the social goal of efficiency.
+  The proof is through  constructing the needed mechanism and then examining how the mechanism works in all possible situations.
+  
+We first need to find an appropriate mechanism. Now we give it as follows and then prove it can indeed implement the social goal of efficiency.
  
  Step 1. Every agent reports a $(v,s_i)$ from the set $V\times S_i$.\footnote{Here $v$ is the matrix
    \begin{matrix}
@@ -457,38 +457,27 @@ We only need to find an appropriate mechanism to implement it. Now we give it as
  
  Step 2. If the $v$ reported by every agent has some disagreement, then the result is that no body gets any good.
  
- Step 3. If the $v$ reported by every agent is the same, randomly pick an integer solution matrix $x$ of  the assignment maximization problem \footnote{By Dantzig's linear programming theory, such a solution exists.} 
- $$\max_{i,j}x_{ij}v_{ij}(s)$$
- s.t.
- $$\sum_i x_{ij} \leq 1\ for\ all\ j $$
- $$\sum_j x_{ij} \leq 1\ for\ all\ i $$
- $$x_{ij} \geq 0\ for\ all\ i,j $$
-
- Then assign the goods according to the matrix $x$ such that if $x_{ij}=1$, agent $i$ is assigned good $j$, and $i$ is
- charged $v_{ij}(s_i^*(s_{-i}), s_{-i})$.
+ Step 3. If the $v$ reported by every agent is the same, then to allocate the goods, choose the social value maximizing allocation scheme designated in Condition $\rho$ which satisfy the additional two assumptions in it.
+ 
+ 
+ 
  
 Explanation of this mechanism being able to induce truthful revelation of every agent's private signal is not
 difficult with the help of case analysis for all possibilities.
 
-Devide the actually received signal $s_i$ into three cases:
+For any $k$, devide the actually received signal $s_i$ into three cases:
 
 (i)When $v_{ik}(s_i, s_{-i})> v_{ik}(s_i^*, s_{-i})$, given others
 truthfully revealing their private signals $s_{-i}$, the agent i
-wishes to be assigned good $k$ otherwise he will be assigned
-nothing. Truthful revelation of $i$'s private signal is enough to
-insure the assignment of $k$ to $i$, since according to Condition
-$\rho$, $k$ will be allocated to $i$ in all the social value
-maximizing schemes which will be enforced by the mechanism. Therefore
+wishes to be assigned good $k$ to gain $v_{ik}(s_i, s_{-i})- v_{ik}(s_i^*, s_{-i})$ surplus. Truthful revelation of $i$'s private signal gives $i$ a probability of the assignment of $k$ to $i$, since $s_i$ will not influence this probability,
 truthful revelation of the signal $s_i$ in this case is incentive
-compatible.
+compatible.\footnote{Not influencing probability is important, because if not, agent $i$ would have incentive to manipulate the probability by report a false $s_i$.}
 
 (ii)When $v_{ik}(s_i, s_{-i})< v_{ik}(s_i^*, s_{-i})$, given others
-truthfully revealing their private signals $s_{-i}$, the agent i's
-best choice is to be allocated nothing and pay nothing. Truthful
+truthfully revealing their private signals $s_{-i}$, the agent i wishes not to be allocated the good and being charged
+$v_{ik}(s_i, s_{-i})< v_{ik}(s_i^*, s_{-i})$. Truthful
 revelation of $i$'s private signal $s_i$ is enough to insure that he
-is allocated nothing, since according to Condition $\rho$, nothing
-will be allocated to $i$ in all the social value maximizing schemes
-which will be enforced by the mechanism. Therefore truthful revelation
+is not allocated good $k$ by Condition $\rho$.  truthful revelation
 of the signal $s_i$ in this case is also incentive compatible.
 
 (iii)When $v_{ik}(s_i, s_{-i}) = v_{ik}(s_i^*, s_{-i})$, given others
@@ -496,6 +485,8 @@ truthfully revealing their private signals $s_{-i}$, winning or losing
 the assignment of good $k$ has the same net value of 0. Therefore
 truthful revelation of the signal $s_i$ in this case is incentive
 compatible trivially.
+
+Therefore, truthful revelation is incentive compatible overall for this mechanism.
 
 \end{proof}
 
@@ -525,21 +516,14 @@ The intuition of these assumptions implying Condition $\rho$ is that
 the own effect of a signal $s_i$ is larger than its effect to the rest
 of the agents. And therefore there exists a threshold $s_i^*$ as
 required by Condition $\rho$ for agent $i$ to get into the group of
-good winners. As for the fixedness of the good $k$ won by agent $i$,
+good winners. As for the fixedness of the good winning probability by agent $i$,
 it's in part due to the fact that as $s_i$ increases, the increasing
 rate of $v_{ik}$ is at least as large as any other $v_{ab}$, where
-$ab$ stands for arbitarty agent and good combination not equal to
+$ab$ stands for arbitrary agent and good combination not equal to
 $ik$. The formal proof can be seen in Appendix \ref{Appendix_B}
 
 
 
-
-
-\begin{comment}
-\parencite{Jacques88} has characterized
-auctions for a single indivisible object in the case where the
-bidders have information about each other which is not available to the seller, and the seller can get full extraction of the surplus in bayesian and dominant strategy auctions. 
-\end{comment}
 
 
 

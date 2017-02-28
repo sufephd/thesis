@@ -1,16 +1,59 @@
 % Appendix A
 
-\chapter{Appendix A: revelation principles} % Main appendix title
+\chapter{revelation principles} % Main appendix title
 
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
-\begin{prop}
+\label{Appendix_A} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\begin{thm*}
+revelation principle:
+
+if a Mechanism $\langle M, h\rangle$ implements the social criteria 
+$F$ in dominant strategy
+equilibrium. Then there is a direct revelation mechanism which
+implements $F$ truthfully in dominant strategy equilibrium(truth
+telling is a dominant strategy equilibrium). 
+
+\end{thm*}
+\begin{proof}
+ Since $F$ can be implemented in dominant strategies by  $\langle M, h\rangle$, there is a profile of strategies $(\sigma^1,\cdots,
+ \sigma^n)\in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$
+ that forms an dominant strategy  equilibrium in the game induced by $\langle M, h\rangle$. Thus, for
+ all $e=(e^1, \cdots,e^n)\in E=E_1\times \cdots\times E_n$, we have
+ $$h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
+ Furthermore, implementability in dominant strategies means that  in
+ the mechanism $\langle M, h\rangle$, for
+ all $i\in N$, $e\in E$, and any  strategy profile
+ $\rho=(\rho^1,\cdots,\rho^n) in (E_1\mapsto M_1)\times \cdots\times (E_n\mapsto M_n)$,
+ \begin{align}\label{domi}
+ h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n)) \succeq_{e_i} h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))
+ \end{align}
+Consider the following direct mechanism $(E_1\times\cdots\times E_n, g)$ where for all $(e_1,\cdots,e_n)\in E_1\times\cdots\times E_n$,
+$$g(e_1,\cdots,e_n)=h(\sigma^1(e_1),\cdots,\sigma^n(e_n))\in F(e_1,\cdots,e_n)$$
+It suffices to show that in the game induced by
+$(E_1\times\cdots\times E_n, g)$, it is a dominant strategy  for each agent 
+$i$ with type $e_i$ to report $e_i$. Suppose not. Then there is a
+profile $e=(e_1,\cdots, e'_i, \cdots, e_n)\in E_1\times\cdots \times
+E_i \times \cdots \times E_n$ and an
+agent $i\in N$ and another type $e'_i$ such that
+$$g(e_1, \cdots, e'_i, \cdots, e_n) \succ_{e_i} g(e)$$
+$$\Longleftrightarrow$$
+$$h(\sigma^1(e_1),\cdots,\sigma^i(e'_i),\cdots,\sigma^n(e_n))\succ_{e_i} h(\sigma^1(e_1),\cdots,\sigma^i(e_i),\cdots,\sigma^n(e_n))$$
+Choose  $\rho=(\rho^1,\cdots,\rho^i,\cdots,
+ \rho^n)\in (E_1\mapsto M_1)\times \cdots\times (E_i\mapsto M_i)
+ \times \cdots\times (E_n\mapsto M_n)$ such that
+ $\rho^j(e_j)=\sigma^j(e_j)$ for every $j \in N, j\not = i$ and $\rho^i(e_i)=\sigma^i(e'_i)$. Then, the last inequality can be rewritten as
+$$h(\rho^1(e_1),\cdots,\rho^i(e_i),\cdots,\rho^n(e_n))\succ_{e_i}h(\rho^1(e_1),\cdots,\sigma^i(e_i),\cdots,\rho^n(e_n))$$
+which contradicts inequality \ref{domi}.
+ \end{proof}
+
+\begin{prop*}
 revelation principle in an interdependent value environment:
 
 if a Mechanism $\langle M, h\rangle$ implements the social choice rule $F$ in ex post 
 equilibrium. Then there is a direct revelation mechanism which implements $F$ truthfully in ex post equilibrium(truth telling is a ex
 post equilibrium). 
 
-\end{prop}
+\end{prop*}
 \begin{proof}
  Since $F$ can be implemented in ex post strategies by  $\langle M, h\rangle$, there is a profile of strategies $(\sigma^1,\cdots,
  \sigma^n)\in (S_1\mapsto M_1)\times \cdots\times (S_n\mapsto M_n)$ that forms an ex post equilibrium in the game induced by $\langle M, h\rangle$. Thus, for
