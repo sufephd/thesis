@@ -15,7 +15,7 @@
 
 
 \section{Introduction}
- We try to characterize truthful implementation in ex post equilibrium in this Chapter.  Due to "Wilson criterion", ex post equilibrium 
+ We try to characterize truthful implementation in ex post equilibrium in this Chapter.  Ex post equilibrium 
  is a good equilibrium in implementation theory for its distribution free property. A large body of literature has been devoted to 
  many aspects of ex post implementation. 
 
@@ -24,59 +24,62 @@
  As is pointed out in \parencite{Postlewaite2014}, it is often the case that truthful revelation is not ex post incentive compatible, that is, for a given 
  agent, there are some profiles of the other agents' types for which the agent may be better off by misreporting his type than by 
  truthfully revealing it. However, with the help of money transfer, the authors in \parencite{Maskin00} devised an complicated yet ingenious 
- auction mechanism to Nash implement a rather general kind of allocation problems in interdependent value context. It is obvious 
+ auction mechanism to Nash implement a class of allocation problems in interdependent value context. It is obvious 
  that money transfer is one key for implementation. 
- In this chapter, we provide a sufficient and necessary condition for truthful implementation with money transfer. VCG mechanisms in 
- private value context and all its generalized forms in interdependent value context have all successfully find a suitable
- money transfer scheme for specific economic environments. We would like to show the subtlety of those ingenious mechanisms in 
- implementing social goal within our paper's model framework, and how their implemented social goals have satisfied the sufficient and 
- necessary condition.
+VCG mechanisms and its extensions are successful mechanisms for dominant strategy implementation in private value context. For interdependent value framework, however
  Here, for a certain but not rare kind of setting, we propose a simple Generalized Vickery mechanism which can easily make the buyers
  reveal their private information truthfully through the help of money transfer. Of course, the Generalized Vickery mechanism is not 
  balanced scheme. Nevertheless, the ability of the mechanism to make people tell truthfully about their private information is a sign of 
  its power.   
- For the common knowledge part of agents, we make the agents tell truth in Nash equilibrium using insights got from the paper
- \parencite{Repullo90}.
+
+  We would like to show the subtlety of those ingenious mechanisms in 
+ implementing social goal within our paper's model framework, and how their implemented social goals have satisfied the sufficient and 
+ necessary condition.
+
+  
  
  In private value settings, ex post equilibrium is equivalent to dominant strategy
  equilibrium. Thus the well-known VCG mechanism is the ideal mechanism for ex post implementation in private value case. What we care
- most in this paper is the interdependent value setting. We also assume quasilinear utility for the agents, which is a common 
+ most in this chapter is the interdependent value setting. We also assume quasilinear utility for the agents, which is a common 
  assumption. 
 In \parencite{BergemannM08}, the authors focus on identifying conditions for full implementation
  of a social choice set in ex post equilibrium. They stressed that a conceptual advantage of ex post equilibrium is its 
  robustness to the informational assumptions about the environment. \parencite{Maskin00} proposed an indirect bidding mechanism which
  give ex post partial implementation of the socially efficient outcome.
-   An important contribution of \parencite{Maskin00} is that a mechanism for allocating  multiple heterogeneous goods is 
+   Another important contribution of \parencite{Maskin00} is that a mechanism for allocating  multiple heterogeneous goods is 
  provided. \parencite{Perry2002} devised another clever mechanism for this case. Their methods consists of a collection of second-price 
  auctions between each pair of bidders conducted over at most two rounds of bidding. Unlike them, in this paper we do not consider 
- full implementation, and for partial implementation we focus on direct revelation mechanism. we use the direct mechanism and get 
+ full implementation, and for partial implementation we focus on direct revelation mechanism. we use the direct mechanism and manage 
  to cover some more situations that are not implementable using the indirect bidding mechanism in \parencite{Maskin00}.
  We restrict out attention to the conditions garanteeing that truthful revelation of one's own private signal constitutes an ex post 
  equilibrium in some carefully designed direct revelation mechanism. That is, we focus on incentive compatibility of truthful
- information revelation in direct mechanism. Partial implementation is enough in this paper. In such direct mechanisms,
+ information revelation in direct mechanism. Partial implementation is emploed in this paper and henceforth just called implementation.
+ In such direct mechanisms,
  a well devised payment rule is of key importance. \parencite{Ausubel99} provides a payment scheme in its generalized Vickery Auction
  mechanism, which under some conditions achieves the task of implementing social efficiency in ex post equilibrium. 
- \parencite{Jehiel2001} takes into consideration discreet social choice possibilities. 
+ \parencite{Jehiel2001} considered efficient, Bayes-Nash incentive compatible mechanisms in a social choice setting that allows for informational and allocative externalities(i.e. interdependence exists). They then apply the results to the study of multi-object auctions. We also consider a multi-goods case, but different from their settings in that, each buyer wants one good at most, which are better known as assignment problem in matching theory literature\parencite{Roth1990}. We are also quite different from the matching literature in that we are considering implementation with interdependent values for this problem.
+
+ \parencite{Ely2006} is a work about ex post implementation. However, we provide different formulations which is easier to grasp and applied to different problems.
  
- In this paper, we would like to also investigate the continuous
+ we first investigate the continuous
  cases of interdependent value,  including allocation of continuous resources and efficient provision of continuous public goods. 
  For example, in a room of dancers, a volume must be chosen for the music so that it can provide the best social efficiency. Each person
  has a valuation function of the form 
  $$u_i= v_i(volume) + \alpha_i\sum_{j\neq i}v_j(volume)$$
- Here, the $\alpha_i$ is the altruist coefficient of agent $i$. We will see how to implement social efficiency in this case later in
- the paper. \parencite{Ely2006} is a work dedicated to similar problems. We are going to mention it when we draw on some of their results
+ Here, the $\alpha_i$ is the altruist coefficient of agent $i$ , which are known by social planner, only each $v_i()$ is private information. We will see how to implement social efficiency in this case later in the paper. 
  later.
 
 
  
- Our intuition is mainly taken from \parencite{Maskin00} Vickery Mechanism and auction theory. 
+ %Our intuition is mainly taken from \parencite{Maskin00} Vickery Mechanism and auction theory. 
 Simpleness often means less mistakes. Also, a simple mechanism is  easy to supervise. For an outsider, it is not easy to judge who should win the goods in a very complicated mechanism
-, so a corrupted social planner might manipulate the result. That is one motivation for us to construct a direct revelation
+, so a corrupted social planner might manipulate the result. That is one motivation for us to construct a direct revelation mechanism.
 
-In interdependent value settings, a winner often suffers from winners' curse. In this paper, we first introduce the notion and model
-of interdependent value goods, then for some kind of setting, we find a unique expost Implementation of 
-the socially efficient results. Finally, we find an application of the model in the mineral rights assignment problem by aggregating
-signals in the designed market.
+% In interdependent value settings, a winner often suffers from winners' curse.
+%In the following, we first introduce the notion and model
+%of interdependent value goods, then for some kind of setting, we find a unique expost Implementation of 
+%the socially efficient results. Finally, we find an application of the model in the mineral rights assignment problem by aggregating
+%signals in the designed market.
 
 
 
@@ -165,15 +168,15 @@ correspondence $F$ on $E$ if it implements $F$ in some kind of equilibrium on $E
 
 
 
-\section{The sufficient and necessary condition for implementation with money transfer}
+\section{General conditions for implementation with money transfer}
 
 
 
 Obviously, for a direct revelation mechanism to implement the social efficiency, every agent must tell truth. 
 
 
-We assume outside choice is $a_0$, and $v_i(a_0,s)=v_i(a_0,s_{-i})$, that is, the agent $i$'s value of the outside choice does not
-depend on $s_i$.
+%We assume outside choice is $a_0$, and $v_i(a_0,s)=v_i(a_0,s_{-i})$, that is, the agent $i$'s value of the outside choice does not
+%depend on $s_i$.
 \begin{thm} \label{thm}
 The social goal of maximizing $\Sigma v_i(a, s)$ can be partially implemented in ex post equilibrium with money transfer if and only if there is a transfer scheme $t(s)$(taken as a tax from agent to the social planner), such that for 
 the chosen $a(s)$ maximizing $\Sigma v_i(a, s)$ the following formula holds for all $i$ , $s$ and $s'_i$
@@ -184,11 +187,10 @@ the chosen $a(s)$ maximizing $\Sigma v_i(a, s)$ the following formula holds for 
 Just use the $t(s)$ as a taxation and according to the definition of ex post equilibrium,  tell truth about one's private signal is an ex post equilibrium.
 
 \end{proof}
-
-In order to facilitate the proof, we give the following fundamental theorem of this paper.
-It is roughly saying that the value sum of you pretending another type(who have different value when truth telling)
-and that type pretending you is less than the value sum of 
-you and that type truthfully report your types.
+The following single crossing condition is a necessary condition of ex post implementation.
+It is roughly saying that the value sum of your current type pretending another type(who have different value when truth telling)
+and that type pretending your current type is less than the value sum of 
+you truthfully report your current type and that other type.
 
 \begin{prop}[single crossing condition]\label{prop}
 A social goal of efficiency $G$ can be ex post implememted on $E$  by some mechanism only if $\forall s, \forall v, \forall i$, when 
@@ -202,7 +204,7 @@ v_i(a(s'),s)-v_i(a(s), s)<v_i(a(s'),s')-v_i(a(s), s')
 \end{prop}
 
 \begin{proof}
-By the necessary and sufficient condition\ref{thm}, there must be a $t(\cdot)$ such that
+By the necessary and sufficient condition \ref{thm}, there must be a $t(\cdot)$ such that
 
 \[v_i(a(s), s) - t(s) \geq v_i(a(s'), s) - t(s') \]
 
@@ -216,29 +218,45 @@ Add the above two inequality together and exchange some terms from both sides, t
 \end{proof}
 
 
-\section{Continuous cases}
-Let us begin with some examples
+\section{Continuous social goals}
+Let us discuss with some examples
 \begin{example}
  Consider there are two chess players living $L$ miles apart from each other along a road in a city. They drive their cars to meet
- each other every sunday to play chess face to face, and then go back home. Suppose that they can choose anywhere on the road to meet.
+ each other every sunday to play chess face to face, and then go back home. Suppose that they can choose anywhere on the road to meet. Let
+ $c_i()$ be the gasoline cost function. 
 The city governer tries to assign a meeting place minimizing the pollution of their car causing to the city, so he wants to
-chose a meeting spot to minimize $c_il_i+c_j(L-l_i)$. They all care about the 
- pollution but they also care about their oil expenditure, player i wants to minimize $v_i= c_il_i+ \alpha(c_il_i+c_j(L-l_i))$. What
+chose a meeting spot to minimize $c_i(l_i)+c_j(L-l_i)$. The two chess players all care about the 
+pollution but they also care about their oil expenditure, player i wants to minimize the detriment $d_i= c_i(l_i)+ \alpha(c_i(l_i)+c_j(L-l_i))$, where $\alpha$
+is a known parameter. What
  is the transfer scheme that can make the two players telling truth about their private $c_i$ an ex post equilibrium.
 \end{example}
-when extending the two player game of chess to four player game like bridge, and the four people meet each other,
-it is more complicated. 
+Though it is artificially made, it is indeed interesting to see that there is a tax scheme to accomplish truthful revelation in ex post equilibrium.
+That taxation method is to tax agent $t_i= c_j(L-l_i)$ and tax agent $t_j= c_i(l_i)$.
+
+when extending the two player game of chess to four player game like mahjong, let the four people report their gasoline cost function, the governor choose their play site,
+it is also easy to let them tell truth in ex post equilibrium with a well designed taxation. That taxation scheme is
+$$t_i= \frac{1}{2} \sum_{j\not = i}c_j(l_j) - \frac{1}{2} c_i(l_i)$$
 \begin{example}
- $n$ firms at $n$ corners of a regular n polygon area transporting their produced goods to a city for sale.
+ $n$($n \geq 3$) vegetable firms at $n$ corners of a regular n polygon area transporting their produced goods to a city for sale.
 The city planner tries to build the city in a place such that it can minimize the pollution caused by transportation of the goods, 
-and the firms cares about its own transportation cost as well as the total pollution(the reason why a firm care about pollution
-may be that the goods are vegetables and pollution can hurt the production). The oil consumption and thus pollution caused 
-by a given amount of goods transportation for each firm is a private value . Each day the goods transported to the city is also
-private information for each firm. What is the taxation scheme that can make each firm report their true private information so that the city 
+and the firms cares about its own transportation cost as well as the total pollution\footnote{the reason why a firm care about pollution
+may be that the goods are vegetables and pollution can hurt the production}. The oil consumption and thus pollution caused 
+by a given amount of goods transportation for each firm is a private value . Each day the goods will be transported to the city once.
+What is the taxation scheme that can make each firm report their true private information so that the city 
 planner can choose the best place to build the city in order to reduce transporation pollution. Here the meaning of the taxation is not
 to reduce pollution directly, but to lead the firms to tell truth about their private information such that the planner can choose a
 pollution minimizing choice for building the city.
 \end{example}
+
+This is a more realistic economic problem than the previous chess and mahjong problems, and the taxation scheme to let the vegetable firms to report
+the true $c_i()$ is
+$$ t_i = \frac{1}{n-2}\sum_{j\not=i}c_j(l_j) - \frac{1}{n-2} c_i(l_i)$$
+
+\begin{remark}
+It is clear that $\sum_i t_i= \sum_i c_i$ for all the above examples. However, the appropriate formula for $n \geq 3$ is different from the appropriate formula for $n=2$. This difference between $2$ agent problem and $n \geq 3$ agent problem is very common in mechanism design literature, which suggest a separate consideration for most future study of mechanism design on $2$ agent problems and $n \geq 3$ problems.
+  
+\end{remark}
+
 
 Another economically more interesting example is as following 
 \begin{example}
@@ -304,11 +322,11 @@ $$\sum_{j=1}^{n} m_{ij}\{q_j(\cdot,s_{-i})p(q(\cdot,s_{-i}))-c(q_j(\cdot,s_{-i})
 
 For this continuously differentiable situation, the private value case of the problem always has the unique solution, the uniqueness
 has been shown by the above more general result. And the unique mechanism is the well-known VCG mechanism. This has been shown by
-Laffont and Maskin(Econometrica, 1980). Tian
+Laffont and Maskin(Econometrica, 1980). 
 
-And for private value case, 
-ex post implementation is indeed dominant strategy implementation. A specialness of the private value situation is that the calculated
-VCG money transfer mechanism can always satisfy the additional requirement for implementability. We will show why now. 
+%And for private value case, 
+%ex post implementation is indeed dominant strategy implementation. A specialness of the private value situation is that the calculated
+%VCG money transfer mechanism can always satisfy the additional requirement for implementability. We will show why now. 
 \section{Discrete social goal}
 The discrete social choice possibility set $A$ does not allow differential analysis like we do above in the continuous social choice
 possibility set case. However, the allocation of discrete social resources, or the determination of whether a project should be carried
@@ -520,7 +538,7 @@ good winners. As for the fixedness of the good winning probability by agent $i$,
 it's in part due to the fact that as $s_i$ increases, the increasing
 rate of $v_{ik}$ is at least as large as any other $v_{ab}$, where
 $ab$ stands for arbitrary agent and good combination not equal to
-$ik$. The formal proof can be seen in Appendix \ref{Appendix_B}
+$ik$. The formal proof can be seen in Appendix \ref{Appendix_C}
 
 
 

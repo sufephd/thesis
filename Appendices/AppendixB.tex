@@ -1,101 +1,211 @@
-% Appendix A
+% Appendix B
 
-\chapter{Proof of proposition \ref{rho}} % Main appendix title
+\chapter{Proofs to theorems listed in \ref{Chapter2}} % Main appendix title
 
-\label{Appendix_B} % For referencing this appendix elsewhere, use \ref{AppendixA}
-\begin{prop*}
-  The social efficient goal of $\max_{i,j}x_{ij}v_{ij}(s)$ can be ex post implemented if:
-  
-For all $i$ and $j$,
-$$v_{ij}(s)=b_{ij} + o_i(s_i) + \sum_{l \not = i} r_l(s_l) $$
-where $b_{ij}>0$ is the base value, $s_i \in [0, + \infty)$, $\forall i,o_i(0)=r_i(0)=0$
+\label{Appendix_B} % For referencing this appendix elsewhere, use \ref{Appendix_B}
 
-Further assumptions are listed below.
-
-(i)For all $i$, $\frac{\partial o_i}{\partial s_i} > 0$, $\frac{\partial r_i}{\partial s_i} > 0$;
-
-(ii) $\forall i, \frac{\partial o_i}{\partial s_i}
-> \frac{\partial r_i}{\partial s_i} > 0$;
-
-%(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
-\end{prop*}
-
-Before the proof of this proposition,  two lemmas which are useful later is given and proved first.
-\begin{lemma*}
-  (u)For the $v$, $s$ described in the main proposition, when $s= s'$, a good $k$ will be allocated to agent $i$ in a maximizing scheme, then when $s_i > s_i'$ and $s_{-i}=s_{-i}'$, the good $k$ will also be allocated to agent $i$ in the maximizing schemes. 
-\end{lemma*}
+\begin{thm*}
+(Hurwicz Impossibility Theorem) For the neoclassical pri-
+vate goods economies, there is no mechanism < M, h > that implements Pareto efficient
+and individually rational allocations in dominant strategy. Consequently, any revelation
+mechanism < M, h > that yields Pareto efficient and individually rational allocations is
+not strongly individually incentive compatible. (Truth-telling about their preferences is not
+Nash Equilibrium).
+\end{thm*}
+The proof is adapted from the original proof.
 \begin{proof}
-  Notice that $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$;for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$.
 
-  Now Suppose when $s= s'$, a good $k$ will be allocated to agent $i$ in the maximizing scheme, but contrary to lemma(u)'s assertion, for some $s_i > s_i'$ and $s_{-i}=s_{-i}'$,  no good is allocated to agent $i$ or a good $q \not= k$ is allocated to agent $i$ in a maximizing scheme. Let $x'$ denote the value maximizing allocation scheme when $s=s'$ and $k$ is allocated to agent $i$, $x$ denote the value maximizing allocation scheme when $s_i>s_i'$, $s_{-i}=s_{-i}$ and a good $q \not= k$ is allocated to agent $i$. We must have $\sum x_{ij}v_{ij}(s_i,s_{-i}) \geq \sum x_{ij}'v_{ij}(s_i,s_{-i})$,  
+By the Revelation Principle, we only need to show that any revelation mecha-
+nism cannot implement Pareto efficient and individually rational allocations truthfully
+in dominant equilibrium for a particular pure exchange economy.
+
+Then, it is enough
+to show that truth-telling is not a Nash equilibrium for any revelation mechanism that
+yields Pareto efficient and individually rational allocations for a particular pure exchange
+economy.
+
+Consider a private goods economy with two agents and  two goods. The
+endowments are 
+
+$$w_1=(2,0), w_2=(0,2).$$
+
+The utilities are
+
+$$ u_i(x,y) = \begin{cases}
+3x_i + y_i & \text{if $x_i\leq y_i$ } \\
+x_i + 3y_i & \text{if $x_i>y_i$ }
+\end{cases}$$
+
+The above things form the economic environment $e$.
+
+For the pure exchange economy, it has the following
+allocation results set 
+$$ A =\{( (x_1,y_1), (x_2,y_2))| x_1+x_2 = 2 \ and\ y_1+y_2=2 \}$$
+
+Let $U$ be the set of all neoclassical utility functions, i.e. they are continuous and quasi-
+concave, which agent i can report to the designer. Thus, the true utility function
+$u_i \in U$.
+
+Then, 
+$$ h: U\times U \rightarrow A $$
+
+Suppose that  the true utility function profile
+$u_i$ were indeed a Nash Equilibrium, it would then  satisfy
+
+\[ u_i(h(u_i, u_{-i})) \geq u_i(h(u'_i,u_{-i}))\]
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (8,8);
+\draw (0,0) -- (8,8);
+\draw (8,0) -- (2,2)--(0,8);
+\draw (8,0) -- (6,6)--(0,8);
+\draw (0,8)--(8,0);
+\node [below] at (2,2) {$a$};
+\node [right] at (6,6) {$b$};
+\node [right] at (4, 4) {$f$};
+\node [below left] at (0,0) {$O_1$};
+\node [above right] at (8,8) {$O_2$};
+
+
+\end{tikzpicture}
+
+Let us denote the individual rational allocations by $IR(e)$, the
+Pareto efficient allocations by $P(e)$, the true report allocation
+$d=h(u_i, u_{-i})$.
+
+First thing to note is that the Pareto efficient allocation results is
+all 
+on the 45 degree line. For any other point, move on to the 45 degree
+line along the shortest path( the path that is orthogonal to it) is a
+Pareto improvement. $P(e)=O_1O_2$.  
+Individual rational means that the final allocation must be at least
+as good as the endowment, so $P(e) \cap IR(e) = \overline{ab}$ .
+
+Suppose $d \in P(e) \cap IR(e)$, that is, $d \in \overline{ab}$.
+
+If agent 1 misreports his utility function :
+
+$$ u_1(x,y)=x_1 + y_1$$
+
+Then, with the misreported $u_1$ and thus the misreported $e'$, the new set of individually rational and Pareto efficient allocations is given
+by $P(e') \cap IR(e') = \overline{fb}$
+
+
+If agent 2 misreports his utility function :
+
+$$ u_2(x,y)=x_2 + y_2$$
+
+Then, with the misreported $u_2$ and thus the misreported $e''$, the new set of individually rational and Pareto efficient allocations is given
+by $P(e'') \cap IR(e'') = \overline{af}$
+
+ If the $d$ is on $\overline{af}$, agent 1 will choose to
+misreport a $u_1(x,y)=x_1 + ky_1$ where $0<k<1$. For any $d$ that is on $\overline{fb}$, agent 2 will choose to
+misreport a $u_2(x,y)=x_2 + ky_2$ where $0<k<1$. 
+
+Thus, no mechanism that yields Pareto efficient and individually rational allocations is
+incentive compatible for both sides.
+
+
 \end{proof}
 
-\begin{lemma*}
-  (d)For the $v$, $s$ described in the main proposition, when $s= s'$, no good will be allocated to agent $i$ in a maximizing scheme, then when $s_i < s_i'$ and $s_{-i}=s_{-i}'$, it is also the case that no good will be allocated to agent $i$ in the maximizing schemes. 
-\end{lemma*}
 
-
-
-  
-
+\begin{thm*}(Moor and Repullo)
+\label{mu}
+  Suppose there are three or more agents. Then a choice rule $f$ is Nash implementable if and only if it satisfies Condition $\mu$.
+\end{thm*}
 
 \begin{proof}
-  We need to show that the assumptions imply Condition $\rho$, that is, from the maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$, one can designate an allocation scheme satisfying
-  if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no probability to be allocated the good $k$. %in all the maximizing allocation schemes.
+Necessity.  There must be a range for the Nash implementing mechanism
+$\Gamma = \langle S, g\rangle$. Let it be the $B$ in condition $\mu$.
 
-  if $v_{ik}(s_i) > v_{ik}(s_i^*)$, agent $i$ will have a probability to be allocated the certain good $k$ and charged $ v_{ik}(s_i^*)$. However, the probability does not depend on $s_i$.
+\[ B\equiv \{a \in A|a=g(s)\ for\ some\ s \in S\}\]
 
-  The wanted allocation scheme under the propostion's environment: Randomly pick an integer solution matrix $x$ of  the assignment maximization problem \footnote{By Dantzig's linear programming theory, such a solution exists.} 
- $$\max_{i,j}x_{ij}v_{ij}(s)$$
- s.t.
- $$\sum_i x_{ij} \leq 1\ for\ all\ j $$
- $$\sum_j x_{ij} \leq 1\ for\ all\ i $$
- $$x_{ij} \geq 0\ for\ all\ i,j $$
+ According to full Nash implementation, $\forall  R\in\mathscr{R}, a \in f(R)$, there is a Nash equilibrium profile $s$
+ implementing the $a$, denote it by $s(a, R)$.  $\forall i \in I$,  we choose 
+\[C_i(a,R)\equiv \{ c \in A | c = g(s'_i,s_{-i}(a,R))\  for\  some\  s'_i \in
+  S_i\}\]
+After finding the $B$ and $C_i$,  $\forall R^* \in \mathscr{R}$, condition $\mu$ (i)(ii)(iii)  are
+directly implied by the full Nash implementation.
 
- Then assign the goods according to the matrix $x$ such that if $x_{ij}=1$, agent $i$ is assigned good $j$, and $i$ is
- charged $v_{ij}(s_i^*(s_{-i}), s_{-i})$.
+if $a \in \cap_{i \in I} M_i(C_i(a, R),R^*)$, then $s(a,R)$ is a Nash
+equilibrium of the mechanism under $R^*$.  Since the mechanism fully
+implement the social choice rule $f$, $a \in f(R^*)$.
+
+if $c \in M_i(C_i(a, R), R^*) \cap [ \cap_{j \not = i} M_j(B, R^*)]$,
+then $c = g(s'_i,s_{-i}(a,R))$ and is the best outcome among outcomes with the form
+  $g(\hat{s_i},s_{-i}(a,R))\  where \  \hat{s_i} \in
+  S_i$  under $R^*$, and $c$ is the best outcome for all $j \not = i$ in $B$ under
+  $R^*$.  Therefore $(s'_i,s_{-i}(a,R))$  is a Nash
+equilibrium of the mechanism under $R^*$.  Since the mechanism fully
+implement the social choice rule $f$, $c \in f(R^*)$.
+
+if $d \in \cap_{i\in I} M_i(B, R^*)$, then $d$ is the best outcome for
+all $i \in I$ under $R^*$ and therefore the strategy profile $s(d,R*)$
+producing $d$ is a Nash equilbrium of the mechanism under $R^*$. 
+Since the mechanism fully
+implement the social choice rule $f$, $d \in f(R^*)$. Thus, necessity
+is  proved.
+
+Sufficiency. For any  $f$ satisfying the condition $\mu$, it  is
+enough to construct a mechanism $\Gamma$ which Nash
+implements the social choice rule $f$  fully. The construction method of such
+a mechanism is adapted
+from the appendix of \parencite{Repullo90}. 
+
+For each agent $i \in I$ , the message or strategy space is 
+\[ S_i \equiv \mathscr{R} \times A \times Z^+ \]
+and the outcome function $g: S \rightarrow A$ is defined as follows.
+
+Case 1. If $\forall i \in I, s_i =  (R, a, n)$ such that $R \in
+\mathscr{R}, a \in A, n \in Z^+$, then $g(s)=a$.
+
+Case 2. If $\exists i \in I, \forall j \not = i \ s_j=(R, a, n) \  and
+\ s_i = (R', a', n')$ where $ (R, a, n)  \not = (R', a', n')$, then 
+$$g(s)= \begin{cases} 
+ a'  & \text{if $a' \in C_i(a, R)$}\\ 
+ a  & \text{otherwise} \end{cases}$$
+
+Case 3. For all the other situations, $g(s) = a_i$, where $a_i$ is the agent with the largest
+reported $n$'s choice of  $a$ (ties are broken by random selection).
+
+Thus, the mechanism $\Gamma$ is fully defined.
+We need to prove $\forall R in \mathscr{R} f(R) = NE(\Gamma, R)$. For
+any $R \in \mathscr{R}$, the following two facts are showed to
+complete the proof.
+
+$f(R) \subset NE(\Gamma, R)$. $\forall a \in f(R)$, we consider the
+strategy profile $s$ satisfying that $\forall i \in I, s_i = (R, a,
+1)$. It is a Nash equilibrium, because  if one deviates, Case 2
+stipulates that other than $a$ only an $a' \in C_i(a,R)$ can be chosen
+which is worse than $a$ according to condition $\mu$($a \in
+M_{i}(C_{i}(a,R),R)$ ).
+
+$NE(\Gamma, R) \subset f(R)$.  There are three equilibrium
+cases. 
+
+Case1: $\forall i \in I, s_i =  (R', a, n)$ , then $g(s)= a \in
+\cap_{i \in I}M_i(C_i(a,R'), R)$ because deviation can lead to any
+element in $C_i(a,R')$ and Nash equilibrium should guarantee no
+profitable deviation. By condition $\mu$ (i), $g(s) \in f(R)$.
+
+Case2: $\exists i \in I, \forall j \not = i \ s_j=(R', a, n) \  and
+\ s_i = (R'', a', n')$ where $ (R', a, n)  \not = (R'', a', n')$, then
+$$g(s)= \begin{cases} 
+ a'  & \text{if $a' \in C_i(a, R')$}\\ 
+ a  & \text{otherwise} \end{cases} $$
+
+and $g(s) \in  \in M_i(C_i(a, R'), R) \cap [ \cap_{j \not = i} M_j(B,
+R)]$ because $i$'s deviation can lead to any element in $C_i(a, R')$
+while $\forall j \not = i$  $j$'s deviation can lead to any element in $B$ by
+anouncing a big enough $n$. By condition $\mu$ (ii), $g(s) \in f(R)$.
 
 
- Now we need to check that this scheme satisfy the two requirements in Condition $\rho$ to complete the proof. Let us show two useful properties.
-
- First, we assert that whenever agent $i$ is never allocated the good $k$ in any maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$ under the reported profile $(s_i,s_{-i})$, then agent $i$ is never allocated the good $k$ in any maximizing solution $x'$s to  $\sum_{ij}x_{ij}'v_{ij}(s_i', s_{-i})$ under the reported profile $(s_i',s_{-i})$ if $s_i' < s_i$. Suppose not, then there is an $\hat{x}$ allocating $k$ to $i$ such that $\sum_{ij}\hat{x}_{ij}v_{ij}(s_i', s_{-i}) \geq \sum_{ij}x_{ij}v_{ij}(s_i',s_{-i})$. Notice that $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$;for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$. Furthermore, $\frac{\partial o_i}{\partial s_i}> \frac{\partial r_i}{\partial s_i} > 0$. Thus $\sum_{ij}\hat{x}_{ij}v_{ij}(s_i, s_{-i}) \geq \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})$ as the increase from $s_i'$ to $s_i$ add to the left hand side at least as much as the right hand side\footnote{Note that all $n$ goods are allocated in any maximizing scheme}. So $\hat{x}$ is also a maximizing scheme. Contrary to  maximizing solution never allocate $k$ to $i$.
-
- Second, we assert that whenever agent $i$ is allocated the good $k$ in a integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$ under the reported profile $(s_i,s_{-i})$, then agent $i$ must also be allocated the good $k$ in some maximizing solution $x'$s to  $\sum_{ij}x_{ij}'v_{ij}(s_i', s_{-i})$ under the reported profile $(s_i',s_{-i})$ if $s_i' > s_i$. Suppose not, then there is a $\tilda{x}$ not allocating $k$ to $i$ such that $\sum_{ij}\hat{x}_{ij}v_{ij}(s_i', s_{-i}) > \sum_{ij}x_{ij}v_{ij}(s_i',s_{-i})$. Notice that $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$;for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$. Furthermore, $\frac{\partial o_i}{\partial s_i}> \frac{\partial r_i}{\partial s_i} > 0$. Thus $\sum_{ij}\hat{x}_{ij}v_{ij}(s_i, s_{-i}) > \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})$ as the decrease from $s_i'$ to $s_i$ reduce the right hand side at least as much as the right hand side. This is contrary to  that $x$ maximizes $\sum_{ij}x_{ij}v_{ij}(s)$.
- 
- From these two properties, we have for each agent good pair $(i,j)$ a particular $s_i=s_i(j)$ such that when $s_i < s_i(j)$, $x_{ij}=1$ never hold for any integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$; when $s_i > s_i(j)$, $x_{ij}=1$ hold for some integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$.\footnote{when $j$ is never allocated to $i$ in a integer maximizing solution, let $s_i(j)=0$; When $j$ is always allocated to $i$ in some integer maximizing solution, let $s_i(j)=+\infty$.}
-
- Now we claim that for any $i$, $s_i(j)=s_i(j')$ for all $j, j'$ if neither is $+\infty$. Suppose not, then as $s_i$ increases from $0$ to $+\infty$, after we pass the first
- $s_i(j),j \in \{1,\cdots,n\}$, we will meet a second $s_i(j'), j' \in \{1,\cdots,n\}$, the set $\{j \in  \{1,\cdots,n\}| x_{ij}=1\ for\ some\ integer\ solution\ x\ to\ \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ increases. Let $x'$ denote the integer solution to $\max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})$
- such that $x_{ij'}=1$ when $s_i > s_i(j')$. Then for any other assignment $x$, $x'_{ij}v_{ij}(s_i,s_{-i}) \geq x_{ij}v_{ij}(s_i,s_{-i})$. Consider $s_i$ decreases to  $s_i < s_i(j')$. Since  $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$,for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$,and $\frac{\partial o_i}{\partial s_i}> \frac{\partial r_i}{\partial s_i} > 0$, it is still the case that $x'_{ij}v_{ij}(s_i,s_{-i}) \geq x_{ij}v_{ij}(s_i,s_{-i})$  as the decrease from $s_i'$ to $s_i$ reduce the right hand side at least as much as the right hand side. But it's contrary to the description of $s_i(j')$ which says that if $s_i < s_j(j')$,  $x_{ij}=1$ never hold for any integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$.
-
- Let $s_i^*$ be the value that all $s_i(j)$ which is not $\infty$ equal to. Then the sets $\{j \in  \{1,\cdots,n\}| x_{ij}=1 for some integer
- solution x to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ and $\{x| x\ is\ an\ integer\
- solution\ to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stay the same for any $s_i > s_i^*$.\footnote{$\{x| x\ is\ an\ integer\
- solution\ to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stays the same for any $s_i > s_i^*$ has not been shown explicitly yet. However, it is easy to show its truthfulness by the method of ``reduction to absurdity'' like the previous paragraphs.}
- We can see that Condition $\rho$ holds,because for any $i$,$k$,
- 
- if $v_{ik}(s_i) < v_{ik}(s_i^*)$,  since $s_i$ influences $v_{ik}(s_i)$ only through $o_{i}(s_i)$ and  $\frac{\partial o_i}{\partial s_i} > 0$, $s_i < s_i*$. According to $s_i*$'s definition, agent $i$ will have no probability to be allocated the good $k$. %in all the maximizing allocation schemes.
-
- if $v_{ik}(s_i) > v_{ik}(s_i^*)$, then $s_i > s_i^*$, agent $i$ will have a probability to be allocated the certain good $k$ and charged $ v_{ik}(s_i^*)$. However, the probability does not depend on $s_i$ since it is $\{x| x_{ij}=1 and x is an integer
- solution to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|/|\{x| x is an integer
- solution to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|$ which is the same for all $s_i > s_i^*$.
-
- 
-
- 
- 
-
- 
-
-% (iii)implies that $k$, $s_i^*$ exist for every $s_{-i}$
-To verify Condition $\rho$, we have to find $s_i^*$, for each $s_{-i}$, $k$.
-Case (a):Given $s_{-i}$ , suppose a good $k$ must always be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$,  then the $s_i^*$ is chosen to be $-\epsilon$, where $epsilon$ is a small positive number.%\footnote{$epsilon$ should be chosen small enough so that $v_{ik}(-\epsilon, s_{-i})
-
-Case (b):Given $s_{-i} $, suppose no good will be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$, then the $s_i^*$ is chosen to be $+\infty$, and $k$ can be chosen arbitrarily for it is not relevant in this case;
-In the above two cases, Condition $\rho$ hold trivially as can be easily verified. The last case is more complex:
-Given $s_{-i}$, for some $s_i \in [0,+\infty)$ no good will be allocated to agent $i$ in the maximizing scheme, and for other $s_i \in [0,+\infty)$ some good will be allocated to agent $i$ in the maximizing scheme._
-
- 
-
+Case3: For all the other situations other than the previous two cases,
+anyone can pronouce a big enough $n$ to get any  element in $B$. Nash
+equilibrium means that the chosen $g(s)=a \in \cap_{i\in I} M_i(B,
+R)$. By condition $\mu$ (iii), $g(s) \in f(R)$.
 
 \end{proof}
+
+
+
