@@ -1,0 +1,74 @@
+% Appendix C
+
+\chapter{Proofs to theorems in \ref{Chapter4}} % Main appendix title
+
+\label{Appendix_D} % For referencing this appendix elsewhere, use \ref{AppendixD}
+
+
+\begin{thm*}(Gale-Shapley)
+The matching given by DA mechanism is stable.
+\end{thm*}
+
+\begin{proof}
+We will prove it by reduction to absurdity. Suppose not, then there is
+a student $i$ and  a college $j$  such that $i$ strictly prefers $j$ to his
+final assignment and $|\mu^{-1}(j)|< q_j\ or\  \exists i' \in
+\mu^{-1}(j)\  satisfying\ \pi_{j}(i') < \pi_{j}(i)$.  However,
+according to the student side operation of DA mechanism,  $j$ must have been applied before the
+final assignment college. And  according to the college side operation
+of DA mechanism, if  $|\mu^{-1}(j)|< q_j\ or\  \exists i' \in
+\mu^{-1}(j)\  satisfying\ \pi_{j}(i') < \pi_{j}(i)$, then $i$ must not
+be rejected by $j$ which contradicts to the fact that he or she was
+rejected(implied by the fact that his or her final college is lower in
+the application order than college $j$).
+\end{proof}
+\begin{thm*}(Gale-Shapley)
+Every student is at least as well off under the assignment given by
+the DA mechanism as he would be under any other stable assignment.
+\end{thm*}
+
+\begin{proof}
+Call a college $j$ achievable for a student $i$ in a particular
+environment if the student can be assigned the college in some stable
+matching result. 
+
+The proof is to show the following proposition. Up to a certain step $ n $, no student has ever
+been rejected by a college achievable for the student, then no student
+will be rejected by a college achievable for the student in the step
+$n$ too. 
+
+Since up to step $1$, no student has been rejected by any
+college obivously, we can show that up to  any finite step no student
+will ever be rejected by  a college achievable for the student by
+repeatedly applying the previous proposition.  The
+end step is a finite number, so in the final result no student is ever
+rejected by a college achievable for the student. And the students apply colleges from the most favorite to the least favorite, we therefore know that the final assignment is most favorite for every
+student among the stable matchings.
+
+Now we will prove that up to a certain step $ n $, no student has ever
+been rejected by a college achievable for the student, then no student
+will be rejected by a college achievable for the student in the step
+$n$ too.  
+%We will do it by way of reduction to absurdity. 
+That is
+eqivalent to
+say, suppose a
+student $i$ is rejected by a college  $j$ in the
+step $n$, then the college is not achievable for the student. Since
+$j$ reject $i$, that means that  after
+step $n$ every student assigned to $j$ is higher in priority than $i$,
+and the quota of $j$ has been full. If $i$ is assigned to $j$ in some
+stable 
+matching result, then some $i'$ that is assigned to $j$ in the step
+$n$ must be assigned to some college that is less preferred than $j$
+because up to $n$ no student is rejected by an achievable college. A
+contradiction occurs here for such a matching result cannot be
+a stable matching result due to the existence of pair $i', j $ which
+blocks $i, j$. Therefore by reduction to absurdity,  we show that $i$
+cannot be assigned to $j$  in any stable matching result, i.e., $j$ is
+not achievable to$i$.
+\end{proof}
+
+%See \parencite{Gale1962} for more details.
+
+
