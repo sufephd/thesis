@@ -114,7 +114,10 @@ These three mechanism are all related to the later analyzed Chinese
 student-college matching mechanism, especial the DA mechanism. Why are they most popular? 
 One reason is that all of these mechanisms are
 strategyproof. Therefore the reported preference profile are true preferences
-for rational agents. 
+for rational agents.
+
+Among these, DA mechanism is what will be of key importance in the later modelling and discussion of Chinese college admission
+mechanisms. Thus an indepth investigation is provided in the following subsection.
 
 
 
@@ -346,27 +349,57 @@ The mechanisms are hard to analyze with all the real procedures on,
 so we will deal with the equivalent direct mechanisms of the mechanisms actually in use.
 
 % Another reason
-According to Revelation  Principle,  if a social result can be
+According to Revelation Principle, if a social result can be
 implemented in dominant strategy equilibrium in a mechanism, then it
-can be truthfully implemented in a direct revelation mechanism. For ex post equilibrium,
-it is also true as proved in Appendix \ref{Appendix_A}. Actually, Revelation Principle
-has not told all that has been shown in the proof. In the proof, we establish a direct revelation mechanism that
-for each strategy profile in the original mechanism, there is strategy profile in the direct revelation mechanism that has the same
-result: $g(s_1,\cdots,s_n)=h(\sigma^1(s_1),\cdots,\sigma^n(s_n))\in F(s_1,\cdots,s_n)$. Then we showed that the ex post equilibrium results in the
-original mechanism is also an ex post equilibrium results in this direct revelation result. Now we will give this derived direct revelation mechanism a name, it will hereafter be called equivalent direct mechanism of the original mechanism. Remember that we have described an assets_inheritance problem in the examples section \ref{assets_inheritance} in the Introduction Chapter. The second mechanism is the equivalent direct mechanism of the first mechanism. 
+can be truthfully implemented in a direct revelation mechanism. For ex
+post equilibrium, it is also true as proved in Appendix
+\ref{Appendix_A}. Actually, Revelation Principle has not told all that
+has been shown in the proof. In the proof, we establish a direct
+revelation mechanism that for each strategy profile in the original
+mechanism, there is a strategy profile in the direct revelation
+mechanism that has the same result:
+$g(s_1,\cdots,s_n)=h(\sigma^1(s_1),\cdots,\sigma^n(s_n))\in
+F(s_1,\cdots,s_n)$. Then we showed that an ex post equilibrium result
+in the original mechanism is also an ex post equilibrium result in
+this direct revelation mechanism.  It is called the equivalent
+direct mechanism of the original mechanism.
+%In fact, the equivalent direct mechanism is equivalent to the original mechanism not only in ex post equilibrium results.
+Remember that we have
+described an assets_inheritance problem in the examples section
+\ref{assets_inheritance} in the Introduction Chapter. The second
+mechanism is the equivalent direct mechanism of the first mechanism.
 %For designing new
 %mechanisms, it seems that considering only strategyproof direct mechanism is
 %enough.
 
-Therefore when studying ex post equilibrium results for existing mechanisms which are not direct revelation mechanism,
-we can use a equivalent direct revelation mechanism with the same ex post equilibrium results for narrational convenience\footnote{We put the mechanisms in the same mechanism class makes it easier to do comparison.}  To aid narration and analysis,  a notion of
-successful manipulation  which means a best report choice given others' report  is frequently used in later analysis of the strategical interaction of students in the Chinese college admission mechanisms. \footnote{ It is essentially the best response concept in Nash equilibrium but sounds more fluent when used
-in description of the strategical interactions among the students.}
+Therefore when studying ex post equilibrium results for existing
+mechanisms which are not direct revelation mechanism, we can use a
+equivalent direct revelation mechanism with the same ex post
+equilibrium results for expositional convenience\footnote{We put the
+  mechanisms in the same revelation mechanism class. and this make it easier to do
+  comparison.}  Also to aid analysis and exposition, a notion of successful
+manipulation which means a best report choice given others' report is
+frequently used in later analysis of the strategical interaction of
+students in the Chinese college admission mechanisms. \footnote{ It is
+  essentially the best response concept in Nash equilibrium but sounds
+  more fluent when used in description of the strategical interactions
+  among the students.}
 
-Now, let's introduce two most important mechanisms: sequential mechanism, parallel mechanism. The sequential mechanism, or Boston or Immediate Acceptance (IA) mechanism,
-had been the only mechanism used in Chinese student assignments both at the high school
-and college level \parencite{Nie2007b}. However, this mechanism has a serious limitation: “a good score in
-the college entrance exam is worth less than a good strategy in the ranking of colleges” \parencite{Nie2007a}. In our paper's wording, a successful manipulation is often more important than your score level. The problem arise from the special priority structure in the mechanism. Priority of a student in a college is based on your reported preference list firstly and based on your score secondly, a dictionary order that put too much emphasis on preference reporting. Given in \parencite{Nie2007b}, and also cited in \parencite{YanChenJPE}, one parent has the following explanation of the problem.
+Now, let's introduce three important class of mechanisms: DA mechanism, Boston
+mechanism and parallel mechanisms. DA mechanism is what we have investigated in the previous section, but it has never been adopted in China. Boston mechanism or the Immediate Acceptance (IA)
+mechanism  had been the only mechanism used in Chinese
+student assignments both at the high school and college
+level \parencite{Nie2007b}. However, this mechanism has a serious
+limitation: “a good score in the college entrance exam is often worth less
+than a good preference reporting strategy” \parencite{Nie2007a}. In our paper's wording, a successful
+manipulation is often more important than your score level. The
+problem arise from the special priority structure in the
+mechanism. Priority of a student in a college is based on your
+reported preference list firstly and based on your score secondly, a
+dictionary order that put too much emphasis on preference
+reporting. Given in \parencite{Nie2007b}, and also cited
+in \parencite{YanChenJPE}, one parent has the following explanation of
+the problem.
 
 ``My child has been among the best students in his school and school district. He
 achieved a score of 632 in the college entrance exam last year. Unfortunately, he was
@@ -397,15 +430,65 @@ take any risks, we unwillingly listed a less prestigious university as her first
 Had Beijing allowed parallel colleges in the first choice band, we could at least give
 Tsinghua a try.''
 
- In the paper  \parencite{YanChenJPE}, they have formulated the IA
- mechanism, parallel mechanism, and DA mechanism as a parametric
- family of application-rejection mechanisms. That is a correct
- description. However, I would like to describe all the three mechanisms
- as generalized DA mechanisms with different priority structures. The IA mechanism
- and parallel mechanism as kinds of DA are very special. The priority
- structure are closely related with the  reported
- preference. The underlying idea for the colleges may be ``I like
- those who like me''. This is where manipulation can creep in.
+%However, I would like to describe all the three mechanisms
+ %as generalized DA mechanisms with different priority structures.
+In the paper \parencite{YanChenJPE}, they have formulated the IA
+mechanism, parallel mechanisms, and DA mechanism as a parametric family
+of application-rejection mechanisms. In this chapter, they are all
+converted to their equivalent direct mechanisms. The following are the definitions.
+
+\begin{definition*}direct revelation DA mechanism:
+Each student reports his or her preference list, each college report its priority criterion(usually score plus some tie-breaking rules),then after collecting all these preference list and priority criterion, the social planner runs the DA procedure
+to produce a final matching result.
+\end{definition*}
+
+\begin{definition*}direct revelation IA mechanism: Each students
+report his or her preference list, each college reports its priority
+criterion(usually score plus some tie-breaking rules),then after
+collecting all these preference list and priority criterion, the
+social planner adjusts the priority rule such that the reported
+priority criterion of a college is made only a tie-breaking rule, and the rank of a college in a student's reported preference list is
+the main priority criterion. Finally,
+the social planner runs the DA procedure
+to produce a final matching result.
+\end{definition*}
+
+The parallel mechanisms are a wide group of mechanisms. Therefore we need to devise a group of equivalent direct mechanism for them all. However,
+parallel mechanisms only differ in the choice-band sizes, so different list of choice-band sizes characterizes a different parallel mechanism.
+\begin{definition*} characteristic list of a parallel mechanism:
+  An infinite list of integers greater than zero $(n_1,n_2,\cdots)$ is the characteristic list of a parallel mechanism if the $n_1,n_2,\cdots$
+  define the choice-band size for the 1st ranked, 2nd ranked, \cdots  choice-band.
+\end{definition*}
+
+\begin{definition*}direct revelation parallel mechanisms: Each student
+  report his or her preference list, each college report its priority
+  criterion(usually score plus some tie-breaking rules),after
+  collecting all these preference list and priority criterion, the
+  social planner uses the preference list to produce a list of
+  choice-bands according to the characteristic list $(n_1,n_2,\cdots)$
+  of the parallel mechanism such that the 1st ranked choice-band
+  includes the top $n_1$ colleges in the preference list, the 2nd
+  ranked choice-band includes the top $n_2$ of the remaining colleges in the preference list, and so on. Then the social planner adjusts the
+  priority rule such that the reported priority criterion of a college
+  is made only a tie-breaking rule, and the rank of the choice-band
+  which a college belongs to in a student's reported preference list
+  is the main priority criterion. Finally, the social planner runs the
+  DA procedure to produce a final matching result.
+\end{definition*}
+
+These three direct mechanisms are henceforth just called DA, IA and parallel mechanisms.
+
+From the definition of parallel mechanisms, we can see that DA and IA mechanisms are two special forms of parallel mechanisms with characteristic
+list $(+\infty,0,0,\cdots)$ and $(1,1,1,\cdots)$. Compared with the parameter $e$ class of mechanisms in \parencite{YanChenJPE}, our formulation incorporates more mechanisms. Because we allow different ranked choice-band to be of different sizes by introducing a list of integers as characteristic parameters instead of just an integer as the parameter.
+
+
+
+The IA mechanism and parallel mechanism are qualitatively different from DA. Their
+priority structure are closely related with the reported preference
+while the priority structure of DA has no connection with the reported
+preference. The underlying idea for the IA mechanism or parallel mechanisms is
+``Colleges should like those who like them''.  This is exactly where manipulations creep
+in.  
 
 Formally, under the setting of student-college matching, we have the following definition.
 
@@ -421,49 +504,27 @@ We have the following proposition.
 IA and parallel mechanisms are manipulable. DA is non-manipulable.
 \end{prop}
 
-%The proof is relegated to Appendices.
+The formal proof is ommited. An example can be easily established to demonstrate it.
  
-Now let us define the concepts of efficient mechanism and stable
-mechanism in the setting of student-college matching.
-
-\begin{definition}
-A mechanism is efficient if for any reported preference profile $R$ and
-priority structure $\pi$, the resulting matching result is pareto
-efficient according to the $R$.
-\end{definition}
-
-
-\begin{definition}
-A mechanism is stable if for any reported preference profile $R$ and
-priority structure $\pi$, the resulting matching result is stable according to the $R$ and $\pi(R)$.
-\end{definition}
-
-According to these definition, we have the following proposition.
-
-\begin{prop}
-IA is efficient. IA , parallel and DA are all stable.
-\end{prop}
-
-The proof is relegated to Appendices.
-
 \begin{remark}
-The efficiency and stableness concept here is apparently not very useful if
-the reported $R$ is not true. What we are concerned is the status of the matching
-result in the perspective of true $R$.
+The efficiency and stableness concept is apparently not very useful when
+the reported $R$ is not true. What we should be concerned is the status of the matching
+result in the perspective of true $R$. So we have investigated the manipulability first.
 \end{remark}
 
-Here I would like to view the mechanisms from a new perspective. The concept is from ex post Nash equilibrium. For ex ante Nash equilibrium or Bayesian Nash equilibrium, there is a  best reponse concept.
+Because manipulation exists, investigating the matching result to the reported preference is of little meaning for the true social welfare. Therefore matching theory about the property of matching results to the reported preference is not applied in investigating Chinese college admission mechanisms. Without strategyproofness, we have to find another equilibrium solution concept other than dominant strategy equilibrium to study the likely matching results.
+
+In this section we would like to view the mechanisms from a perspective of ex post Nash equilibrium.
+For ex ante Nash equilibrium or Bayesian Nash equilibrium, there is a  best reponse concept.
 A best response is a strategy for your type that maximize the ex ante payoff given the others' probability distribution on all probable types and each type's strategy choice. An ex ante Nash equilibrium or
 Bayesian equilibrium is a strategy profile in which every player type chooses the best response. 
 For ex post equilibrium,  a successful manipulation is similar in meaning to a best response to  ex ante Nash equilibrium. It means that given the other students' actual choice(action), the action you have
-chosen is best to your interest. It deprives the intermediary probability distribution structure. This way we can concentrate on the final assignment or allocation result. In real life situations, 
-we have to use probability to make decisions ex ante, but when we can avoid it in mechanism design, we had better design a sure way to implement a certain social criteria or goal, not relying on 
-probability distribution. The only exception should be entertainment activity like mahjong, poker games, or lottery where no prescribed social goals need to be fulfilled. Here, the ex post should not be taken 
+chosen is best to your interest. It deprives the intermediary probability distribution structure. This way we can concentrate on the final matching result.  Here, the ex post should not be taken 
 literally, it does not mean that 
 evaluating the action after some particular time. Actually, it means that assuming that every action of the other players have been known, the player still insists his choice due to its optimality with respect
 to the others' actual action or choice. In fact, it may happen that the player will never know all the actions of the other players and therefore there is not a time point after which all information is revealed. 
 The important thing is that the action or manipulation can be called successful when all information is known.
-Formally, we give the following definition in the student-college matching setting. 
+Formally, we give the following definition in the college admission setting. 
 \begin{definition}
 A student i has a successful manipulation 
 if let $R$ denote the true preference, $R'$ the reported preference, $\mu' = h(R')$, then for any $R_i''$, let $\mu''= h(R_i'',R_{-i}')$, we have  $\mu'(i) R_i \mu''(i)$
@@ -471,57 +532,55 @@ if let $R$ denote the true preference, $R'$ the reported preference, $\mu' = h(R
 
 Here, I would like to explain this seemingly trivial concept. I think it is even more basic than ex post Nash Equilibrium. In fact, I extract it from the definition of ex post Nash equilibrium and find it more applicable than Nash equilibrium in my every day life. Its definition is in fact half of the Nash Equilibrium.
 
-You may say that it is just the best response function. Almost, best response function is a way of getting a successful manipulation when the others' action choice is known. But calling it a successful manipulation is more appropriate in most cases as this concept does not assume that you know the payoff or the strategies of the others. 
-Nash equilibrium usually assumes that the payoffs are known. That is, it may not be a purposeful response but just happen to be successful and optimal. It is an ex post equilibrium but it maybe the case that 
-nobody knows the payoffs of the game fully. Here, our ``ex post'' requires that the strategies to be considered must be pure.
+You may say that it is just the best response function. Almost, best response function is a way of getting a successful manipulation when the others' action choice is known. But calling it a successful manipulation is more appropriate in most cases as this concept does not assume that you know the payoff or the strategies of the others. Nash equilibrium usually assumes that the payoffs are known. But for a manipulation to be successful, it may not be a purposeful response but just happen to be successful and optimal. It is an ex post equilibrium but it may be possible that 
+nobody knows the payoffs of the game fully.
 
-In this chapter, I only consider deterministic game forms and only consider pure strategies. 
+A striking difference between Nash equilibrium and our ex post equilibrium which requires every player has a successful manipulation is that the Nash equilibrium is strongly repeatable but our ex post equilibrium is not since to be successful but not knowing it does not prevent you from trying something else the next time.
 
-Why this concept deserves a special mention? Well, that is because in most real life situation it is the player who always choose a successful manipulation wins the game. 
-\begin{example}
-Consider a 
-\end{example}
+
+In this chapter, I consider deterministic game forms and only consider pure strategies. Our ``ex post'' concept requires that the strategies to be considered must be pure because you cannot report this preference and that preference at the same time when every thing is known\footnote{Only scholars who study quantum games may have disagreement. However,we do not consider quantum games here.}.
+
+Why the concept of ex post equilibrium  deserves a special mention? Well, that is because in most real life situation the players may have chosen a successful manipulation but he or she does not necessarily know that he or she has achieved that and so can deviate from the successful manipulation. In that case, a disclosure of all the payoff functions to every player can make it a Nash equilibrium which is repeatable.   
+
 
  
-However, when you have clear social criteria in mind, it is not good to devise a mechanism in which the social criteria are satisfied only when every agents have a successful manipulation. Not everyone 
-is adapted at manipulation.
+When you have clear social criteria in mind, it is not good to devise a mechanism in which the social criteria are satisfied only when every agents have a successful manipulation. Not everyone 
+is adapted at manipulation and has the information to achieve that. However, from the social point of view, the ex post equilibrium with every player successfully manipulated is still in a sense the fairest result that the mechanism can have. No body has done worse because of lack of informationin an ex post equilibrium.
 
 
-In this chapter, I find that in the Chinese style college admission, the Boston mechanism, the parallel mechanism and the DA mechanism have the same assignment result in their expost equilibrium. However, it is not 
-easy to achieve the expost equilibrium for the Boston mechanism and the parellel mechanism because they are not direct mechanisms while the DA can be seen as an almost direct mechanism which makes the ``truthful
-revealation'' the expost equilibrium strategy and easy to find for every student.
+We found that in the Chinese style college admission, the Boston mechanism, the parallel mechanisms and the DA mechanism have the same matching results in their expost equilibrium. However, it is not 
+easy to achieve the expost equilibrium for the Boston mechanism and the parellel mechanism because they need lots of information to achieve it but the informtion is not easily attainable. On the contrary, the DA's ex post equilibrium can be achieved just by every player reporting the true preference, and it is indeed a dominant strategy equilibrium, stronger than merely an ex post equilibrium.
 
-Then we can have an important concept defined now.
+Now a definition that is useful in formally expressing the ideas in the previous paragraph.
 \begin{definition}
 under a preference reporting direct mechanism $h(.)$, and students report some preference profile $R$, therefore the matching result is $\mu=h(R)$.
 If all students have successful manipulation in this case, then the matching result $\mu$ is called achievable with perfect manipulation under the mechanism $h(.)$.
 \end{definition}
 
-In fact, the concept is just a special Nash implementation in
-an indirect mechanism. The difference is that when in a direct
-mechanism, you nash implement a result and know whether it satisfies a
-social goal $f(p)$, but in a indirect mechanism even if you know that
+There is a diffculty in analysing the true welfare property of a matching result achievable with perfect manipulation under a mechanism. The difficulty is that  even if you know that in the ex post equilibrium the matching result
 is successfully manipulated by everyone, you do not know if it
 satisfies a social goal $f(p)$, because you do not know the economics
-environment $p$!
+environment $p$ because of manipulation of preference reporting!
 
 
-If you see carefully, you will know that this concept is  a kind of ex post nash
-implementation in the particular case of matching mechanism.  For
-general priority structures, what
-kind of matching results can be achieved with perfect manipulation
-under the IA mechanism, see \parencite{Ergin2006}; what kind of
-matching results can be achieved with perfect manipulation under the
-parallel mechanism, see \parencite{YanChenJPE}.  In this chapter, we
+For general priority structures, as to matching results that can be
+achieved with perfect manipulation under the IA mechanism, some
+discussion can be found in \parencite{Ergin2006}; as to matching
+results that can be achieved with perfect manipulation under the
+parallel mechanism, relevant discussion can be found
+in \parencite{YanChenJPE}.
+
+ In this chapter, we
 focus our attention on a very important kind of priority structure,
 the score-based priority structure and discuss what kind of matching
-results can be achieved with perfect manipulation under such
+results can be achieved with perfect manipulation under such uniformly
 score-based priority. 
 
 DA mechanism just use the score high-low comparison to determine
 priority of students for every college. The more score you get, the
 high priority you get.
 
+As to the adjusted priority structure in IA and parallel mechanisms, it is described as following.
 To determine a student $i$'s priority in college $j$, parallel
 mechanism fisrt group the colleges according to $i$'s reported
 preference list. For example, in Tibetan's parallel mechanism, every
@@ -543,10 +602,30 @@ We have the following important theorem.
 
 \begin{thm}\label{same}
 If every college has the same base priority for the students, and only
-modify the priority structure as is necessary for the IA and parallel
-mechanism, then the only matching achievable with perfect
-manipulation under the IA and parallel mechanism  is the same with the one under  the DA mechanism, which is  unique , efficient and stable. 
+modify the priority structure as described for the IA and parallel
+mechanism, then the matching achievable with perfect
+manipulation under the IA and parallel mechanism  is the same with the one under  the DA mechanism, which is  unique , stable and constrained efficient. 
 \end{thm}
+
+%In this section, we would like to show
+%that the matching results that can be achieved with perfect
+%manipulation is the same with the truthful revelation matching under the corresponding
+%DA that results from deleting the adjustment that was done to the colleges' reported priority structure.\footnote{We do not consider college's
+% strategic behaviour or preference, that is, we just view the report of colleges' priorities as a given fixed behaviour.}
+
+
+%We have the following important theorem.
+
+%\begin{thm}\label{same}
+%If the colleges report the same priority criteria for the DA,IA and parallel mechanisms, then the matching achievable with perfect
+%manipulation under the DA, IA and parallel mechanisms are the same  which is  unique ,  stable and constrained efficient. 
+%\end{thm}
+
+
+
+
+
+
 
 To get this result, we first propose a property of the DA mechanism which is convenient for discussion of its matching result. 
 
@@ -559,7 +638,7 @@ Because of the finiteness of the problem, any mechanism with the above requireme
 %The proof is relegated to the appendix C. 
 We call this group of mechanisms as the DA family of mechanisms.
 
-As a direct result of the above propostion and the optimal stableness and non-manipulability, we have the following corollary.
+As a direct result of the above propostion and the optimal stableness and non-manipulability of DA mechanism, we have the following corollary.
 
 \begin{corollary}
 The DA family of mechanisms are all optimally stable, and non-manipulable.

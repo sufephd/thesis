@@ -20,25 +20,6 @@ Further assumptions are listed below.
 %(iii)Faced with a $s_{-i}$, as the $s_i$ increases, agent $i$ will finally get some good allocated in the solution of the assignment problem.
 \end{prop*}
 
-Before the proof of this proposition,  two lemmas which are useful later is given and proved first.
-\begin{lemma*}
-  (u)For the $v$, $s$ described in the main proposition, when $s= s'$, a good $k$ will be allocated to agent $i$ in a maximizing scheme, then when $s_i > s_i'$ and $s_{-i}=s_{-i}'$, the good $k$ will also be allocated to agent $i$ in the maximizing schemes. 
-\end{lemma*}
-\begin{proof}
-  Notice that $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$;for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$.
-
-  Now Suppose when $s= s'$, a good $k$ will be allocated to agent $i$ in the maximizing scheme, but contrary to lemma(u)'s assertion, for some $s_i > s_i'$ and $s_{-i}=s_{-i}'$,  no good is allocated to agent $i$ or a good $q \not= k$ is allocated to agent $i$ in a maximizing scheme. Let $x'$ denote the value maximizing allocation scheme when $s=s'$ and $k$ is allocated to agent $i$, $x$ denote the value maximizing allocation scheme when $s_i>s_i'$, $s_{-i}=s_{-i}$ and a good $q \not= k$ is allocated to agent $i$. We must have $\sum x_{ij}v_{ij}(s_i,s_{-i}) \geq \sum x_{ij}'v_{ij}(s_i,s_{-i})$,  
-\end{proof}
-
-\begin{lemma*}
-  (d)For the $v$, $s$ described in the main proposition, when $s= s'$, no good will be allocated to agent $i$ in a maximizing scheme, then when $s_i < s_i'$ and $s_{-i}=s_{-i}'$, it is also the case that no good will be allocated to agent $i$ in the maximizing schemes. 
-\end{lemma*}
-
-
-
-  
-
-
 \begin{proof}
   We need to show that the assumptions imply Condition $\rho$, that is, from the maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$, one can designate an allocation scheme satisfying
   if $v_{ik}(s_i) < v_{ik}(s_i^*)$, agent $i$ will have no probability to be allocated the good $k$. %in all the maximizing allocation schemes.
@@ -64,37 +45,20 @@ Before the proof of this proposition,  two lemmas which are useful later is give
  
  From these two properties, we have for each agent good pair $(i,j)$ a particular $s_i=s_i(j)$ such that when $s_i < s_i(j)$, $x_{ij}=1$ never hold for any integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$; when $s_i > s_i(j)$, $x_{ij}=1$ hold for some integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$.\footnote{when $j$ is never allocated to $i$ in a integer maximizing solution, let $s_i(j)=0$; When $j$ is always allocated to $i$ in some integer maximizing solution, let $s_i(j)=+\infty$.}
 
- Now we claim that for any $i$, $s_i(j)=s_i(j')$ for all $j, j'$ if neither is $+\infty$. Suppose not, then as $s_i$ increases from $0$ to $+\infty$, after we pass the first
- $s_i(j),j \in \{1,\cdots,n\}$, we will meet a second $s_i(j'), j' \in \{1,\cdots,n\}$, the set $\{j \in  \{1,\cdots,n\}| x_{ij}=1\ for\ some\ integer\ solution\ x\ to\ \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ increases. Let $x'$ denote the integer solution to $\max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})$
+ A notational declaration: all the $x$ in the following part is integral.
+
+ Now we claim that for any $i$, $s_i(j)=s_i(j')$ for all $j, j'$ if neither is $+\infty$.  Suppose not, then as $s_i$ increases from $0$ to $+\infty$, after we pass the first
+ $s_i(j),j \in \{1,\cdots,n\}$, we will meet a second $s_i(j'), j' \in \{1,\cdots,n\}$, the set $\{j \in  \{1,\cdots,n\}| x_{ij}=1, x\ maximizes \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ increases. Let $x'$ denote the integer solution to $\max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})$
  such that $x_{ij'}=1$ when $s_i > s_i(j')$. Then for any other assignment $x$, $x'_{ij}v_{ij}(s_i,s_{-i}) \geq x_{ij}v_{ij}(s_i,s_{-i})$. Consider $s_i$ decreases to  $s_i < s_i(j')$. Since  $s_i$ influence $v_{ij}$ only through $o_i(s_i)$ for all $j \in \{1,\cdots,n\}$,for all other agent $l \not = i$, $s_i$ influence $v_{lj}$ only through $r_i(s_i)$,and $\frac{\partial o_i}{\partial s_i}> \frac{\partial r_i}{\partial s_i} > 0$, it is still the case that $x'_{ij}v_{ij}(s_i,s_{-i}) \geq x_{ij}v_{ij}(s_i,s_{-i})$  as the decrease from $s_i'$ to $s_i$ reduce the right hand side at least as much as the right hand side. But it's contrary to the description of $s_i(j')$ which says that if $s_i < s_j(j')$,  $x_{ij}=1$ never hold for any integer maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$.
 
- Let $s_i^*$ be the value that all $s_i(j)$ which is not $\infty$ equal to. Then the sets $\{j \in  \{1,\cdots,n\}| x_{ij}=1 for some integer
- solution x to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ and $\{x| x\ is\ an\ integer\
- solution\ to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stay the same for any $s_i > s_i^*$.\footnote{$\{x| x\ is\ an\ integer\
- solution\ to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stays the same for any $s_i > s_i^*$ has not been shown explicitly yet. However, it is easy to show its truthfulness by the method of ``reduction to absurdity'' like the previous paragraphs.}
+ Let $s_i^*$ be the value that all $s_i(j)$ which is not $\infty$ equal to. Then the sets $\{j \in  \{1,\cdots,n\}| x_{ij}=1, x\ maximizes \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ and $\{x| x\ maximizies \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stay the same for any $s_i > s_i^*$.\footnote{The fact that$\{x| x\ maximizes \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i})\}$ stays the same for any $s_i > s_i^*$ has not been shown explicitly yet. However, it is easy to show its truthfulness by the method of ``reduction to absurdity'' like the previous paragraphs.}
+ 
  We can see that Condition $\rho$ holds,because for any $i$,$k$,
  
  if $v_{ik}(s_i) < v_{ik}(s_i^*)$,  since $s_i$ influences $v_{ik}(s_i)$ only through $o_{i}(s_i)$ and  $\frac{\partial o_i}{\partial s_i} > 0$, $s_i < s_i*$. According to $s_i*$'s definition, agent $i$ will have no probability to be allocated the good $k$. %in all the maximizing allocation schemes.
 
- if $v_{ik}(s_i) > v_{ik}(s_i^*)$, then $s_i > s_i^*$, agent $i$ will have a probability to be allocated the certain good $k$ and charged $ v_{ik}(s_i^*)$. However, the probability does not depend on $s_i$ since it is $\{x| x_{ij}=1 and x is an integer
- solution to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|/|\{x| x is an integer
- solution to \max_x\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|$ which is the same for all $s_i > s_i^*$.
-
- 
-
- 
- 
-
- 
-
-% (iii)implies that $k$, $s_i^*$ exist for every $s_{-i}$
-To verify Condition $\rho$, we have to find $s_i^*$, for each $s_{-i}$, $k$.
-Case (a):Given $s_{-i}$ , suppose a good $k$ must always be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$,  then the $s_i^*$ is chosen to be $-\epsilon$, where $epsilon$ is a small positive number.%\footnote{$epsilon$ should be chosen small enough so that $v_{ik}(-\epsilon, s_{-i})
-
-Case (b):Given $s_{-i} $, suppose no good will be allocated to agent $i$ in the maximizing scheme for any $s_i \in [0,+\infty)$, then the $s_i^*$ is chosen to be $+\infty$, and $k$ can be chosen arbitrarily for it is not relevant in this case;
-In the above two cases, Condition $\rho$ hold trivially as can be easily verified. The last case is more complex:
-Given $s_{-i}$, for some $s_i \in [0,+\infty)$ no good will be allocated to agent $i$ in the maximizing scheme, and for other $s_i \in [0,+\infty)$ some good will be allocated to agent $i$ in the maximizing scheme._
-
+ if $v_{ik}(s_i) > v_{ik}(s_i^*)$, then $s_i > s_i^*$, agent $i$ will have a probability to be allocated the certain good $k$ and charged $ v_{ik}(s_i^*)$. However, the probability does not rely on $s_i$ for it is a fixed value for all $s_i > s_i^*$,  $|\{x | x_{ij}=1,x\ maximizes
+\sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|/|\{x| x\ maximizes \sum_{ij}x_{ij}v_{ij}(s_i,s_{-i}) \}|$  .
  
 
 

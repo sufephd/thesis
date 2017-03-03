@@ -66,8 +66,9 @@ In \parencite{BergemannM08}, the authors focus on identifying conditions for ful
  For example, in a room of dancers, a volume must be chosen for the music so that it can provide the best social efficiency. Each person
  has a valuation function of the form 
  $$u_i= v_i(volume) + \alpha_i\sum_{j\neq i}v_j(volume)$$
- Here, the $\alpha_i$ is the altruist coefficient of agent $i$ , which are known by social planner, only each $v_i()$ is private information. We will see how to implement social efficiency in this case later in the paper. 
- later.
+ Here, the $\alpha_i$ is the altruist coefficient of agent $i$ , which are known by social planner, only each $v_i()$ is private information. This is a typical interdependent value situation.
+ %We will see how to implement social efficiency in  later in the paper. 
+ 
 
 
  
@@ -301,8 +302,8 @@ maximized at $s_i$.
 The theorem is simple, but it contains much information. One thing is that not every continuously differentiable
 social goal $a(s)$ is implementable in ex post equilibrium with money transfer. It must satisfy the conditions in the theorem 
 to be implemented with money transfer. The second thing is that even if it can be implemented with money transfer, the scheme for 
-implementing it is unique in essence. They only differ by a constant(the solution to the differential equations are some specific
-function plus a something of the form $f(s_{-i})$ that is not changing with $s_{-i}$).
+implementing it is unique in essence. They only differ by a constant\footnote{the solution to the differential equations are some specific
+function plus something of the form $f(s_{-i})$ that is not changing with $s_i$}.
 
 Now let us consider the oil producers example. We should give a mathematical structure to it in order to show how the process of mechanism
 design is done in this case. Market demand function is $q(p)$, inverse demand function is $p(q)$. The cost function 
@@ -448,9 +449,9 @@ This problem is generally not ex post implementable. However, we find under the 
 
 Condition $\rho$:
 
-$\forall i,\forall s_{-i}, \exists s_i^*,for all k \in \{1,\cdots,n\}, such\ that $
+$\forall i,\forall s_{-i}, \exists s_i^*$,for all $k \in \{1,\cdots,n\}$, such that :
 
-From the maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$, one can designate an allocation scheme, such that
+from the maximizing solution $x$s to  $\sum_{ij}x_{ij}v_{ij}(s)$, one can designate an allocation scheme, such that
 
 %if $s_i = s_i^*$, agent $i$ will be given the certain good $k$ or have no good allocated in a value maximizing allocation schemes.
 
