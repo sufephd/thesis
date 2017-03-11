@@ -67,7 +67,7 @@ headsepline, % Uncomment to get a line under the header
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Essays on some mechanisms in the fields of auction, matching and mental competition} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Essays on mechanisms for efficient social choice, matching and mental competition} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Professor Guoqiang \textsc{Tian},   Zhe \textsc{Yang}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{PhD of Economics} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -75,7 +75,7 @@ headsepline, % Uncomment to get a line under the header
 \addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
 \subject{Theoretical Economics} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{mechanism design, auction, matching, game theory} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\keywords{mechanism design, efficiency, matching, game theory} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
 \university{\href{http://www.shufe.edu.cn}{Shanghai University of Finance and Economics}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \department{\href{http://econ.shufe.edu.cn}{School Of Economics}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
 %\group{\href{http://researchgroup.university.com}{Research Group Name}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
@@ -164,17 +164,16 @@ headsepline, % Uncomment to get a line under the header
 
 \vspace*{0.2\textheight}
 
-\noindent\enquote{\itshape Thanks to my solid academic training, today I can write a whole doctoral thesis paper!}\bigbreak
+\noindent\enquote{\itshape Economist, unlike Lawyers, believe you have to pay people to tell the truth.}\bigbreak
 
-\hfill Yan Ju
+\hfill Morton Kamien
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-
+%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 Mechanisms Design is a very interesting field of economics. In this paper, theories about general mechanisms are presented as well as some kinds of special mechanisms such as matching. With all the needed 
 details provided or given in the literature, the thesis is mostly a reflection of the author's interest and provide insightful arguments and findings in related areas.
 
@@ -187,8 +186,6 @@ For a perfect information competitive board game like chess which is a mechanism
 for deciding win or loss, the last chapter of this paper classify every position 
 into three categories, winning position, losing position, and drawing position, and provides the way to identify them theoretically. It is only theoretical for chess because the work need to be done is 
 astronomical figure. However, the paper manages to use this method to solve an interesting game, which shows the power of the notions.
-
-
 
 \end{abstract}
 
@@ -221,11 +218,12 @@ Thanks to all the classmates and friends that has been with me!
 %----------------------------------------------------------------------------------------
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
-
+\textbf{VCG} & \textbf{V}ickery \textbf{C}lark \textbf{G}roves  \\
 \textbf{DA} & \textbf{D}eferred \textbf{A}cceptance \\
 \textbf{SOSM} & \textbf{S}tudent \textbf{O}ptimal \textbf{S}table \textbf{M}atching\\
 \textbf{TTC} &\textbf{T}op \textbf{T}rading \textbf {C}ycle\\
 \textbf{SD} &\textbf{S}erial \textbf{D}ictatorship\\
+\textbf{CCA} &\textbf{C}hinese \textbf{C}ollege \textbf{A}dmission \\
 \textbf{IA} &\textbf{I}nstant \textbf{A}cceptance
 \end{abbreviations}
 
@@ -276,7 +274,7 @@ Thanks to all the classmates and friends that has been with me!
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter1}
-\include{Chapters/Chapter2} 
+%\include{Chapters/Chapter2} 
 \include{Chapters/Chapter3}
 \include{Chapters/Chapter4} 
 \include{Chapters/Chapter5} 
@@ -291,7 +289,7 @@ Thanks to all the classmates and friends that has been with me!
 % Uncomment the lines as you write the Appendices
 
 \include{Appendices/AppendixA}
-\include{Appendices/AppendixB}
+%\include{Appendices/AppendixB}
 \include{Appendices/AppendixC}
 \include{Appendices/AppendixD}
 
@@ -302,5 +300,30 @@ Thanks to all the classmates and friends that has been with me!
 \printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
+\clearpage
+\thispagestyle{empty}
+
+\addcontentsline{toc}{chapter}{Resume}
+\Large{Resume}\\
+\normalsize
+
+Yan Ju was born in June 1983. He graduated from Shandong University in 2004, majored in English Literature, and received bachelor of arts.
+He received master of economics in 2011. He is studying in Shanghai University of Finance and Economics till now.\\
+
+\emph{Published papers:}
+
+Zhe Yang, Yan Ju. Existence and generic stability of cooperative equilibria for multi-leader-multi-follower games[J]. Journal of Global Optimization, 2016, 65(3):563-573.
+
+Tingting Wang, Yan Ju, Minfeng Lu. Incentive compatible mechanism design for sustainable development of Chinese economy from east to west.  Hainan Finance, 2014, 6.\\
+
+\emph{Working papers:}
+
+Ex post implementation in mechanism design.with Dawen Meng.
+
+Structure of ex post equilibrium matching results in the Chinese college admission mechanism.
+
+Experience Fee, Reserve Price and Experience Good Auction. with Dazhong Wang.
+
+Affirmative action in school choice. with Deguang Lin, Dazhong Wang.
 
 \end{document}  

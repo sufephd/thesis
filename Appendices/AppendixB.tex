@@ -1,6 +1,6 @@
 % Appendix B
 
-\chapter{Proofs to theorems listed in \ref{Chapter2}} % Main appendix title
+\chapter{A Simple Proof to Hurwicz Impossibility Theorem} % Main appendix title
 
 \label{Appendix_B} % For referencing this appendix elsewhere, use \ref{Appendix_B}
 
@@ -106,105 +106,6 @@ misreport a $u_2(x,y)=x_2 + ky_2$ where $0<k<1$.
 Thus, no mechanism that yields Pareto efficient and individually rational allocations is
 incentive compatible for both sides.
 
-
-\end{proof}
-
-
-\begin{thm*}(Moor and Repullo)
-\label{mu}
-  Suppose there are three or more agents. Then a choice rule $f$ is Nash implementable if and only if it satisfies Condition $\mu$.
-\end{thm*}
-
-\begin{proof}
-Necessity.  There must be a range for the Nash implementing mechanism
-$\Gamma = \langle S, g\rangle$. Let it be the $B$ in condition $\mu$.
-
-\[ B\equiv \{a \in A|a=g(s)\ for\ some\ s \in S\}\]
-
- According to full Nash implementation, $\forall  R\in\mathscr{R}, a \in f(R)$, there is a Nash equilibrium profile $s$
- implementing the $a$, denote it by $s(a, R)$.  $\forall i \in I$,  we choose 
-\[C_i(a,R)\equiv \{ c \in A | c = g(s'_i,s_{-i}(a,R))\  for\  some\  s'_i \in
-  S_i\}\]
-After finding the $B$ and $C_i$,  $\forall R^* \in \mathscr{R}$, condition $\mu$ (i)(ii)(iii)  are
-directly implied by the full Nash implementation.
-
-if $a \in \cap_{i \in I} M_i(C_i(a, R),R^*)$, then $s(a,R)$ is a Nash
-equilibrium of the mechanism under $R^*$.  Since the mechanism fully
-implement the social choice rule $f$, $a \in f(R^*)$.
-
-if $c \in M_i(C_i(a, R), R^*) \cap [ \cap_{j \not = i} M_j(B, R^*)]$,
-then $c = g(s'_i,s_{-i}(a,R))$ and is the best outcome among outcomes with the form
-  $g(\hat{s_i},s_{-i}(a,R))\  where \  \hat{s_i} \in
-  S_i$  under $R^*$, and $c$ is the best outcome for all $j \not = i$ in $B$ under
-  $R^*$.  Therefore $(s'_i,s_{-i}(a,R))$  is a Nash
-equilibrium of the mechanism under $R^*$.  Since the mechanism fully
-implement the social choice rule $f$, $c \in f(R^*)$.
-
-if $d \in \cap_{i\in I} M_i(B, R^*)$, then $d$ is the best outcome for
-all $i \in I$ under $R^*$ and therefore the strategy profile $s(d,R*)$
-producing $d$ is a Nash equilbrium of the mechanism under $R^*$. 
-Since the mechanism fully
-implement the social choice rule $f$, $d \in f(R^*)$. Thus, necessity
-is  proved.
-
-Sufficiency. For any  $f$ satisfying the condition $\mu$, it  is
-enough to construct a mechanism $\Gamma$ which Nash
-implements the social choice rule $f$  fully. The construction method of such
-a mechanism is adapted
-from the appendix of \parencite{Repullo90}. 
-
-For each agent $i \in I$ , the message or strategy space is 
-\[ S_i \equiv \mathscr{R} \times A \times Z^+ \]
-and the outcome function $g: S \rightarrow A$ is defined as follows.
-
-Case 1. If $\forall i \in I, s_i =  (R, a, n)$ such that $R \in
-\mathscr{R}, a \in A, n \in Z^+$, then $g(s)=a$.
-
-Case 2. If $\exists i \in I, \forall j \not = i \ s_j=(R, a, n) \  and
-\ s_i = (R', a', n')$ where $ (R, a, n)  \not = (R', a', n')$, then 
-$$g(s)= \begin{cases} 
- a'  & \text{if $a' \in C_i(a, R)$}\\ 
- a  & \text{otherwise} \end{cases}$$
-
-Case 3. For all the other situations, $g(s) = a_i$, where $a_i$ is the agent with the largest
-reported $n$'s choice of  $a$ (ties are broken by random selection).
-
-Thus, the mechanism $\Gamma$ is fully defined.
-We need to prove $\forall R in \mathscr{R} f(R) = NE(\Gamma, R)$. For
-any $R \in \mathscr{R}$, the following two facts are showed to
-complete the proof.
-
-$f(R) \subset NE(\Gamma, R)$. $\forall a \in f(R)$, we consider the
-strategy profile $s$ satisfying that $\forall i \in I, s_i = (R, a,
-1)$. It is a Nash equilibrium, because  if one deviates, Case 2
-stipulates that other than $a$ only an $a' \in C_i(a,R)$ can be chosen
-which is worse than $a$ according to condition $\mu$($a \in
-M_{i}(C_{i}(a,R),R)$ ).
-
-$NE(\Gamma, R) \subset f(R)$.  There are three equilibrium
-cases. 
-
-Case1: $\forall i \in I, s_i =  (R', a, n)$ , then $g(s)= a \in
-\cap_{i \in I}M_i(C_i(a,R'), R)$ because deviation can lead to any
-element in $C_i(a,R')$ and Nash equilibrium should guarantee no
-profitable deviation. By condition $\mu$ (i), $g(s) \in f(R)$.
-
-Case2: $\exists i \in I, \forall j \not = i \ s_j=(R', a, n) \  and
-\ s_i = (R'', a', n')$ where $ (R', a, n)  \not = (R'', a', n')$, then
-$$g(s)= \begin{cases} 
- a'  & \text{if $a' \in C_i(a, R')$}\\ 
- a  & \text{otherwise} \end{cases} $$
-
-and $g(s) \in  \in M_i(C_i(a, R'), R) \cap [ \cap_{j \not = i} M_j(B,
-R)]$ because $i$'s deviation can lead to any element in $C_i(a, R')$
-while $\forall j \not = i$  $j$'s deviation can lead to any element in $B$ by
-anouncing a big enough $n$. By condition $\mu$ (ii), $g(s) \in f(R)$.
-
-
-Case3: For all the other situations other than the previous two cases,
-anyone can pronouce a big enough $n$ to get any  element in $B$. Nash
-equilibrium means that the chosen $g(s)=a \in \cap_{i\in I} M_i(B,
-R)$. By condition $\mu$ (iii), $g(s) \in f(R)$.
 
 \end{proof}
 

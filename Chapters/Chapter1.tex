@@ -58,7 +58,7 @@ economics. To do that, a framework must be provided. Now the framework
 has become a theory with a large body of literatures. That theory is
 mechanism design theory. The mechanism design theory was established
 by leonid Hurwicz, later expanded by Roger B.Myerson, Eric S. Maskin,
-Guoqiang Tian and many other  scholars of the field.
+Guoqiang Tian and many other scholars of the field.
 
  The most important
 component of Mechanism design theory is implementation
@@ -328,9 +328,54 @@ telling is a dominant strategy equilibrium).
 
 The importance of revelation principle lies in the fact that it narrowes the search space for an implementation mechanism to a special kind of mechanism. This makes the finding of a mechanism implementing some social goal more easily or give a method of proving the nonexistence of such mechanism in general by just proving the unavailability of such mechanism for the revelation games.
 
+
+\section{Known impossibility results}
+
+A few important impossibility results from the literature of mechanism design are listed in this section.
+We have mentioned the important
+contributions of Hurwicz, Gibbard, Satterthwaite. Their contributions contain
+important impossibility theorems about which social goal we can not design mechanisms to implement. Like
+in physics, we know that we can not produce perpetual motion machine,
+then we put our efforts on resource consuming machines which are
+everywhere in use today. Likely, we should understand these proved
+negative theorems well first, then we can begin our search on
+mechanisms that can be designed and of some good qualities while
+avoiding time waste on mechanism design that has been proved impossible.
+
+The economic environment $e$ in the following part and most economic literature is mostly the preference profile or utility profile, usually denoted $R$ or $u$.
+
+\begin{thm*}(Gibbard-Satterthwaite)
+  \label{gibbard-satterthwaite}
+If the outcome set $A$ has at least 3 alterna-
+tives, a social choice rule which is strongly individually incentive compatible and
+defined on a unrestricted preference domain is dictatorial.
+\end{thm*}
+
+\parencite{Gibbard1973} and \parencite{Satterthwaite1975} first proposed this important theorem for implementation theory. It is generally known as 
+Gibbard Satterthwaite Impossibility theorem. This impossibility result is very important. It has led our research to restricted preference domain, like in matching where the outcome is assumed to be ranked only by a player's self matched object. For its proof, the original paper is recommended for reference.
+
+Pareto efficiency is often a basic requirement of economic
+mechanisms. However, in \parencite{Hurwicz1972}
+Hurwics  shows that  the Pareto efficiency and the truthful revelation is
+fundamentally inconsistent even for the class of neoclassical economic
+environments.
+\begin{thm*}
+(Hurwicz Impossibility Theorem) For the neoclassical pri-
+vate goods economies, there is no mechanism < M, h > that implements Pareto efficient
+and individually rational allocations in dominant strategy. Consequently, any revelation
+mechanism < M, h > that yields Pareto efficient and individually rational allocations is
+not strongly individually incentive compatible. (Truth-telling about their preferences is not
+Nash Equilibrium).
+\end{thm*}
+The proof can be found in Hurwicz's original paper. 
+%Since the proof is not too long. We provide
+%an adapted proof in Appendix \ref{Appendix_B}.
+
+After introducing these impossibility results, we would like to see what can be implemented with mechanism design through two examples.
+
 \section{Some examples of  mechanisms}
 
-The previous introduction of general model is abstract. The following subsections will give two examples of mechanism design in more concrete situations. These exemplifies the usefulness of mechanism design. They can be safely skipped without hindering reading of later chapters.
+The previous introduction of general model is abstract, and the impossibility results are depressing. To show the usefulness of mechanism design, the following subsections will give two examples of mechanism design in more concrete situations. These exemplifies the usefulness of mechanism design. They can be safely skipped without hindering reading of later chapters. 
 
 \subsection{Assets Inheritance problem}
 \label{assets_inheritance}
@@ -358,12 +403,15 @@ give it to him,
 then picks the more valuable group from the remaining assets according to the middle son's value report, and finally gives the last group of goods to  the oldest son. 
 
 \begin{comment}
-In fact, the existence of the second mechanism is implied by the existence of the first mechanism by a simple application of revelation principle.If due to some reason for implementation, a revelation mechanism is more preferred, whenever we have chanced upon a mechanism implementing some social goal, we can convert it to a revelation mechanism which is called the equivalent direct mechanism of the original mechanism. You can see Chapter \ref{Chapter4} for a conversion of some Chinese college admission mechanisms into equivalent direct mechanism forms.
+In fact, the existence of the second mechanism is implied by the existence of the first mechanism by a simple application of revelation principle.If due to some reason for implementation, a revelation mechanism is more preferred, whenever we have chanced upon a mechanism implementing some social goal, we can convert it to a revelation mechanism which achieve the same social goal of the original mechanism.
 \end{comment}
 
 
 \subsection{An example of Auction Design}
-In the last part of the chapter, we would like to design a mechanism for selling goods with  uncertain values.  Here a distribution assumption is used. Auctions are one of the most successful areas where the development of economics
+The idea of this part has established after discussion with Dazhong Wang and the mechanisms in this part are jointly designed by us.
+
+We would like to design a mechanism for selling goods with  uncertain values.
+Here a distribution assumption is used. Auctions are one of the most successful areas where the development of economics
 theory and practice help each other. I will try to investigate this area from
 a mechanism design perspective in this section. The material is put here as an example of what can be implemented for some special market. 
 
@@ -563,17 +611,13 @@ When the seller is not able to charge experience fee, her optimal sales mechanis
 In this section, I would like to talk about the scope of my
 thesis. The main focus will be around mechanisms for dealing with
 decentralized information problem. The last chapter is a diversion to
-some
-mechanisms that are designed for special purpose and under special requirements.4 chapters follow this introductory one.
+some mechanisms that are designed for special purpose and under special requirements. 3 chapters follow this introductory one.
 
- Chapter 2 is a review of important results in the literatures of mechanism design and Nash implementation, especially those
-impossibility results. These results establish the impossibility of implementability with most general conditions. And this lead us to put effort in the consideration of more specific environments and conditions. The body of theory on Perfect Information Nash implementation exemplify the method mostly employed in the search. They proposed conditions and then through method of construction proved that under the conditions certain social goal can be Nash implemented.
+Chapter 2 is a whole chapter devoted to the study of ex post implementation of socially efficient allocation goal through money transfer under the interdependent value environment. Both continuous and discrete cases are considered. First, a form of VCG mechanism is proposed in the social choice of minimizing total pollution under a special interdependent value environment. The scope of use for this form of VCG mechanism is investigated and provided.  The later theoretical material in this chapter employ the condition-proposing and constructive-proving method frequently found in mechanism design literature.  A sufficient condition called Condtion $\rho$ for ex post implementation with interdependent values via money transfer is given for the multiple goods assignment problem as an attempt to contribute to the field. 
 
-Chapter 3 is a whole chapter devoted to the study of ex post implementation of socially efficient allocation goal through money transfer under the interdependent value environment. The material in this chapter employ the condition-proposing and constructive-proving method frequently found in mechanism design literature. Both continuous and discrete cases are considered. A sufficient condition called Condtion $\rho$ for ex post implementation with interdependent values via money transfer is given for the multiple goods assignment problem as an attempt to contribute to the field. 
+Chapter 3 is devoted to a discussion of matching mechanisms design. The attention is focused on an application of the theory to the Chinese college admission mechanism. We have two findings. First if all colleges have same priority criterion , the ex post equilibrium matching result of DA, IA and parallel mechanisms is the unique optimal stable matching result for the students. Second under general priority structures of the colleges, the sets of ex post equilibrium matching results for these mechanisms exibits a nested structure. These derived propositions show that the DA mechanism is perhaps the best choice among these three popular mechanisms.
 
-Chapter 4 is devoted to a discussion of matching mechanisms design. The attention is later focused on an application of the theory to the Chinese college admission mechanism. A few derived propositions show that the score-dictating mechanism is perhaps the best choice among three popular mechanisms.
-
-Chapter 5 is a chapter reflecting upon a special class of mechanisms in which the implementation goal is to let the side with more skills etc to win. It is up to the agents to show their techniques to compete in these mechanism to win . Focus is put upon finite dynamic games with perfect information with chess as a model for the convenience of discussion.
+Chapter 4 is a chapter reflecting upon a special class of mechanisms in which the implementation goal is to let the side with more skills etc to win. It is up to the agents to show their techniques to compete in these mechanism to win . Focus is put upon finite dynamic games with perfect information with chess as a model for the convenience of discussion.
 
 
 

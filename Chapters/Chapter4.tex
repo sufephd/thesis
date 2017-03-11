@@ -54,9 +54,9 @@ unlimited. Hence:
 \[ \mu(0) = \{j \in C : |\mu^{-1}(j)| < q_j\}\cup \{0\}\]
 
 
-We assume students have preferences on colleges.  Denote by $R_i$ student $i$'s preference on the set of colleges $C \cup \{0\}$. The corresponding strict preference and indifference relations are denoted by $P_i$ and $I_i$, respectively. The meaning of the notation is as follows: if $c,c'\in C \cup \{0\}$ and $c R_i c'$, then student $i \in S$ weakly prefers college $c$ to college $c'$. Change ``weakly prefers'' to ``strictly prefer'' we get the meaning for the strict $P_i$. Change ``weakly prefers'' to ``are indifferent'' we get the meaning for the indifferent $I_i$. Preferences are assumed to be rational in the sense that for all $i \in S$, $R_i$ is complete, reflexive and transitive. A preference profile is a list $ R = (R_1,...,R_n)$ of the students' preferences. All the discussions here and after are based on the strict preference assumption. That is , if $c I_i c'$, then $c=c'$.\footnote{Because the students have strict preference, a college can only be indifferent to itself in any student's preference. No two things are exactly the same, and indifference are usually the result of inadequate information, so here we assume aspects of the university are known to the extent that the colleges can be ranked by a student.}
+We assume that students have preferences on colleges.  Denote by $R_i$ student $i$'s preference on the set of colleges $C \cup \{0\}$. The corresponding strict preference and indifference relations are denoted by $P_i$ and $I_i$, respectively. The meaning of the notation is as follows: if $c,c'\in C \cup \{0\}$ and $c R_i c'$, then student $i \in S$ weakly prefers college $c$ to college $c'$. Change ``weakly prefers'' to ``strictly prefer'' we get the meaning for the strict $P_i$. Change ``weakly prefers'' to ``are indifferent'' we get the meaning for the indifferent $I_i$. Preferences are assumed to be rational in the sense that for all $i \in S$, $R_i$ is complete, reflexive and transitive. A preference profile is a list $ R = (R_1,...,R_n)$ of the students' preferences. All the discussions here and after are based on the strict preference assumption. That is , if $c I_i c'$, then $c=c'$.\footnote{Because the students have strict preference, a college can only be indifferent to itself in any student's preference. No two things are exactly the same, and indifference are usually the result of inadequate information, so here we assume aspects of the university are known to the extent that the colleges can be ranked by a student.}
 
- Here, a priority structure $\pi$ is assumed for the colleges, that is, for each college $j \in C$, there is an exogenously given strict priority-order $\pi_j$. Formally, $\pi_j: S \rightarrow S$ is a bijection where the highest-ranked student  is the student $i\in S$ with $\pi_j(i)=1$, the second highest ranked student $i' \in S$ has $\pi_j(i')=2$, and so on. When $\pi_j$ is the same for all $j\in C$, we get the serial dictator matching mechanism. A priority structure is a list $ \pi = (\pi_1,...,\pi_m)$ of the colleges' priority-order. For the concept of pairwise stable, this priority structure is enough. \footnote{For group stable or core, further definition of college preference on groups of students should be provided. And for substitutable college preferences which is an implied assumption of this chapter, the two concepts coincide. See Proposition 6.4 in \parencite{Roth1990} for more details.}
+ Here, a priority structure $\pi$ is assumed for the colleges, that is, for each college $j \in C$, there is an exogenously given strict priority-order $\pi_j$. Formally, $\pi_j: S \rightarrow \{1,\cdots,n\}$ is a bijection where the highest-ranked student  is the student $i\in S$ with $\pi_j(i)=1$, the second highest ranked student $i' \in S$ has $\pi_j(i')=2$, and so on. When $\pi_j$ is the same for all $j\in C$, we get the serial dictator matching mechanism. A priority structure is a list $ \pi = (\pi_1,...,\pi_m)$ of the colleges' priority-order. For the concept of pairwise stable, this priority structure is enough. \footnote{For group stable or core, further definition of college preference on groups of students should be provided. And for substitutable college preferences which is an implied assumption of this chapter, the two concepts coincide. See Proposition 6.4 in \parencite{Roth1990} for more details.}
 
  A matching $\mu$ is pairwise stable(or called priority respecting as in \parencite{Svensson2014}) if there is no student $i \in S$ who strictly prefers some college $j$ to $\mu(i)$ and $\mu^{-1}(j)$ contains some other student $i' \in S$ who has lower priority for college $j$ than student $i$(i.e., $\pi_j(i')>\pi_j(i)$), and furthermore, all students weakly prefer their assigned college seats to any unassigned seats in $\mu(0)$(seats from the same college are obviously equal). We'll simply use stable to mean pairwise stable later in the chapter.
 
@@ -308,14 +308,14 @@ deciding tool for the colleges.
 Students from high school in China need to take an entrance exam to
 decide the student priority for colleges, and the priority structure
 is also influenced by the application form that the students write to
-inform authority their own preferences. Starting from the early 1950s,
-the mechanisms adopted has gone
-through series of reforms,  and what kind of mechanism should be adopted is
-currently still in debate.
-
-The college entrance exam, or Gaokao in Chinese Pinyin,  forms the 
+inform authority their own preferences. The college entrance exam, or Gaokao in Chinese Pinyin,  forms the 
 foundation of the priority determination process for the current
-admission system.  There are millions of high school seniors compete
+admission system. However,the stage of priority determination through examimations is not the concern of us. There is a complication in the real system, the colleges are classified into batches, where each batch of colleges share the same enrollment scoreline, that is, the minimum score that a student must have in order to be considered eligible for colleges of that batch. However, Shanghai has first abandoned the classification of colleges into batches with different enrollment scoreline from 2016, and many other provinces have anounced their plan to reduce batches or simply abandon batches since then. This complication is not considered in our analysis.
+
+We are interested in mechanisms about how to match the college and students once the priority has been determined. Starting from the early 1950s,
+the mechanisms adopted for the stage of matching has gone
+through series of reforms,  and what kind of mechanism should be adopted is
+currently still in debate. There are millions of high school seniors compete
 for  seats at various colleges and universities in China each
 year. The matching of students to these colleges and universities has
 profound implications for the education and labor market outcomes for
@@ -323,79 +323,57 @@ these students.  The fairness and efficiency of this matching process,
 is of great importance to the society.
 
 Many Chinese scholars have writen articles discussing problems related
-to Gaokao. \parencite{Zhong2004} has done the efficiency comparison of
-the three preference reporting  mechanisms, i.e. reporting preference
+to Chinese college admission mechanisms. \parencite{Zhong2004} has investigated the effects
+of three preference report timings on the efficiency of the final matching, i.e. reporting preference
 before the exam, after the exam but not knowing the exact scores,  and
-after the scores are known.  This kind of study apparently focused on the
-strategical interaction of studnets in the games, not on how to induce
-the truthful reporting.  As to the strategical importance of
+after the scores are known.  This study has focused on the
+strategical interaction of students in the games, not on how to induce
+the truthful reporting with a suitable matching mechanism later in the match stage.  As to the strategical importance of
 preference reporting,  Haifeng Nie has written many articles.  Both \parencite{Nie2007a}
 and \parencite{Nie2007b} has stressed the point that a good score may
 not be as useful as a good strategy for reporting the preference of
-the university. This somewhat strange phenomenon has motivated me
+the university. This somewhat strange phenomenon has motivated us
 in studying the issue of reducing manipulation and inducing better
 and fairer results.
 
-The Chinese  matching mechanisms has recently caught attention of overseas scholars from
+The Chinese  matching mechanisms has also recently caught attention of overseas scholars from
 the economic field of matching. \parencite{YanChenJPE} has
 done much to analyze theoretically the sutleties of the different
 mechanisms adopted, and has gone even further to design experiments
 for studying features of these mechanisms,
-see \parencite{YanChen2016}. 
+see \parencite{YanChen2016}. Though much has been investigated by them, we still find something interesting in addition to what they find.
 
-\subsection{A simple model of the Chinese student-college matching}
 
-The mechanisms are hard to analyze with all the real procedures on,
+
+\subsection{A simple characterization of the popular matching mechanisms in CCA}
+
+The mechanisms are hard to analyze with all the real application-rejection procedures mixed in the definition,
 so we will deal with the equivalent direct mechanisms of the mechanisms actually in use.
 
-% Another reason
-According to Revelation Principle, if a social result can be
-implemented in dominant strategy equilibrium in a mechanism, then it
-can be truthfully implemented in a direct revelation mechanism. For ex
-post equilibrium, it is also true as proved in Appendix
-\ref{Appendix_A}. Actually, Revelation Principle has not told all that
-has been shown in the proof. In the proof, we establish a direct
-revelation mechanism that for each strategy profile in the original
-mechanism, there is a strategy profile in the direct revelation
-mechanism that has the same result:
-$g(s_1,\cdots,s_n)=h(\sigma^1(s_1),\cdots,\sigma^n(s_n))\in
-F(s_1,\cdots,s_n)$. Then we showed that an ex post equilibrium result
-in the original mechanism is also an ex post equilibrium result in
-this direct revelation mechanism.  It is called the equivalent
-direct mechanism of the original mechanism.
-%In fact, the equivalent direct mechanism is equivalent to the original mechanism not only in ex post equilibrium results.
-Remember that we have
-described an assets_inheritance problem in the examples section
-\ref{assets_inheritance} in the Introduction Chapter. The second
-mechanism is the equivalent direct mechanism of the first mechanism.
-%For designing new
-%mechanisms, it seems that considering only strategyproof direct mechanism is
-%enough.
-
-Therefore when studying ex post equilibrium results for existing
-mechanisms which are not direct revelation mechanism, we can use a
-equivalent direct revelation mechanism with the same ex post
-equilibrium results for expositional convenience\footnote{We put the
+when studying ex post equilibrium results for existing
+mechanisms which are not direct revelation mechanism, we will convert it to aa
+equivalent direct revelation mechanism with the same matching results for expositional convenience\footnote{We put the
   mechanisms in the same revelation mechanism class. and this make it easier to do
   comparison.}  Also to aid analysis and exposition, a notion of successful
-manipulation which means a best report choice given others' report is
-frequently used in later analysis of the strategical interaction of
-students in the Chinese college admission mechanisms. \footnote{ It is
+manipulation which means a best report choice given others' reports is
+used in later analysis of the strategical interaction of
+students in the CCA matching mechanisms. \footnote{ It is
   essentially the best response concept in Nash equilibrium but sounds
   more fluent when used in description of the strategical interactions
   among the students.}
 
-Now, let's introduce three important class of mechanisms: DA mechanism, Boston
-mechanism and parallel mechanisms. DA mechanism is what we have investigated in the previous section, but it has never been adopted in China. Boston mechanism or the Immediate Acceptance (IA)
-mechanism  had been the only mechanism used in Chinese
+Now, let's introduce three important class of mechanisms: DA mechanism, IA\footnote{Immediate Acceptance mechanism, also known abroad as the Boston Mechanism for its adoption in Boston district, uses the same accept-reject procedure as DA, only the acceptance is not tentative but final.}
+mechanism and parallel mechanisms. DA mechanism is what we have investigated in the previous section, but it has never been truely adopted in China
+due to the fact that the length of reported preference list is too small a number compared to the hundreds of colleges. The Immediate Acceptance (IA)
+mechanism  had been the main mechanism used in Chinese
 student assignments both at the high school and college
 level \parencite{Nie2007b}. However, this mechanism has a serious
 limitation: “a good score in the college entrance exam is often worth less
 than a good preference reporting strategy” \parencite{Nie2007a}. In our paper's wording, a successful
-manipulation is often more important than your score level. The
-problem arise from the special priority structure in the
-mechanism. Priority of a student in a college is based on your
-reported preference list firstly and based on your score secondly, a
+manipulation is often more important than your score level. This
+problem arises from the special priority structure in the
+mechanism. Priority of a student in a college is based on the
+reported preference list firstly and based on your scores secondly, a
 dictionary order that put too much emphasis on preference
 reporting. Given in \parencite{Nie2007b}, and also cited
 in \parencite{YanChenJPE}, one parent has the following explanation of
@@ -409,7 +387,7 @@ choices were already full. My child had no choice but to repeat his senior year.
 To alleviate this problem of high-scoring students not being accepted by any universities, the
 parallel mechanism was proposed. 
 In the parallel mechanism, students select several
-“parallel” colleges within each choice-band. The priority structure is changed. The priority of a student in a college of the same choice-band is the same. A more detailed description from \parencite{YanChenJPE} is cited here for the importance of fully understanding the mechanism.
+“parallel” colleges within each choice-band. The priority structure is changed. A detailed description from \parencite{YanChenJPE} is cited here for your full understanding of the mechanism.
 
 ``a student’s first choice-band may
 contain a set of three colleges, A, B, and C while her second choice-band may contain another set
@@ -438,14 +416,16 @@ of application-rejection mechanisms. In this chapter, they are all
 converted to their equivalent direct mechanisms. The following are the definitions.
 
 \begin{definition*}direct revelation DA mechanism:
-Each student reports his or her preference list, each college report its priority criterion(usually score plus some tie-breaking rules),then after collecting all these preference list and priority criterion, the social planner runs the DA procedure
+  
+Each student reports his or her preference list, each college reports its priority criteria(usually scores plus some tie-breaking rules),then after collecting all these preference lists and priority criteria, the social planner runs the DA procedure
 to produce a final matching result.
 \end{definition*}
 
-\begin{definition*}direct revelation IA mechanism: Each students
-report his or her preference list, each college reports its priority
-criterion(usually score plus some tie-breaking rules),then after
-collecting all these preference list and priority criterion, the
+\begin{definition*}direct revelation IA mechanism:
+
+Each students reports his or her preference list, each college reports its priority
+criteria(usually scores plus some tie-breaking rules),then after
+collecting all these preference lists and priority criteria, the
 social planner adjusts the priority rule such that the reported
 priority criterion of a college is made only a tie-breaking rule, and the rank of a college in a student's reported preference list is
 the main priority criterion. Finally,
@@ -455,21 +435,27 @@ to produce a final matching result.
 
 The parallel mechanisms are a wide group of mechanisms. Therefore we need to devise a group of equivalent direct mechanism for them all. However,
 parallel mechanisms only differ in the choice-band sizes, so different list of choice-band sizes characterizes a different parallel mechanism.
+
 \begin{definition*} characteristic list of a parallel mechanism:
-  An infinite list of integers greater than zero $(n_1,n_2,\cdots)$ is the characteristic list of a parallel mechanism if the $n_1,n_2,\cdots$
-  define the choice-band size for the 1st ranked, 2nd ranked, \cdots  choice-band.
+  
+  An infinite list of integers greater than zero $(e_1,e_2,\cdots)$ is the characteristic list of a parallel mechanism if the $e_1,e_2,\cdots$
+  define the choice-band sizes for the 1st ranked, 2nd ranked, \cdots  choice-bands.
 \end{definition*}
 
-\begin{definition*}direct revelation parallel mechanisms: Each student
-  report his or her preference list, each college report its priority
-  criterion(usually score plus some tie-breaking rules),after
-  collecting all these preference list and priority criterion, the
-  social planner uses the preference list to produce a list of
-  choice-bands according to the characteristic list $(n_1,n_2,\cdots)$
-  of the parallel mechanism such that the 1st ranked choice-band
-  includes the top $n_1$ colleges in the preference list, the 2nd
-  ranked choice-band includes the top $n_2$ of the remaining colleges in the preference list, and so on. Then the social planner adjusts the
-  priority rule such that the reported priority criterion of a college
+Henceforth, a parallel mechanism with a characteristic list $(e_1,e_2,\cdots)$ will just be called mechanism $(e_1,e_2,\cdots)$.
+
+
+\begin{definition*}direct revelation parallel mechanism $(e_1,e_2,\cdots)$:
+
+  Each student reports his or her preference list, each college reports its priority
+  criteria(usually scores plus some tie-breaking rules). After
+  collecting all these preference lists and priority criteria, the
+  social planner uses the preference list to produce a list of college
+  choice-bands according to the characteristic list $(e_1,e_2,\cdots)$
+  such that the 1st ranked choice-band
+  includes the top $e_1$ colleges in the preference list, the 2nd
+  ranked choice-band includes the top $e_2$ of the remaining colleges in the preference list, and so on. Then the social planner adjusts the
+  priority rule such that the reported priority criteria of a college
   is made only a tie-breaking rule, and the rank of the choice-band
   which a college belongs to in a student's reported preference list
   is the main priority criterion. Finally, the social planner runs the
@@ -477,9 +463,10 @@ parallel mechanisms only differ in the choice-band sizes, so different list of c
 \end{definition*}
 
 These three direct mechanisms are henceforth just called DA, IA and parallel mechanisms.
-
 From the definition of parallel mechanisms, we can see that DA and IA mechanisms are two special forms of parallel mechanisms with characteristic
-list $(+\infty,0,0,\cdots)$ and $(1,1,1,\cdots)$. Compared with the parameter $e$ class of mechanisms in \parencite{YanChenJPE}, our formulation incorporates more mechanisms. Because we allow different ranked choice-band to be of different sizes by introducing a list of integers as characteristic parameters instead of just an integer as the parameter.
+list $(+\infty,0,0,\cdots)$ and $(1,1,1,\cdots)$. Therefore they can also be called mechanism $(+\infty,0,0,\cdots)$ and mechanism $(1,1,1,\cdots)$.
+
+
 
 
 
@@ -498,13 +485,9 @@ $R$, and priority structure $\pi$, $\mu = h(R, \pi(R))$ and for any $i
 \in S$, denote $h(R_i',R_{-i}, \pi(R_i',R_{-i}))$ by $\mu'$, then we have $\mu(i)R_i \mu'(i)$.
 \end{definition}
 
-We have the following proposition.
-
-\begin{prop}
+We have the following claim.
 IA and parallel mechanisms are manipulable. DA is non-manipulable.
-\end{prop}
-
-The formal proof is ommited. An example can be easily established to demonstrate it.
+Its proof can been found in \parencite{YanChenJPE}.
  
 \begin{remark}
 The efficiency and stableness concept is apparently not very useful when
@@ -563,18 +546,17 @@ satisfies a social goal $f(p)$, because you do not know the economics
 environment $p$ because of manipulation of preference reporting!
 
 
-For general priority structures, as to matching results that can be
-achieved with perfect manipulation under the IA mechanism, some
-discussion can be found in \parencite{Ergin2006}; as to matching
-results that can be achieved with perfect manipulation under the
-parallel mechanism, relevant discussion can be found
-in \parencite{YanChenJPE}.
+In \parencite{YanChenJPE}, they started analysis of parallel mechanisms with the symmetric parameter setting, i.e., $e =e_1=e_2=\cdots$ before studying the general case where $e_1, e_2,\cdots$ might be independent parameters. In the general case, they proved a nested manipulability structure for parallel mechanisms, and then they paid attention to stability comparisons between parallel mechanisms with an additive decomposition relationship. For ex post equilibrium outcomes, they only give the Proposition 4 in the symmetric parameter setting. We found a nested structure of the ex post equilibrium outcomes in parallel mechanisms, and proved that the set of ex post equilibrium outcomes is not influenced by $e_2,e_3,\cdots$.   
 
- In this chapter, we
+
+
+
+
+ Before diving into the case of general priority structure, we first
 focus our attention on a very important kind of priority structure,
 the score-based priority structure and discuss what kind of matching
 results can be achieved with perfect manipulation under such uniformly
-score-based priority. 
+score-based priority. This interest comes from reality. In CCA, the priority criteria is basically the scores with some similar tie-breaking rules across colleges, and the examination paper is usually the same nationwide\footnote{Only Beijing, Shanghai, and a few provinces choose to devise an exam paper of their own} .
 
 DA mechanism just use the score high-low comparison to determine
 priority of students for every college. The more score you get, the
@@ -597,14 +579,14 @@ comes the second procedure of comparison. The student with higher
 score(or high original priority) has higher priority. IA mechanism is
 just a parallel mechanism with every group size equal to $1$.
 
-
+In fact, the important thing is not that the priority structure is score-based nationwide, but that it is the same across colleges.
 We have the following important theorem.
 
 \begin{thm}\label{same}
 If every college has the same base priority for the students, and only
 modify the priority structure as described for the IA and parallel
 mechanism, then the matching achievable with perfect
-manipulation under the IA and parallel mechanism  is the same with the one under  the DA mechanism, which is  unique , stable and constrained efficient. 
+manipulation,that is, the ex post equilibrium matching result,  under the IA and parallel mechanism  is the same with the one under  the DA mechanism, which is  unique , stable and constrained efficient. 
 \end{thm}
 
 %In this section, we would like to show
@@ -627,47 +609,142 @@ manipulation under the IA and parallel mechanism  is the same with the one under
 
 
 
-To get this result, we first propose a property of the DA mechanism which is convenient for discussion of its matching result. 
+To get this result, we first propose a property of the DA mechanism which is convenient for discussion of its matching result.
+\begin{definition}
+  free-style DA:
+  
+  Actions includes:
+  
+  1.some students not tentatively holding by a college apply to their head college in their preference lists, and erase these colleges from the lists.
+  
+  2.some colleges with more than quota number of students applying rejects some students that are not in their top quota priority.
 
+  Each round, action 1 happens or action 2 happens or action 1 and 2 happens together.
+  
+  
+The termination condition for the free-style DA:
+
+ When there is no college holding more than quota students, and no student is rejected by any college, the free-style DA ends.
+ %that is his or her favorite among the colleges having not rejected him.
+\end{definition}
+
+The DA mechanism described before is a free-style DA such that each round all students not tentatively holding apply and all colleges with more than quota number of students reject all that are not in the top quota priority. The standard DA mechanism is the most efficient in operation among the free style DA mechanisms, but when the focus is on the final matching result, they are all the same DA mechanism. The following is a proposition for this.
 \begin{prop}
+  \label{irrelevant}
  The final
-matching result of the DA mechanism is not influenced by the number and order of applications of the students in each step, as long as there is some student in each step  who applies for the college that is his or her favorite among the colleges having not rejected him.
+ matching result of free-style DA mechanism is  influenced by neither the number and order of applications of the students in each step nor the number and order of the rejection of colleges,  as long as there is some student who applies for a college in the preference list order  or a college rejects some student not in the top quota priority.
+ 
 \end{prop}
 
-Because of the finiteness of the problem, any mechanism with the above requirement will end, and we can say that the result is the same as the ordinary DA according to this  proposition. 
-%The proof is relegated to the appendix C. 
-We call this group of mechanisms as the DA family of mechanisms.
-
-As a direct result of the above propostion and the optimal stableness and non-manipulability of DA mechanism, we have the following corollary.
-
-\begin{corollary}
-The DA family of mechanisms are all optimally stable, and non-manipulable.
-\end{corollary}
-
 \begin{proof}
-Now is the proof of the above theorem \ref{same}.
-In fact, the Serial dictatorship mechanism is just a member of the DA family of mechanisms and has the property mentioned in the above corollary. Therefore, in the following discussion, we take the Score-based serial dictatorship mechanism for producing the DA matching result.
-
-Now we give a intuitionistic proof of the important theorem. The perfect manipulation of DA mechanism is just non-manipulation, that is, stating the true 
-preference according to \ref{thm1}. For the parallel mechanism, we would first prove that for everyone to report as his or her favorite  the college that the DA matching mechanism assigns is a perfect manipulation. 
-
-To prove perfect manipulation, we only need to show that every student has got a successful manipulation by doing so. Using induction on the students' score list(without loss of generality, assuming no same scores).
-
-First, the student with the highest score, anounce his or her true favorite college as his or her favorite, has successfully manipulated. His or her true favorite is obviously the DA matching result. Therefore, this top student has done a successful manipulation by reporting as his or her favorite  the college that the DA matching mechanism assigns. 
-
-Second, for  an arbitrary student $i$. Suppose every student higher in the score list hasreported as his or her favorite  the college that the DA matching mechanism assigns. Then since the DA result is the same as the score-based serial dictatorship result, these students will get what they get in the DA. Now the student $i$ can only expect as the best the DA result, and can indeed get it if reporint it as his or her favorite. Therefore reporting  as his or her favorite  the college that the DA matching mechanism assigns is a successful manipulation for him.
-
-Having proved that the DA matching result is achievable with perfect manipulation, next we prove the uniqueness of the achievable matching result with perfect manipulation. We use terms of the DA matching result and the score-based serial dictatorship matching result interchangeably since they are the same in our setting.
-The proof of unique. Take any other matching result ,we would prove that it is not acheivable with perfect manipulation. Because the score-based serial dictatorship matching result is pareto-efficient, and the preference is strict, in any other matching result there must be some students who are worse off thanin the DA matching result. There must be a student with highest score among them, then we would like to show that this student has not successfully manipulated. Still using induction, 
-
-first, if this student is the top scored student, then he or she definitely has not successfully manipulated because if he or she report whatever college as his or her first choice, then he or she will get it.
-
-second, if all the higher scored students has successfully manipulated, then they will get the score-based serial dictatorship matching college, so this student can get the score-based serial dictatorship matching result. If he or she gets a worse college, he or she definitely has not successfully manipulated.
- 
-Done.
+  During the proof of the optimal stability of ordinary DA mechanism as shown in Appendix \ref{Appendix_D}, no specific order of application is assumed, therefore the order does not influence the final result's property of optimal stability. However, there is only one such result, hence the final matching result is the same.
 \end{proof}
 
-Now let us go to the next subsection where we put some details on.
+Since the order of application does not influence the final result, we can rearrange the DA application orders as we see convenient.
+In fact, the DA mechanism produces the same matching result as  SD(Serial Dictatorship) mechanism when the base priority structure is the same. This can be seen easily by rearrange the DA application order by priority. The 1st prioritied student applies to his or her favorite college and is accepted ``finally'' because no later application can be from a student with higher priority. The 2nd prioritied student applies to his or her favorite college in the colleges with unfilled seats because he cannot compete with the previous applied students who have higher priority, and is accepted ``finally''. The 3rd, the 4th,... ,the nth, applies in the same manner.  Therefore, in the following discussion, we take the SD mechanism as equal to the DA mechanism under the environment of same priority structure. And we use terms of the DA matching result and the SD matching result interchangeably since they are the same in the same priority setting.
+
+With this idea in mind, now an informal proof of theorem \ref{same} is given below. The proof is intuitionistic . The perfect manipulation of serial dictatorship mechanism is just non-manipulation, that is, stating the true preference. For the parallel mechanism, we would prove that for everyone to report as his or her favorite  the college he or she is matched to in the SD mechanism forms an ex post equilibrium. We only need to show that every student has got a successful manipulation by doing so. Using induction on the students' priority list(Note that we assumes strict priorities in this chapter).
+
+First, the student $i$ with $\pi(i)=1$, anounce his or her true favorite college as his or her favorite, has successfully manipulated. He can obviously get  his or her true favorite this way. Moreover, this top student can only achieve a successful manipulation by reporting this way.
+
+Second, for  an arbitrary student $i$. Suppose every student $i'$ such that $\pi(i')<\pi(i)$, i.e., higher in the priority list has reported as his or her favorite  the college that the SD mechanism assigns when he or she has reported truthfully. Now the student $i$ can only expect the SD resultas the best, and can indeed get it if reporting it as his or her favorite. Therefore reporting  as his or her favorite  the college that the SD mechanism assigns is a successful manipulation for him.
+
+Having showed that the SD matching result is achievable with perfect manipulation, next we prove the uniqueness of the achievable matching result with perfect manipulation.
+
+The proof of unique. Take any other matching result ,we would prove that it is not acheivable with perfect manipulation. Because the SD matching result is pareto-efficient, and the preference is strict, in any other matching result there must be some students who are worse off than in the SD matching result. There must be a student with highest priority among them, then we would like to show that this student has not successfully manipulated. Using case study, 
+
+first, if this student is the top prioritied student, then he or she definitely has not successfully manipulated because if he or she report whatever college as his or her first choice, then he or she will get it.
+
+second, if  this student is not the top scored student, but all the higher prioritied students have successfully manipulated, then they will get the SD matching result, so this student can get the SD  matching result too. If he or she gets a worse college, he or she definitely has not successfully manipulated.
+
+Except for the informal proof, later we will give another proof using the following theorem.
+ 
+
+For general priority structures, as to matching results that can be
+achieved with perfect manipulation under the IA mechanism, \emph{Theorem 1} in \parencite{Ergin2006} is of vital importance\footnote{They called them Nash equilibrium results which we do not think accurate as we have discussed the difference between Nash equilibrium and ex post equilibrium.}; as to matching
+results that can be achieved with perfect manipulation under the
+parallel mechanism,  \parencite{YanChenJPE} provided many deep insights.
+
+\begin{thm}
+  \label{expost-equilibrium}
+  For two parallel mechanisms $(e_1,e_2,...)$ and $(e_1',e_2',...)$, if $e_1 < e_1'$, then any ex post equilibrium matching result in mechanisms $(e_1,e_2,...)$ can be implemented in ex post equilibrium with a properly chosen preference report in mechanism $(e_1',e_2',...)$.
+\end{thm}
+
+The concept of underdemanded school has been crucial in \parencite{Qianfeng2014}.
+In the proof of the above proposition, a similar concept of underdesiredness is needed and defined below.
+\begin{definition}
+  A college $c$ is underdesired at a matching $\mu$ if no student $i$ strictly prefers $c$ to $\mu(i)$ relative to the student's true preference.
+\end{definition}
+
+Note that there is a difference between the underdesired concept here and the underdemanded concept in  \parencite{Qianfeng2014}. We say ``relative to the student's true preference'' while they mean ``relative to the reported preference''.
+
+\begin{lemma}
+  \label{yan}
+  For the DA mechanism, a preference reporting profile $(R_1,...,R_n)$ gets the matching result $\mu$. For any student $i$, if he or she
+  changes the preference report to just $\{\mu(i),...\}$,i.e.,put $\mu(i)$ at the first place, the resulting matching result under the
+  new reported preference is $\mu'$. It must be
+  the case that  $\mu'(i)=\mu(i)$.
+\end{lemma}
+\begin{proof}
+  If we can show that deleting the report of the college before $\mu(i)$ in $R_i$ does not change $i$'s final matching result, then by repeated deleting the college before $\mu(i)$, we will move $\mu(i)$ to the first place while maintaining its final matching result unchanged.
+
+  Suppose $R_i'$ is the preference which results from deleting the college $c$ before $\mu(i)$ in $R_i$ . Arrange the DA so that the student $i$ does not start the report of preference until the DA with all other students reporting has finalized. Then $i$ enters and report his preference list one by one. For $\mu(i)$ to be the final matching for $i$, all the college reports before it will fail\footnote{Downright rejection or first accepted then a rejection cycle is induced so that finally being rejected.}. There are two cases:
+  
+  First, if applying to the $c$ before $\mu(i)$ results in downright rejection, then deleting the application of it or not does not change the final matching of $i$.
+  
+  Second, if applying to  the $c$ before $\mu(i)$ results in a rejection circle, then: if the $\mu{i}$ is not involved in the circle, the final matching to $\mu{i}$ is not changed;if the $\mu(i)$ is a college in the circle, then $i$ can get in $\mu(i)$ after the circle has rotated means that before the circle rotates, it will initiate it and when it rotates back, make $\mu(i)$ reject the student that without $i$ would be tentatively accepted.
+\end{proof}
+
+Now is the formal proof of Theorem \ref{expost-equilibrium}.
+
+
+\begin{proof}
+  Suppose $R$ is an ex post equilibrium preference report in mechanism $(e_1,e_2,...)$, and produces the matching result $\mu$. At equilibrium, if a college $c$ has admitted $k$ students who have put it in any of the choice-band $e_2,...$, $c$ is an underdesired college. Also, $c$ must have more than $k$ seats unfilled after running  DA for the truncated preference lists where we only retain the first $e_1$ items in every student's preference list.
+  %after the DA procedure of applications in the first choice-band $e_1$ of every student.
+  Modify the preference report of $R$ to $R'$ as follows. If a student $i$ is matched to his or her first choice-band $e_1$, then $R_i'=R_i$. Otherwise, insert $\mu(i)$ to the end of choice-band $e_1$.
+
+  First we claim that in mechanism $(e_1',e_2',...)$ this $R'$ produce the same matching result $\mu$. First, run  DA for the truncated preference lists where we only retain the first $e_1$ items in every student's preference list. This produces the same matching results for the students in the set $\{i| \mu(i) \text{ is in the first } e_1 \text{ colleges of } R\}$ since the $e_1$ items are in the $e_1'$ items of the $(e_1',e_2',...)$ due to $e_1<e_1'$. For any other student $i$, since they all insert $\mu(i)$ to the end of choice-band $e_1$, they are just matched to $\mu(i)$ too since $\mu(i)$ have enough seats unfilled. 
+
+  Second we claim that $R'$ is an ex post equilibrium in mechanism $(e_1',e_2',...)$. Note that with the reported preference $R'$ each student is matched to a college in their first choice-band $e_1'$ in mechanism $(e_1',e_2',...)$, thus the running of the mechanism is equal to the DA. Suppose a student $i$ can become matched to a $\mu'(i)$ that is strictly preferred to $\mu(i)$ by $i$ relative to the student's true preference. Then by Lemma \ref{yan}, by moving $\mu(i)$ to the first of reported preference list, $i$ still gets $\mu'(i)$. Now consider $i$ report $\mu'(i)$ as 1st place under mechanism $(e_1,e_2,...)$, the preference reports of other students there can be viewed as essentially shorter than under mechanism $(e_1',e_2',...)$, so $i$ can get a matching result at least as good as $\mu'(i)$ under mechanism $(e_1,e_2,...)$ by \emph{Theorem 5.34} in \parencite{Roth1990}\footnote{ here it means that $i$ is matched to $\mu'(i)$ since $\mu'(i)$ is already the first in the reported list.}. This is contradictory to $R$ being an ex post equilibrium under mechanism $(e_1,e_2,...)$.
+
+
+ 
+  
+\end{proof}
+
+An alternative proof of theorem \ref{same} is as follows.
+\begin{proof}
+  \emph{Theorem 1} in \parencite{Ergin2006} tells that the ex post(or Nash) equilibrium results for IA(or Boston) mechanism are the same with stable matchings. The only ex post equilibrium matching result  in DA with same priority is just the optimal stable matching. Theorem \ref{expost-equilibrium} says that the ex post equilibrium results set is a subset of DA, but a superset of IA, and therefore contains only the unique stable matching in this priority structure.
+\end{proof}  
+
+
+
+
+For two parallel mechanism with the same first choice-band size, we have the following theorem.
+
+\begin{thm}
+  \label{first-equal}  
+ For two parallel mechanisms $(e_1,e_2,...)$ and $(e_1',e_2',...)$, if $e_1 = e_1'$,then the set of all matching results from  ex post equilibriums  in mechanisms $(e_1,e_2,...)$ is the same with the set of all matching results from  ex post equilibriums in mechanisms $(e_1',e_2',...)$.
+\end{thm}
+
+\begin{proof}
+  We only need to show that if $R$ is an ex post equilibrium of mechanism $(e_1,e_2,...)$ and produces the matching result $\mu$, then we can find a $R'$ such that $R'$ under mechanism $(e_1',e_2',...)$ produces the same matching result $\mu$ and reporting $R'$ is an ex post equilibrium under mechanism $(e_1',e_2',...)$.
+
+  At equilibrium $R$, if a college $c$ has admitted $k$ students who have put it in any of the choice-band $e_2,...$, $c$ is an underdesired college. Also, $c$ must have more than $k$ seats unfilled after running  DA for the truncated preference lists where we only retain the first $e_1$ items in every student's preference list.
+
+  Modify the preference report of $R$ to $R'$ as follows. If a student $i$ is matched to his or her first choice-band $e_1$, then $R_i'=R_i$. Otherwise, insert $\mu(i)$ to the end of choice-band $e_1$.
+
+  First we claim that in mechanism $(e_1',e_2',...)$ this $R'$ produce the same matching result $\mu$. First, run  DA for the truncated preference lists where we only retain the first $e_1$ items in every student's preference list. This produces the same matching results for the students in the set $\{i| \mu(i) \text{ is in the first } e_1 \text{ colleges of } R\}$.  For any other student $i$, since they all insert $\mu(i)$ to the end of choice-band $e_1$, they are just matched to $\mu(i)$ too since $\mu(i)$ have enough seats unfilled.
+
+  Second we claim that $R'$ is an ex post equilibrium in mechanism $(e_1',e_2',...)$.  Suppose through reporting $R_i''$ a student $i$ can become matched to a $\mu'(i)$ that is strictly preferred to $\mu(i)$ by $i$ relative to the student's true preference.  This $\mu'(i)$ must not be underdesired college. By Lemma \ref{yan}, by moving $\mu(i)$ to the first of reported preference list, $i$ still gets $\mu'(i)$. Now consider $i$ reports $\mu'(i)$ as 1st place under mechanism $(e_1,e_2,...)$, due to $e_1=e_1'$, the preference reports $R_i$ of other students can be viewed as essentially the same as under mechanism $(e_1',e_2',...)$(2nd,3rd and ...  choice-bands preference do not matter due to low priority ), so $i$ can get the same matching result  $\mu'(i)$ under mechanism $(e_1,e_2,...)$. This is contradictory to $R$ being an ex post equilibrium under mechanism $(e_1,e_2,...)$.
+\end{proof}
+
+
+
+
+  
+
+Now let us go to the next subsection where we put some more details on.
 
 \subsection{Student-college matching with affirmative actions of bonus-score
   and quota}
@@ -684,12 +761,12 @@ chaotic state that the score-based serial dictatorship mechanism has
 successfully avoided in our previous simple model.
 
 Next is the more discussed affirmative action of quota, 
-A prevalent affirmative action policy in school choice limits the number of ad-
-mitted majority students to give minority students higher chances to attend their
-desired schools. To circumvent the inefficiency caused by majority quo-
-tas, \parencite{Hafalir2013} offered a different interpretation of the affirmative action policies based on
-minority reserves. With minority reserves, schools give higher priority to minor-
-ity students up to the point that the minorities fill the reserves.
+A prevalent affirmative action policy in school choice limits the number of
+admitted majority students to give minority students higher chances to attend their
+desired schools. To circumvent the inefficiency caused by majority
+quotas, \parencite{Hafalir2013} offered a different interpretation of the affirmative action policies based on
+minority reserves. With minority reserves, schools give higher priority to
+minority students up to the point that the minorities fill the reserves.
 we would like to adopt the minority reserve definition
 in \parencite{Hafalir2013} with a little extension. we will give every group(including the majority group) a reserve (or
 called quota, whatever) that gives a student of this group priority
@@ -789,28 +866,109 @@ From the above example, we see that the matching result of DA mechanism with quo
 matching results shows that IA 
 mechanism's result is a pareto improvement. Student $2$ and $5$ gets strictly better result in IA mechanism than in DA mechanism. Why the efficiency result of the
 the previous subsection lost. The reason is that the efficiency in previous subsection comes from the serial dictatorship nature of DA in that special priority
- structure. Now with quota included, the priority structure is changed and that property is lost in the process. However, the resulted matching is still priority-respecting(as \parencite{Svensson2014} call ``stable''), and constrained efficient(pareto efficient among the priority-respecting matchings). Meanwhile, there is not way for the student to manipulate to get a better result for this example. 
+structure. Now with quota included, the priority structure is changed and that property is lost in the process. However, the resulted matching for DA is still priority-respecting(as \parencite{Svensson2014} call ``stable''), and constrained efficient(pareto efficient among the priority-respecting matchings). Meanwhile, there is not a way for the student to manipulate to get a better result for this example.
 
-This is true for the DA mechanism with quota.
-Because of its importance, we state it as a formal theorem here.
+Despite the truth-reporting result of IA weakly pareto dominates the DA result, we should notice that the truthful reporting strategy as in the example does not constitutes an ex post equilibrium. The student $3$ has not manipulated successfully, if he or she has reported college $B$ as favorite, $3$ will not ended with matching no college.
+
+For the DA mechanism with majority quota, we have the following proposition.
+
+\begin{prop}
+A DA mechanism with majority quota is priority-respecting, constrained efficient and non-manipulable.
+\end{prop}
+\begin{proof}
+  A DA mechanism with majority quota can be  converted into an equivalent DA as follows.
+
+  Break each college into two colleges, one is the majority college with quota seats, the other is the minority college with remaining seats. The majority college with quota seats inherit the same priority structure, and the minority college with the remaining seats only accept minority students and preserve the priority of them. The preference list for minority is adjusted such that each original college is divided into two college with the minority college put before the majority college.  The preference list for majority is adjusted such that each original college is divided into two college with the majority college put before the minority college. Then run DA with these divided colleges and adjusted preferences, one get exactly the same result as running DA with majority quota as described in \parencite{Kojima2012}.
+
+  From the above perspective, a DA mechanism with quota is just a DA mechanism essentially, and retains all the feature of a DA mechanism. Therefore it is priority-respecting, constrained efficient and non-manipulable.
+\end{proof}
+
+For the DA mechanism with minority reserve, the same assertion holds.
+
+\begin{prop*}(Hafalir-Yenmez-Yildirim)
+  A DA mechanism with minority reserve is priority-respecting, constrained efficient(optimal stable) and non-manipulable.
+\end{prop*}
+
+This is equivalent to the proposition 1 in \parencite{Hafalir2013}. 
+In their proof, they also show that an equivalent way to implement the deferred acceptance
+algorithm with minority reserves is first to create a new matching problem with no af-
+firmative action and then to apply the original deferred acceptance algorithm to this
+market.
+
+A DA mechanism with minority reserve can be converted into an equivalent DA as follows.
+
+  Break each college into two colleges, one is the majority college with quota seats, the other is the minority college with remaining seats. The majority college with quota seats inherit the same priority structure, and the minority college with the remaining seats raise the priority of minority students  to the front of the majority students while keeping the priority relationship in the group unchanged. The preference list for minority is adjusted such that each original college is divided into two college with the minority college put before the majority college.  The preference list for majority is adjusted such that each original college is divided into two college with the majority college put before the minority college. Then run DA with these divided colleges and adjusted preferences, one get exactly the same result as running DA with minority reserve as described in \parencite{Hafalir2013}.
+
+
+
+
+Quota and reserve are quite distinct measures. Quota is to restrict a group such that it won't occupy more than  a number $q$ seats. Reserve is  to help a group such that as long as the $r$ seats for a college are not occupied fully by the group, then a member of the group only need to compete with members in the same group to enter the college.
+
+From the previous description of quota and reserve, we see that quota does not help any group directly while reserve does help the first $r$ number of the protected students in each college directly because some of them may not be admitted to their college without the reserve help. Majority quota $q^M$ puts a natural reserve $r^m$ on minority because no majority will get into the reserve, and besides that, it is more demanding since even if $r^m$ is not full, majority can not be filled.
+
+
+As is pointed out in \parencite{Hafalir2013}, the Pareto domination relationship in Theorem 1 of \parencite{Hafalir2013} holds if and only if it holds for the student-optimal stable matchings under the corresponding policies. To see this, note that for each affirmative action policy, the
+student-optimal stable matching Pareto dominates any other stable matching. However, we think the equivalent one is more concise, and give it
+here as a theorem.
+\begin{thm*}(Hafalir-Yenmez-Yildirim)
+  
+the student-proposing de-
+ferred acceptance algorithm with minority reserves Pareto dominates the algorithm
+with majority quotas when $q^M + r^m= q$.
+\end{thm*}
+Here we would like to provide another informal proof of it, which is much shorter and may provide some insight.
+\begin{proof}
+Consider the equivalent DAs for the DA with majority quota $q^M$, and DA with minority reserve $r^m$.
+  
+By proposition \ref{irrelevant}, we can run the equivalent DA for the DA with minority reserve first to get its final result. Then let the minority colleges ejecting all majority students  and continue running the equivalent DA for the DA with majority quota $q^M$ until a termination reach.
+
+The result of this free style DA is the same as the equivalent DA for DA with majority quota $q^M$, only it postpone the rejection of some majority students in the minority colleges until a matching result of the equivalent DA for the DA with minority reserve is reached.
+
+The continuing of DA is bad for students as they are heading to colleges lower in the preference list. Therefore the student-proposing de-
+ferred acceptance algorithm with minority reserves Pareto dominates the algorithm
+with majority quotas when $q^M + r^m= q$.
+
+
+\end{proof}
+
+
+Though minority reserve was first proposed explicitly in theory in \parencite{Hafalir2013}. However, the reserve method was practically in use in China for years. In CCA, a college often reserves a fixed number of students seats for a particular province. Through the years, students in the provinces with reserves have mostly benefited from such policy. \footnote{ The author of this thesis himself has enjoyed the benefit of such reserves in CCA, though there is a minimum-score requirement for enjoying the reserve which is called the enrollment scoreline for the first batch of schools.  } 
+  
+When considering reserves for provinces, the nested structure of ex post equilibrium results for DA, IA and parallel mechanisms still hold. We have the following theorem. 
 
 \begin{thm}
-A DA mechanism with quota is priority-respecting, constrained efficient and non-manipulable.
+  \label{expost-equilibrium-with-reserve}
+  For two parallel mechanisms $(e_1,e_2,...)$ and $(e_1',e_2',...)$ with reserves for  provinces, if $e_1 \leq e_1'$, then any ex post equilibrium matching result in mechanisms $(e_1,e_2,...)$ can be implemented in ex post equilibrium with a properly chosen preference report in mechanism $(e_1',e_2',...)$.
 \end{thm}
 
-The proof is relegated to the Appendices.
+\begin{proof}
+  We only need to convert the parallel mechanisms with the same reserve into equivalent parallel mechanisms with no reserve, and show that the converted mechanisms produce the same results and their first choice-band size still have the same comparative relationship.
+  After receiving the preferrence report of the students and the priority report of the colleges, break each college into the subcolleges each with the reserved number of seats and raise the priority of the target group of students\footnote{For example, students from shanghai.}  to the front of the other students while keeping the priority relationship in this group unchanged. The preference list for a student in each reserve group is adjusted such that each original college is replaced by the list of subcolleges with the reserve subcollege for the student being raised to the head. Then multiply the characteristic list of the original parallel mechanism by the number of subcolleges, we get the new characteristic list.
+
+  After all the above conversions, run the converted parallel mechanism, we can get a matching result. Combine the subcolleges back into the original college with all the admitted students, we get a matching result for the students and colleges. It is obvious that this matching result is the same with the matching result from  original parallel mechanism. For any two converted mechanisms, their first choice-band size still have the same comparative relationship because they are multiplied by the same number.
+  
+\end{proof}
+
+Quota also does not influence the nested structure of ex post equilibrium results for parallel mechanisms with similar reason. The style of proof in this section is intuitional and informal, but the ideas are hopefully conveyed. All in all, we find that the nested structure of ex post equilibrium matching results is not influence by the added details of quota or reserve.
+
+ 
+
+
+
+
+
 
 \subsection{Policy suggestions}
 
 For student-college matching mechanisms, when no affirmative actions are taken, and the scores in the nationwide college entrance examination is the base priority criterion, then the achievable result under perfect
 manipulation is the same, which is efficient, stable and
-unique. However, only for the DA or score-based serial dictatorship,
+unique. However, for the DA or score-based serial dictatorship,
 the perfect manipulation is easily fulfilled in reality, since the
 perfect manipulation is just non-manipulation, i.e., reporting the
 true preference. Therefore, it's very easy to teach how to do a
 successful manipulation in a score-based serial dictatorship, and even
 a researcher cannot tell how to do a successful manipulation in
-another mechanism such as IA mechanism and parallel mechanism. As a
+any other mechanism such as IA mechanism and parallel mechanism. As a
 result, a kind of unfairness caused by manipulation occurs. We do not
 want to judge students by manipulation, but these IA and parallel
 mechanism allow students' matching results to be influenced by a large
@@ -822,10 +980,10 @@ Where there is manipulation, there is
 corruption. A successful manipulation(reporting of preference) in IA
 and parallel mechanism needs information about other students'
 preference reporting. So there might be buying and selling of such
-information and even without corruption of relevant institutions, some
+information. Even without corruption of relevant institutions, some
 other unnecessary  businesses, like strategy
 consulting of preference  reporting  for  the college admission
-mechanisms.  These things  burden the family
+mechanisms will arise.  These things  burden the family
 of senior high school students unnecessarily both economically and
 spiritually.
 
