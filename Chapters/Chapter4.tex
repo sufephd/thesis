@@ -651,11 +651,11 @@ Second, for  an arbitrary student $i$. Suppose every student $i'$ such that $\pi
 
 Having showed that the SD matching result is achievable with perfect manipulation, next we prove the uniqueness of the achievable matching result with perfect manipulation.
 
-The proof of unique. Take any other matching result ,we would prove that it is not acheivable with perfect manipulation. Because the SD matching result is pareto-efficient, and the preference is strict, in any other matching result there must be some students who are worse off than in the SD matching result. There must be a student with highest priority among them, then we would like to show that this student has not successfully manipulated. Using case study, 
+The proof of unique. Take any other matching result ,we would prove that it is not acheivable with perfect manipulation. Because the SD matching result is pareto-efficient, and the preference is strict, in any other matching result there must be some students who are worse off than in the SD matching result. There must be a student with highest priority among them, then we would like to show that this student has not successfully manipulated. Using case analysis: 
 
-first, if this student is the top prioritied student, then he or she definitely has not successfully manipulated because if he or she report whatever college as his or her first choice, then he or she will get it.
+First, if this student is the top prioritied student, then he or she definitely has not successfully manipulated because if he or she report whatever college as his or her first choice, then he or she will get it.
 
-second, if  this student is not the top scored student, but all the higher prioritied students have successfully manipulated, then they will get the SD matching result, so this student can get the SD  matching result too. If he or she gets a worse college, he or she definitely has not successfully manipulated.
+Second, if  this student is not the top scored student, but all the higher prioritied students have successfully manipulated, then they will get the SD matching result, so this student can get the SD  matching result too. If he or she gets a worse college, he or she definitely has not successfully manipulated.
 
 Except for the informal proof, later we will give another proof using the following theorem.
  
@@ -746,33 +746,30 @@ For two parallel mechanism with the same first choice-band size, we have the fol
 
 Now let us go to the next subsection where we put some more details on.
 
-\subsection{Student-college matching with affirmative actions of bonus-score
-  and quota}
+\subsection{Student-college matching with affirmative actions}
 
 In this subsection, we would like to consider extending the previous
-model to cover affirmative actions of bonus-score and quota.
+model to cover affirmative actions.
 When there are bonus-score given to some student, if the bonus-score
 is accepted in every college, then we can just take his or her total score as
-original score + bonus-score. The rest is the same as the serial
+original-score + bonus-score. The rest is the same as the serial
 dictatorship case analyzed in the previous subsection. However, if
 there is difference between the accepted bonus-score
-among colleges, then the priority structure again goes into the
-chaotic state that the score-based serial dictatorship mechanism has
-successfully avoided in our previous simple model.
+among colleges, then the priority structure goes into the
+general priority model.
 
-Next is the more discussed affirmative action of quota, 
-A prevalent affirmative action policy in school choice limits the number of
+In the following parts, we will focus on affirmative action of quota and reserve. Quota is 
+a prevalent affirmative action policy in school choice limits the number of
 admitted majority students to give minority students higher chances to attend their
 desired schools. To circumvent the inefficiency caused by majority
 quotas, \parencite{Hafalir2013} offered a different interpretation of the affirmative action policies based on
 minority reserves. With minority reserves, schools give higher priority to
 minority students up to the point that the minorities fill the reserves.
 we would like to adopt the minority reserve definition
-in \parencite{Hafalir2013} with a little extension. we will give every group(including the majority group) a reserve (or
-called quota, whatever) that gives a student of this group priority
-over other group whenever the reserve number has not been reached.
-Using this definition of quota, we give the following enlightening
-example.
+in \parencite{Hafalir2013} with a little extension. we will give every group(including the majority group) a reserve that gives a student of this group priority
+over other groups whenever the reserve number has not been reached. This model can cover the CCA province reserves policy widely in use.
+Using this definition of reserve, we give the following
+example to compare DA and IA.
 
 \begin{example}
 There are two colleges $A$ and $B$, each with two seats for students. There are
@@ -864,13 +861,11 @@ indicating, then the result is as the table below.
 
 From the above example, we see that the matching result of DA mechanism with quota is not pareto efficient for the students. In fact, the comparison of the tables' 
 matching results shows that IA 
-mechanism's result is a pareto improvement. Student $2$ and $5$ gets strictly better result in IA mechanism than in DA mechanism. Why the efficiency result of the
-the previous subsection lost. The reason is that the efficiency in previous subsection comes from the serial dictatorship nature of DA in that special priority
-structure. Now with quota included, the priority structure is changed and that property is lost in the process. However, the resulted matching for DA is still priority-respecting(as \parencite{Svensson2014} call ``stable''), and constrained efficient(pareto efficient among the priority-respecting matchings). Meanwhile, there is not a way for the student to manipulate to get a better result for this example.
+mechanism's result is a pareto improvement. Student $2$ and $5$ gets strictly better result in IA mechanism than in DA mechanism. Why the efficiency result of the score-based DA is lost. The reason is that the efficiency in previous subsection comes from the serial dictatorship nature of DA with score as the same priority among colleges. Now with quota included, the priority structure is changed and that property is lost in the process. However, the resulted matching for DA is still priority-respecting(as \parencite{Svensson2014} call ``stable''), and constrained efficient(pareto efficient among the priority-respecting matchings) . Meanwhile, there is not a way for the student to manipulate to get a better result in DA with quota.
 
-Despite the truth-reporting result of IA weakly pareto dominates the DA result, we should notice that the truthful reporting strategy as in the example does not constitutes an ex post equilibrium. The student $3$ has not manipulated successfully, if he or she has reported college $B$ as favorite, $3$ will not ended with matching no college.
+Despite the truth-reporting result of IA weakly pareto dominates the DA result, we should notice that the truthful reporting strategy as in the example does not constitutes an ex post equilibrium. The student $3$ has not manipulated successfully, if he or she has reported college $B$ as favorite, $3$ will not ended with matching no college. What are the relationships of ex post equilibrium matching results among DA with reserve or quota, IA with reserve or quota and parallel mechanism with reserve or quota in general? That is one of the important issues we will deal with in the following parts.
 
-For the DA mechanism with majority quota, we have the following proposition.
+We start the investigation from DA with quota. For the DA mechanism with majority quota, we have the following proposition.
 
 \begin{prop}
 A DA mechanism with majority quota is priority-respecting, constrained efficient and non-manipulable.
