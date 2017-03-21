@@ -236,17 +236,17 @@ Let us discuss with some examples
  $c_i(\cdot)$ be the gasoline cost function for $i$'s one time travelled distance. 
 The city governer tries to assign a meeting place minimizing the pollution of their car causing to the city, so he wants to
 chose a meeting spot to minimize $c_i(l_i)+c_j(l_j)$. The two chess players all care about the 
-pollution but they also care about their oil expenditure, player $i$ feels the detriment $d_i= c_i(l_i)+ \phi_i(c_i(l_i)+c_j(l_j))$, where $\phi_i(\cdot)$ is the polution effect function for $i$, which is monotonically increasing. What
+pollution but they also care about their oil expenditure, player $i$ feels the disutility $d_i= c_i(l_i)+ \phi_i(c_i(l_i)+c_j(l_j))$, where $\phi_i(\cdot)$ is the polution effect function for $i$, which is monotonically increasing. What
  is the transfer scheme that can make the two players telling truth about their private $c_i$ an ex post equilibrium.
 \end{example}
 Though it is artificially made, it is indeed interesting to see that there is a tax scheme to accomplish truthful revelation in ex post equilibrium.
 That taxation method is to tax agent $t_i= \hat{c}_j(l_j^*)$ and tax agent $t_j=\hat{c}_i(l_i^*)$, where $\hat{c_i(\cdot)},\hat{c_j(cdot)}$ are the reported gasoline cost functions and $l_i^*,l_j^*$ is the social choice, which is a solution to $\min\sum \hat{c}_i(l_i)+\hat{c}_j(l_j)$.
 
- The total detriment for $i$ is $ t_i+ d_i = c_i(l_i)+\hat{c_j}(l_j)+\phi_i(c_i(l_i)+c_j(l_j))$. If the other player $j$ has told truth about $c_j(\cdot)$, then $ t_i+ d_i = c_i(l_i)+c_j(l_j)+\phi_i(c_i(l_i)+c_j(l_j))$.  Player $i$ wants the total detriment as small as possible, and therefore hopes to get a pair of $l_i,l_j$ to minimize $c_i(l_i)+c_j(l_j)$. However, we know that the social planner chooses $l_i^*,l_j^*$ to minimize $\hat{c_i}(l_i)+\hat{c_j}(l_j)$. Given the other player reported truthfully, i.e.,  $\hat{c}_j=c_j$, player $i$ can let the social planner choose $l_i,l_j$ to minimize $c_i(l_i)+c_j(l_j)$ by just telling truth (let $\hat{c}_i=c_i$).
+ The total disutility for $i$ is $ t_i+ d_i = c_i(l_i)+\hat{c_j}(l_j)+\phi_i(c_i(l_i)+c_j(l_j))$. If the other player $j$ has told truth about $c_j(\cdot)$, then $ t_i+ d_i = c_i(l_i)+c_j(l_j)+\phi_i(c_i(l_i)+c_j(l_j))$.  Player $i$ wants the total disutility as small as possible, and therefore hopes to get a pair of $l_i,l_j$ to minimize $c_i(l_i)+c_j(l_j)$. However, we know that the social planner chooses $l_i^*,l_j^*$ to minimize $\hat{c_i}(l_i)+\hat{c_j}(l_j)$. Given the other player reported truthfully, i.e.,  $\hat{c}_j=c_j$, player $i$ can let the social planner choose $l_i,l_j$ to minimize $c_i(l_i)+c_j(l_j)$ by just telling truth (let $\hat{c}_i=c_i$).
 
 when extending the two player game of chess to four player game like mahjong, let the four people report their gasoline cost function, the governor choose their play site,
 it is also easy to let them tell truth in ex post equilibrium with a well designed taxation. As you can verify, one possible taxation scheme is
-$$t_i= \sum_{j\not=i}c_j(l_j^*)- \min_{l_j,j\not =i}\sum_{j\not=i}c_j(l_j)$$
+$$t_i= \sum_{j\not=i}\hat{c}_j(l_j^*)- \min_{l_j,j\not =i}\sum_{j\not=i}\hat{c}_j(l_j)$$
 where $(l_1^*,l_2^*,l_3^*,l_4^*) \text{ is a solution to } \min_{l_k,k\in \{1,2,3,4\}}\sum_{k\in \{1,2,3,4\}}c_k(l_k)$.
 
 \begin{example}
@@ -263,7 +263,7 @@ pollution minimizing choice for building the city.
 
 This is a more realistic economic problem than the previous chess and mahjong problems, and the taxation scheme to let the vegetable firms to report
 the true $c_i()$ is
-$$ t_i = \sum_{j\not=i}c_j(l_j^*)- \min_{l_j,j\not =i}\sum_{j\not=i}c_j(l_j) $$
+$$ t_i = \sum_{j\not=i}\hat{c}_j(l_j^*)- \min_{l_j,j\not =i}\sum_{j\not=i}\hat{c}_j(l_j) $$
 
 where $(l_1^*,\cdots,l_n^*) \text{ is a solution to }\min_{l_k,k\in \{1,...,n\}}\sum_{k\in \{1,...,n\}}c_k(l_k)$
 
@@ -404,8 +404,7 @@ if
  $$(b) When\ v_i(s_i, s_{-i}) > v_i(s_i^*, s_{-i}), $$
   $$\forall j \not = i, v_i(s_i, s_{-i}) - v_i(s_i^*, s_{-i}) > v_j(s_i, s_{-i}) - v_j(s_i^*, s_{-i});$$
   $$When\ v_i(s_i, s_{-i}) < v_i(s_i^*, s_{-i}), $$
-  $$\forall j \not = i, v_i(s_i, s_{-i}) - v_i(s_i^*, s_{-i}) < v_j(s_i, s_{-i}) - v_j(s_i^*, s_{-i});\\
-  $$
+  $$\forall j \not = i, v_i(s_i, s_{-i}) - v_i(s_i^*, s_{-i}) < v_j(s_i, s_{-i}) - v_j(s_i^*, s_{-i});  $$
  
 \end{prop}
 \begin{proof}
@@ -455,10 +454,11 @@ Their three assumptions are listed below.
 (i)$\frac{\partial v_i}{\partial s_i} > 0$;
 
 (ii) $\forall i, j \not = i, \frac{\partial v_i}{\partial s_i}(s_1,...,s_n)
-> \frac{\partial v_j}{\partial s_i}(s_1,...,s_n)$;
+> \frac{\partial v_j}{\partial s_i}(s_1,...,s_n)$,
 
-at any point where $v_i(s_1,...,s_n) = v_j(s_1,...,s_n)= max_k v_k(s_1,...,s_n)$
-(iii)$ \forall s_{-i} \in S_{-i}, \exists s_i' \in S_i, such\ that\ v_i(s_i', s_{-i}) > max_{j\not=i}v_j(s_i', s_{-i})$;
+at any point where $v_i(s_1,...,s_n) = v_j(s_1,...,s_n)= max_k v_k(s_1,...,s_n)$;
+
+(iii)$ \forall s_{-i} \in S_{-i}, \exists s_i' \in S_i, such\ that\ v_i(s_i', s_{-i}) > max_{j\not=i}v_j(s_i', s_{-i})$.
 
 
 Therefore, we can implement social
@@ -478,8 +478,8 @@ their contingent biding function loses the information revelation role in this c
 $b_1(v_2)=15-2v_2,\quad b_2(v_1)=\frac{15-v_1}{2}$.
 
 The next section will be with multiple goods, and there we will provide a sufficient condition for ex post implementation. When that condition is applied to the one object case($1$ is a special case of $n$), we will have a further relaxed condition than the one we proposed in this part.
-\subsection{Allocation of multiple goods}
-\label{sec:allocation_of_multiple_goods}
+\subsection{Assignment of multiple goods}
+\label{sec:assignment_of_multiple_goods}
 
 For allocation of multiple goods under interdependent value environment, not much has been done to our knowledge. \parencite{Che2015} involve assigning indivisible objects to individuals without monetary transfer under interdependent values setting. Now in this subsection we extend the previous result to the allocation of multiple goods with money transfer under interdependent value environment.  The problem we'll consider is actually the assignment model with a special kind of interdependency. \footnote{For the private value assignment problem, the knowledge of which may help the understanding of this section, see Chapter 8 \parencite{Roth1990}for reference.} 
 
@@ -555,7 +555,7 @@ $\rho$ to show that it is indeed satisfiable in some situations so
 that we can ex post implement the socially efficient goal.
 \begin{prop}
   \label{rho}
-  The social efficient goal of $\max_{i,j}x_{ij}v_{ij}(s)$ can be ex post implemented if:
+  The social efficient goal of $\max_{x}x_{ij}v_{ij}(s)$ can be ex post implemented if:
 For all $i$ and $j$,
 $$v_{ij}=b_{ij} + o_i(s_i) + \sum_{l \not = i} r_l(s_l) $$
 where $b_{ij}>0$ is the base value, $s_i \in [0, + \infty)$, $\forall i,o_i(0)=r_i(0)=0$
@@ -579,7 +579,7 @@ good winners. As for the fixedness of the good winning probability by agent $i$,
 it's in part due to the fact that as $s_i$ increases, the increasing
 rate of $v_{ik}$ is at least as large as any other $v_{ab}$, where
 $ab$ stands for arbitrary agent and good combination not equal to
-$ik$. The formal proof can be seen in Appendix \ref{Appendix_C}
+$ik$. The formal proof can be seen in Appendix \ref{Appendix_C}.
 
 
 
