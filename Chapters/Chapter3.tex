@@ -317,7 +317,8 @@ The taxation scheme is a new challenge. We try to face this kind of challenge by
 One interesting finding is that the money transfer scheme is unique up to a shifting constant if the functions involved are
 continuously differentiable as to the private signal.
 
-\begin{thm}
+\begin{lemma}
+  \label{l1}
 Assuming all the partial derivatives exists and are continuous, then solve the following 
 differential equations
  $$\frac{\partial t_i}{\partial s_i} = \frac{\partial v_i(a(s_i,s_{-i}),s_i,s_{-i})}{\partial a } \frac{\partial a}{\partial s_i}$$
@@ -327,21 +328,26 @@ differential equations
 A sufficient and necessary condition for implementation with money transfer in such continuous case is that, for all $i$,$s$
 by shifting up or down the $t(\cdot,s_{-i})$ to let it be tangent with $ v_i(a(\cdot,s_{-i}),s_i,s_{-i})$ at $s_i$, the curve
 $t_i(\cdot,s_{-i})$ is below $ v_i(a(\cdot,s_{-i}),s_i,s_{-i})$, namely, $v_i(a(\cdot,s_{-i}),s_i,s_{-i})-t(\cdot,s_{-i})$ is
-maximized at $s_i$.
-
- 
-\end{thm}
+maximized at $s_i$. 
+\end{lemma}
 \begin{proof}
  If truth telling is a ex post equilbrium, it must be the case that $s_i$ is the solution to
  $$\max_{s'_i} \{v_i(a(s'_i,s_{-i}),s_i,s_{-i})-t(s'_i,s_{-i})\}$$
  solving it, we get the conclusions in the theorem.
 \end{proof}
 
+Thus for any two $t_i,t_i'$ which can lead to truthful implementation in ex post equilibrium, $\frac{\partial(t_i-t_i')}{\partial s_i}=0$, and we have the uniqueness of transfer.
+
+From Lemma \ref{l1}, the uniqueness theorem followes.
+  \begin{thm}(Uniqueness)
+    If a mechanism with money transfer exists which truthfully implements the social efficiency in  ex post equilibrium, then given any $s_{-i}$,  the transfer tax scheme $tax(x)=t_i^*(x,s_{-i})$ for agent $i$ is essentially the tangent curve of $i$'s profit function family  $f(x,s_i)=v_i(a(x,s_{-i}),s_i,s_{-i}) $ where $s_i, x \in S_i$, that is, $tax(x)$ has the same slope as $f(x,s_i)$ at $s_i$. Moreover, any other implementing scheme is an upward or downward shift of it, ie., $tax(x)=t_i^*(x,s_{-i}) + c(s_{-i})$.
+  \end{thm}
+
 The theorem is simple, but it contains much information. One thing is that not every continuously differentiable
 social goal $a(s)$ is implementable in ex post equilibrium with money transfer. It must satisfy the conditions in the theorem 
-to be implemented with money transfer. The second thing is that even if it can be implemented with money transfer, the scheme for 
+to be implemented with money transfer, that is, there must be an upper envelope curve for a family of function curves. The second thing is that even if it can be implemented with money transfer, the scheme for 
 implementing it is unique in essence. They only differ by a constant\footnote{the solution to the differential equations are some specific
-  function plus something of the form $f(s_{-i})$ that is not changing with $s_i$}. The model here is just illustrative and does not include
+  function plus something of the form $c(s_{-i})$ that is not changing with $s_i$}. The model here does not include
 the previous VCG mechanism case as $c_i$ or $v_i$ are functions there, not a $s_i$. The idea to convey is that $i$'s transfer difference of any two mechanisms truthfully implementing an efficient social goal must be a function which is not changing with the reported value of $i$. 
 
 Now let us consider the oil producers example again. We should give a mathematical structure to it in order to show how the process of mechanism
@@ -360,6 +366,28 @@ $$\frac{\partial t}{\partial s_i} = \sum_{j=1}^{n} m_{ij}\{q_j\frac {\partial p(
 Now that the transfer scheme is calculated, we only need to verify whether it satisfies the requirement that for all $i$,$s$,  $s_i$ maximizes  
 $$\sum_{j=1}^{n} m_{ij}\{q_j(\cdot,s_{-i})p(q(\cdot,s_{-i}))-c(q_j(\cdot,s_{-i}),s_j)\}-t_i(\cdot,s_{-i})$$
 When the requirement holds, then $t$ is the money transfer scheme.
+
+To have an intuitionistic idea about the above discussion, we will give a numerical illustration. Let $n=2,p(q)=5-q, m_{11}=2/3,m_{12}=1/3$, $c(q,s_i)=qs_i$ for $i=1,2$. Suppose that the agent 2 has reported the real $s_2=1$. Now what is $tax(x)$ for agent 1 which can make him or her tell truth?
+
+A possible tax scheme for player 1 is $tax(x)=x^2/9 - 2x/9 + 1$, which can be deduced from the just sketched method.\footnote{We use the software Maxima to calculate the functions and draw the graph. A detailed guide for doing such jobs is obtained from \parencite{Maxima}.
+  See the Appendix \ref{Appendix_B} for the code of producing the graph.}
+
+In the graph, we depict the tax curve $tax(x)$ together with the family of $f(x,s_1)$s that is parallel to it\footnote{Tangent after an appropriate downward shift.} at five $x$s  $(0.1,1.0,1.2,1.8,3)$. If $S_i= (0,3]$, then the $tax(x)=x^2/9 - 2x/9 + 1$ is individual rational for the agent 1. We can also see that only $tax(x)$ is convex while all the family of $f(x,s_1)$s with $s_1$ changing from $0$ to $3$ are concave. Therefore it is a tax scheme which can make the agent 1 tell truth as shifting any curve $f(x,s_1)$ downward such that it is tangent to $tax(x)$ at $s_1$ will make the curve  $f(x,s_1)$ lie under $tax(x)$. As for the agent 2, the taxation is similarly calculated given any $s_1, m_{21},m_{22}$ and we omit it here.
+
+
+
+%\begin{figure}[htb]
+%   　　\centering
+%   　　\includegraphics[scale=0.5,bb=0 0 385 567]{picture.png}
+%   　　\caption{Some description about the picture}
+%   　　\label{picture-label}
+%   　　\end{figure}
+
+ \begin{figure}
+\centering
+\includegraphics[width = 11cm]{tax.pdf}
+\caption{tax scheme $tax(x)$ etc.} \label{fig:tax}
+\end{figure}
 
 For this continuously differentiable situation, the private value case of the problem always has the unique solution, the uniqueness
 has been shown by the above more general result. And the unique mechanism is the well-known VCG mechanism. This has been shown by

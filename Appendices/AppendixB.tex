@@ -1,113 +1,211 @@
 % Appendix B
 
-\chapter{A Simple Proof to Hurwicz Impossibility Theorem} % Main appendix title
+\chapter{wxMaxima session code for producing picture \ref{fig:tax}} % Main appendix title
 
 \label{Appendix_B} % For referencing this appendix elsewhere, use \ref{Appendix_B}
 
-\begin{thm*}
-(Hurwicz Impossibility Theorem) For the neoclassical pri-
-vate goods economies, there is no mechanism < M, h > that implements Pareto efficient
-and individually rational allocations in dominant strategy. Consequently, any revelation
-mechanism < M, h > that yields Pareto efficient and individually rational allocations is
-not strongly individually incentive compatible. (Truth-telling about their preferences is not
-Nash Equilibrium).
-\end{thm*}
-The proof is adapted from the original proof.
-\begin{proof}
-
-  By the Revelation Principle, we only need to show that any
-  revelation mechanism cannot implement Pareto efficient and
-  individually rational allocations truthfully in dominant equilibrium
-  for a particular pure exchange economy.
-
-Then, it is enough
-to show that truth-telling is not a Nash equilibrium for any revelation mechanism that
-yields Pareto efficient and individually rational allocations for a particular pure exchange
-economy.
-
-Consider a private goods economy with two agents and  two goods. The
-endowments are 
-
-$$w_1=(2,0), w_2=(0,2).$$
-
-The utilities are
-
-$$ u_i(x,y) = \begin{cases}
-3x_i + y_i & \text{if $x_i\leq y_i$ } \\
-x_i + 3y_i & \text{if $x_i>y_i$ }
-\end{cases}$$
-
-The above things form the economic environment $e$.
-
-For the pure exchange economy, it has the following
-allocation results set 
-$$ A =\{( (x_1,y_1), (x_2,y_2))| x_1+x_2 = 2 \ and\ y_1+y_2=2 \}$$
-
-Let $U$ be the set of all neoclassical utility functions, i.e. they are continuous and quasi-
-concave, which agent i can report to the designer. Thus, the true utility function
-$u_i \in U$.
-
-Then, 
-$$ h: U\times U \rightarrow A $$
-
-Suppose that  the true utility function profile
-$u_i$ were indeed a Nash Equilibrium, it would then  satisfy
-
-\[ u_i(h(u_i, u_{-i})) \geq u_i(h(u'_i,u_{-i}))\]
-
-\begin{tikzpicture}
-\draw (0,0) rectangle (8,8);
-\draw (0,0) -- (8,8);
-\draw (8,0) -- (2,2)--(0,8);
-\draw (8,0) -- (6,6)--(0,8);
-\draw (0,8)--(8,0);
-\node [below] at (2,2) {$a$};
-\node [right] at (6,6) {$b$};
-\node [right] at (4, 4) {$f$};
-\node [below left] at (0,0) {$O_1$};
-\node [above right] at (8,8) {$O_2$};
+First, we solve the FOC. of the social planner's maximization problem. 
 
 
-\end{tikzpicture}
-
-Let us denote the individual rational allocations by $IR(e)$, the
-Pareto efficient allocations by $P(e)$, the true report allocation
-$d=h(u_i, u_{-i})$.
-
-First thing to note is that the Pareto efficient allocation results is
-all 
-on the 45 degree line. For any other point, move on to the 45 degree
-line along the shortest path( the path that is orthogonal to it) is a
-Pareto improvement. $P(e)=O_1O_2$.  
-Individual rational means that the final allocation must be at least
-as good as the endowment, so $P(e) \cap IR(e) = \overline{ab}$ .
-
-Suppose $d \in P(e) \cap IR(e)$, that is, $d \in \overline{ab}$.
-
-If agent 1 misreports his utility function :
-
-$$ u_1(x,y)=x_1 + y_1$$
-
-Then, with the misreported $u_1$ and thus the misreported $e'$, the new set of individually rational and Pareto efficient allocations is given
-by $P(e') \cap IR(e') = \overline{fb}$
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i1) 
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+solve([-q[1]+5-q[1]-q[2]=s[1], -q[2]+5-q[1]-q[2]=s[2]], [q[1],q[2]] );
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o1} 
+[[{q_1}=-\frac{-{s_2}+2 {s_1}-5}{3},{q_2}=\frac{-2 {s_2}+{s_1}+5}{3}]]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+Price p: 
 
 
-If agent 2 misreports his utility function :
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i2)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+p: ratsimp(5-(-(-s[2]+2*s[1]-5)/3+(-2*s[2]+s[1]+5)/3));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{p}
+\frac{{s_2}+{s_1}+5}{3}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+Second, calculate agent 1 's profit f(x,s\_1) given the share 2/3,1/3, and s\_2=1. 
 
-$$ u_2(x,y)=x_2 + y_2$$
 
-Then, with the misreported $u_2$ and thus the misreported $e''$, the new set of individually rational and Pareto efficient allocations is given
-by $P(e'') \cap IR(e'') = \overline{af}$
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i3)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ ratsimp(1/3 * (-2+x+5)/3 *((1+x+5)/3 - 1)  + 2/3 * (-(-1+2*x-5)/3 *((1+x+5)/3 -s[1])));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o3} 
+-\frac{{{x}^{2}}+\left( 2-4 {s_1}\right)  x+12 {s_1}-27}{9}\mbox{}
+\]
+%%%%%%%%%%%%%%%
 
- If the $d$ is on $\overline{af}$, agent 1 will choose to
-misreport a $u_1(x,y)=x_1 + ky_1$ where $0<k<1$. For any $d$ that is on $\overline{fb}$, agent 2 will choose to
-misreport a $u_2(x,y)=x_2 + ky_2$ where $0<k<1$. 
 
-Thus, no mechanism that yields Pareto efficient and individually rational allocations is
-incentive compatible for both sides.
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i4)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+f(x,s) := -(x\^{}2+(2-4*s)*x+12*s-27)/9;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o4} 
+\operatorname{f}\left( x,s\right) :=\frac{-\left( {{x}^{2}}+\left( 2-4 s\right)  x+12 s-27\right) }{9}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+Third, calculate the partial derivative of f(x,s) to x at s=x, and then from the differential equation \ensuremath{\partial}t(x)/\ensuremath{\partial}x=\ensuremath{\partial}f(x,s)/\ensuremath{\partial}x hold whens=x, we derive a t(x). 
 
 
-\end{proof}
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i5)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+diff(f(x,s),x);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o5} 
+\frac{-2 x+4 s-2}{9}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i6)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+partial: (2*x-2)/9;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{partial}
+\frac{2 x-2}{9}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i7)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+desolve('diff(t(x),x) =(2*x-2)/9, t(x));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o7} 
+\operatorname{t}(x)=\frac{{{x}^{2}}}{9}-\frac{2 x}{9}+\operatorname{t}(0)\mbox{}
+\]
+%%%%%%%%%%%%%%%
+We find from the following that all f(x,s)s go through (3,4/3), and let t(x) goes through it too, we get a tax(x). 
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i8)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ratsimp(f(3,s));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o8} 
+\frac{4}{3}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i9)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+tax(x) := x\^{}2/9-(2*x)/9+1;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o9} 
+\operatorname{tax}(x):=\frac{{{x}^{2}}}{9}-\frac{2 x}{9}+1\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i10)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+tax(3);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle
+\tag{\% o10} 
+\frac{4}{3}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+Now we can draw the picture. 
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}\color{red}\bf
+(\% i11)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+wxplot2d([f(x,0.1),f(x,1.0),f(x,1.2),f(x,1.8), f(x,3), tax(x)], [x, 0,6],[legend, "f(x,0.1)","f(x,1.0)","f(x,1.2)","f(x,1.8)", "f(x,3)", "tax(x)"]);
+
+
+\end{minipage}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width = 11cm]{tax.pdf}
+%\caption{tax scheme $tax(x)$ etc.} \label{fig:transfer}
+%\end{figure}
+
+%%% OUTPUT:
+%\[\displaystyle
+%\tag{\% t11} 
+%\includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{tax_img/tax_1}\mbox{}
+%\]
+%%%%%%%%%%%%%%%
 
 
 
