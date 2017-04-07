@@ -125,7 +125,7 @@ Given economic environments, each agent participates economic activities, makes 
 sions, receives benefits and pays costs on economic activities.The designer wants to reach
 some desired goal that is considered to be socially optimal by some criterion. Let
 
-$F:E\rightarrow \rightarrow Z$: the social goal or called social choice correspondence in which
+$F:E\rightarrow Z$: the social goal or called social choice correspondence in which
 $F(e)$ is the set of socially desired outcomes at a certain state of the economy under some
 criterion of social optimality. For this paper, the social goal is denoted
 $$F(s)=\{(a^*,t_1,\cdots,t_n)|a^*\ is\ a \ solution\ to \ \max_a \sum_{i=1}^n v_i(a,s)\}$$
@@ -164,6 +164,13 @@ $b(e, \Gamma)$ on Environment space $E$ if for every $e\in E$, $h(b(e,\Gamma))\i
 Incentive compatibility is another way of saying implementation. A Mechanism is said to be incentive-compatible with a social choice
 correspondence $F$ on $E$ if it implements $F$ in some kind of equilibrium on $E$. 
 
+\subsection{Ex post equilibrium}
+
+An ex post equilibrium is a Nash equilibrium when every information and strategy choices have been revealed. In an ex post equilibrium, no body will regret the strategy choice he or she has made. In contrast to this, ex ante equilibrium is a Nash equilibrium when not many information has been known by the players. Later on, after everything is known, the participants in an ex ante equilibrium may regret his strategy choice because ex ante equilibrium may not be ex post equilibrium. In this sense, an ex post equilibrium is more robust than an ex ante equilibrium.
+
+We focus on ex post equilibrium $b(\cdot)$ for implementation. According to revelation principle for ex post implementation, if a Mechanism $\langle M, h\rangle$ implements the social choice rule $F$ in ex post equilibrium, then there is a direct revelation mechanism which implements $F$ truthfully in ex post equilibrium(truth telling is an ex post equilibrium) \footnote{This is similar to the revelation principle for dominant strategy implementation. For proofs, see Appendix \ref{Appendix_A}}. This principle narrowes the search space for an ex post implementation mechanism to the space of direct revelation mechanisms, which are the mechanisms we consider in this chapter and the next chapter.
+
+In the analysis of existing mechanisms, the ex post implementable outcomes are sometimes called achievable with perfect manipulation in this paper, because no participant will regret his or her strategical choice in such ex post equilibrium strategy profiles from ex post point of view. The outcomes achievable with perfect manipulation for some CCA(Chinese college admission) mechanisms are discussed in the next chapter on matching. For this chapter, we focus on devising new direct mechanisms to truthfully implement socially efficient choices.
 
 
 
