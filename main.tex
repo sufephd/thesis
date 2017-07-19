@@ -36,6 +36,7 @@ onehalfspacing, % Single line spacing, alternatives: onehalfspacing or doublespa
 %nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
+\usepackage{CJK}
 \usepackage{amsmath, amsthm, verbatim,amssymb,graphicx, tikz, mathrsfs}%added by Yan Ju
 \usepackage{bbm}%zheyang
 \usepackage[utf8]{inputenc} % Required for inputting international characters
@@ -128,6 +129,8 @@ headsepline, % Uncomment to get a line under the header
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 
 \begin{document}
+
+\begin{CJK}{UTF8}{gbsn}
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
@@ -233,10 +236,20 @@ Keywords: \keywordnames
 \end{abstract}
 
 
-%\clearpage
-%\thispagestyle{empty}
+\clearpage
+\thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{Resume}
-%鞠岩中文摘要
+\large{中文摘要}\\
+\normalsize
+机制设计是经济学里一个非常有意义的领域。在本论文里，我们首先介绍了一般的机制设计理论框架，然后着重探讨了几种机制设计问题。本论文在前人理论的基础上进行，主要是作者研究兴趣的反映，在相关的领域给出了一些有洞察力的见解并作出了一些有意思的发现。
+
+我们在论文中以事后均衡为执行问题的均衡概念，因为事后均衡相比于事前均衡在有信息波动的情况下更稳健。对于两类特别的依赖价值问题，我们仿效VCG机制设计一种机制获得了社会最优结果的事后均衡执行。 然后我们对一类信号连续可微依赖价值问题进行研究，发现了这种情况下事后执行的条件，并给出了在该条件下，能够事后执行的机制的货币转移规则的唯一性结论。对于离散的社会最优选择目标，我们着重考虑了最优分配一个和多个物品的情况。在依赖价值环境下，文章首先提出了单物品拍卖事后执行最有效分配结果（将物品分给对它评价最高者）的一个充分条件。该充分条件比马斯金2000年文章中的条件适用范围更广。 接着我们扩展了该充分条件到依赖值的多物品情形，我们称这个充分条件为条件ρ，随后我们应用该条件完成了一个在某类经济环境下事后执行社会最有效结果的机制设计。
+
+对于中国大学录取机制，本文发现志愿优先机制，中国平行志愿机制和DA机制在统一考试成绩完全决定学生优先级的情况下，事后均衡执行的结果是一样的。尽管如此，DA机制的事后均衡结果同时也是说真话的占有策略均衡结果，因此更易达成。在更一般的学生相对于学校的优先级的情形下，我们发现中国平行志愿机制的事后执行分配结果展现出一种嵌套的结构，这种结构说明DA作为一种特殊的平行志愿机制有着最多的可事后均衡执行的结果。
+
+对于完全信息竞争关系的动态博弈，如象棋，它是一种决定胜负的机制。我们在最后一章把每一种棋局都分成三类，胜势局面，败势局面和和局局面，并且在理论上提供了识别的方法。最后，对于一个简单的游戏，我们在实践上利用了该方法作出了局面的分类识别。
+
+关键词：机制设计，效率，匹配，博弈论，事后均衡
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
@@ -373,5 +386,7 @@ Structure of ex post equilibrium matching results in the Chinese college admissi
 Experience Fee, Reserve Price and Experience Good Auction. with Dazhong Wang.
 
 Affirmative action in school choice. with Deguang Lin, Dazhong Wang.
+
+\end{CJK}
 
 \end{document}  
